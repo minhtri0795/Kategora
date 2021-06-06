@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/image/favicon-32x32.png"
+    />
+    <title>Kategora</title>
+    <!-- Bootrap4 -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- Main style app -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body>
+    <!-- Main header -->
+    <div class="main-header-wrapper">
+      <a class="logo" href="./index.html">
+        <svg width="115" height="66" viewBox="0 0 115 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Kategora Logo</title>
+          <path class="kategora-type" d="M13.9035 57.0949L12.4925 58.547V63.0123H10V50.1492H12.4925V55.2379L17.2756 50.1492H20.5573L15.6068 55.2939L21.0144 63.0123H17.9001L13.9035 57.0949Z" fill="#232323"/>
+          <path class="kategora-type" d="M29.8101 60.1616H24.8436L23.7993 63.0097H21.2324L26.1617 50.1465H28.4894L33.4186 63.0097H30.8517L29.8101 60.1616ZM29.0421 58.0488L27.3388 53.4183L25.6355 58.0488H29.0421Z" fill="#232323"/>
+          <path class="kategora-type" d="M36.004 52.2992H32.1377V50.1492H42.3655V52.2992H38.4992V63.0123H36.0067V52.2992H36.004Z" fill="#232323"/>
+          <path class="kategora-type" d="M43.627 50.1492H52.2046V52.2992H46.1195V55.1287H50.9956V57.2974H46.1195V60.8436H52.4066V63.0123H43.627V50.1492Z" fill="#232323"/>
+          <path class="kategora-type" d="M53.25 56.5781C53.25 52.7202 55.9445 50 59.739 50C62.8002 50 65.1997 51.7451 65.6594 54.2815L63.1669 54.7957C62.8374 53.1598 61.4636 52.1501 59.739 52.1501C57.4113 52.1501 55.7611 53.8392 55.7611 56.5781C55.7611 59.1864 57.3927 60.9875 59.739 60.9875C61.7001 60.9875 63.0739 59.8658 63.1855 58.158H58.9897V56.1358H65.8428V57.1269C65.8428 60.7477 63.4061 63.1535 59.7576 63.1535C55.9418 63.1588 53.25 60.4386 53.25 56.5781Z" fill="#232323"/>
+          <path class="kategora-type" d="M67.1387 56.5781C67.1387 52.7735 69.8889 50 73.6437 50C77.3824 50 80.1327 52.7735 80.1327 56.5781C80.1327 60.3827 77.3824 63.1562 73.6437 63.1562C69.8889 63.1589 67.1387 60.3827 67.1387 56.5781ZM77.6216 56.5781C77.6216 54.0231 75.9714 52.1501 73.6437 52.1501C71.3159 52.1501 69.6471 54.0257 69.6471 56.5781C69.6471 59.1331 71.3159 60.9875 73.6437 60.9875C75.9714 60.9901 77.6216 59.1331 77.6216 56.5781Z" fill="#232323"/>
+          <path class="kategora-type" d="M89.5696 63.0097L86.5085 57.7371H84.4916V63.0097H81.9991L81.9805 50.1465H86.9283C89.4394 50.1465 91.071 51.6359 91.071 53.9511C91.071 55.4032 90.319 56.6341 89.0541 57.2602L92.4634 63.0123H89.5696V63.0097ZM84.4942 55.587H86.5457C87.8291 55.587 88.5625 54.9795 88.5625 53.9511C88.5625 52.9227 87.8291 52.2966 86.5457 52.2966H84.4942V55.587Z" fill="#232323"/>
+          <path class="kategora-type" d="M101.391 60.1616H96.4247L95.3804 63.0097H92.8135L97.7427 50.1465H100.07L105 63.0097H102.433L101.391 60.1616ZM100.621 58.0488L98.9172 53.4183L97.2113 58.0488H100.621Z" fill="#232323"/>
+          <path d="M90.9776 28.5106V30.0941C83.0227 26.5561 68.0554 18.9286 56.8388 7.3921C45.6286 18.9221 30.6678 26.5496 22.7129 30.0844V28.5009C45.1268 16.4581 56.8388 0 56.8388 0C56.8388 0 68.554 16.471 90.9776 28.5106Z" fill="#232323"/>
+          <path d="M90.9776 31.5616V33.0516C81.736 30.765 63.6196 25.9336 56.8774 21.6667C50.1191 25.9433 31.9319 30.7875 22.7129 33.0677V31.5809C40.3179 25.8982 55.7966 15.3615 56.8452 14.6455V14.6036C56.8452 14.6036 56.8678 14.6197 56.8774 14.6262C56.8871 14.6197 56.9031 14.6036 56.9031 14.6036V14.6455C57.9518 15.3647 73.3951 25.8756 90.9776 31.5616Z" fill="#232323"/>
+          <path d="M90.9776 34.6352V36.1316H22.7129V34.6352C41.4887 32.2647 56.6683 28.8234 56.8388 28.7879V28.7815C56.8388 28.7815 56.8388 28.7815 56.8452 28.7815V28.7879C57.0157 28.8266 72.2017 32.2647 90.9776 34.6352Z" fill="#232323"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Menu wraper -->
+
+    <!-- ============= CONTENT ============= -->
+    <div class="page-main">
+      <div class="home-page">
+        <header class="page-header">
+          <div class="home-header-wrapper">
+            <!-- <span class="background-dark"></span> -->
+            <div class="row expanded">
+              <div class="col-lg-12 text-center">
+                <span class="upper-title">Welcome</span>
+              </div>
+            </div>
+            <div class="row expanded align-center text-wrapper">
+              <div class="col-lg-12 text-center">
+                <h2 class="text">
+                  <p><span class="serif-light italic">Smart</span> living starts with</p>
+                  <p>smart <span class="serif-light italic">building</span></p>
+                </h2>
+              </div>
+            </div>
+            <div class="image-wrapper">
+              <div class="header-video-container">
+                <video class="header-video" autoplay playsinline loop muted>
+                  <source src="./assets/image/kategora-loop-finalissimo.mp4"
+                    type="video/mp4">
+                </video>
+              </div>
+              <div class="row expanded align-center text-wrapper">
+                <div class="col-lg-12 text-center">
+                  <h2 class="text">
+                    <p><span class="serif-light italic">Smart</span> living starts with</p>
+                    <p>smart <span class="serif-light italic">building</span></p>
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main class="page-content">
+          <section>
+            <div class="projects-block-wrapper">
+              <div class="row expanded title-container">
+                <div class="col-lg-12 text-center">
+                  <span class="upper-title">Projects</span>
+                  <h2 class="main-title">
+                    <p><span class="serif-light italic">A</span> decade <span class="serif-light italic">of</span>
+                      projects</p>
+                  </h2>
+                  <div class="cta-btn-wrapper">
+                    <a href="https://kategora.com/en/projects/">
+                      <span class="background"></span>
+                      <span class="round-text-wrapper">
+                        <img src="./assets/image/circle-text2.png" alt="">
+                      </span>
+                      <div class="icons-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" preserveAspectRatio="xMidYMid meet" style="transform: translate3d(0px, 0px, 0px);">
+                          <defs>
+                            <clipPath id="__lottie_element_2"><rect width="120" height="120" x="0" y="0"></rect></clipPath>
+                          </defs>
+                          <g clip-path="url(#__lottie_element_2)">
+                          <g transform="matrix(1,0,0,1,23.8489990234375,37.447998046875)" opacity="1" style="display: block;">
+                          <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                            <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="2" d=" M1,25.97800064086914 C1,25.97800064086914 65.06900024414062,25.97800064086914 65.06900024414062,25.97800064086914"></path></g>
+                          <g opacity="1" transform="matrix(1,0,0,1,52.26599884033203,15.48900032043457)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="2" d=" M-12.802000045776367,-10.48900032043457 C-12.802000045776367,-1.0110000371932983 -7.64900016784668,10.48900032043457 12.802000045776367,10.48900032043457"></path></g>
+                          <g opacity="1" transform="matrix(1,0,0,1,52.26599884033203,36.46699905395508)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="2" d=" M-12.802000045776367,10.48900032043457 C-12.802000045776367,1.0110000371932983 -7.64900016784668,-10.48900032043457 12.802000045776367,-10.48900032043457"></path></g>
+                        </g></g>
+                      </svg>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="row expanded justify-content-center text-container">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                  <p>The <span class="serif-light italic">future</span> of housing is already here.</p>
+                  <p>Alongside our co-investors and customers, we develop <span
+                    class="serif-light italic">sustainable</span> buildings just as technical as they are <span
+                    class="serif-light italic">attractive</span>.
+                  </p>
+                  <p><span class="serif-light italic">We</span> are meticulously passioned — about <span
+                    class="serif-light italic">innovation</span>, about <span
+                    class="serif-light italic">design</span>, about <span
+                    class="serif-light italic">co-existence</span>. All the future demands.
+                  </p>
+                  <p>Coliving is the <span class="serif-light italic">concept</span> and our job is to <span
+                    class="serif-light italic">make it real</span>.
+                  </p>
+                </div>
+              </div>
+              <div class="images-wrapper">
+                <figure class="kiraly-1-image">
+                  <img data-lazyload
+                    src="./assets/image/kiraly-1.jpg" alt=""
+                    width="666 " height="494">
+                  <figcaption>
+                    <span class="caption">kiraly budapest</span>
+                  </figcaption>
+                </figure>
+
+                <figure class="kiraly-2-image">
+                  <img
+                    src="./assets/image/kiraly-2.jpg"
+                    width="572" height="816">
+                  <figcaption>
+                    <span class="caption">kiraly budapest</span>
+                  </figcaption>
+                </figure>
+
+                <figure class="ura-1-image">
+                  <img
+                    src="./assets/image/ura-1.jpg"
+                    width="1178" height="562">
+                  <figcaption>
+                    <span class="caption">ura</span>
+                  </figcaption>
+                </figure>
+
+                <figure class="ura-2-image">
+                  <img
+                    src="./assets/image/ura-2.jpg"
+                    width="624" height="864">
+                  <figcaption>
+                    <span class="caption">ura</span>
+                  </figcaption>
+                </figure>
+
+                <figure class="nivaria-1-image">
+                  <img
+                    src="./assets/image/nivaria-1.jpg"
+                    width="680" height="456">
+                  <figcaption>
+                    <span class="caption">nivaria</span>
+                  </figcaption>
+                </figure>
+
+                <figure class="nivaria-2-image">
+                    <img
+                     src="./assets/image/nivaria-2.jpg"
+                      width="954" height="534">
+                    <figcaption>
+                      <span class="caption">nivaria</span>
+                    </figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="about-block-wrapper">
+              <div class="image-container">
+                <div class="block-bg-cover">
+                  <picture class=''>
+                    <img width='1700' height='1075' class='canvas-img element-cover'
+                      src='./assets/image/kategora-homepage-office-1700x1075-c.jpg'
+                      alt='Meeting room team work space creating'>
+                  </picture>
+                </div>
+                <picture class=''>
+                  <img width='348' height='589' class='floating-img'
+                    src='./assets/image/kategora-homepage-office-02-348x589-c.jpg'
+                    alt='Work spaces team building teh place to be coworking'>
+                </picture>
+                <div class="title-container">
+                  <div class="inner">
+                    <span class="upper-title">About</span>
+                    <div class="slide-title-container">
+                      <h2>
+                        <span class="word">Our Culture</span>
+                      </h2>
+                    </div>
+                    <div class="cta-btn-wrapper" data-follow="false" data-follow-target="false">
+                      <a href="https://kategora.com/en/about/">
+                        <span class="background"></span>
+
+                        <span class="round-text-wrapper">
+                          <img src="./assets/image/circle-text2.png" alt="">
+                        </span>
+                        <div class="icons-container">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" preserveAspectRatio="xMidYMid meet" style="transform: translate3d(0px, 0px, 0px);">
+                            <defs>
+                              <clipPath id="__lottie_element_2"><rect width="120" height="120" x="0" y="0"></rect></clipPath>
+                            </defs>
+                            <g clip-path="url(#__lottie_element_2)">
+                            <g transform="matrix(1,0,0,1,23.8489990234375,37.447998046875)" opacity="1" style="display: block;">
+                            <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                              <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="2" d=" M1,25.97800064086914 C1,25.97800064086914 65.06900024414062,25.97800064086914 65.06900024414062,25.97800064086914"></path></g>
+                            <g opacity="1" transform="matrix(1,0,0,1,52.26599884033203,15.48900032043457)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="2" d=" M-12.802000045776367,-10.48900032043457 C-12.802000045776367,-1.0110000371932983 -7.64900016784668,10.48900032043457 12.802000045776367,10.48900032043457"></path></g>
+                            <g opacity="1" transform="matrix(1,0,0,1,52.26599884033203,36.46699905395508)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="2" d=" M-12.802000045776367,10.48900032043457 C-12.802000045776367,1.0110000371932983 -7.64900016784668,-10.48900032043457 12.802000045776367,-10.48900032043457"></path></g>
+                          </g></g>
+                        </svg>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row text-container">
+                <div class="col-xl-7 col-lg-6 col-md-10 offset-md-3 offset-sm-0 col-sm-12 order-md-2">
+                    <picture class='left-img-picture'>
+                      <img width='923' height='589' class=''
+                        src='./assets/image/kategora-homepage-team-923x589-c.jpg'
+                        alt='Team meeting enjoyable time coworkers coworking'>
+                    </picture>
+                </div>
+                <div
+                    class="col-xl-4 offset-xl-1 col-lg-5 col-md-10 offset-md-3 offset-sm-0 col-sm-12 order-md-1">
+                    <p>Our architecture encourages co-existence. So does our business philosophy. We have abolished
+                      barriers of hierarchy and departmentalization to work as a single team. We believe in full
+                      transparency — and of course, that entails our clients.</p>
+                    <p>Kategora was born in Bilbao in 2006 but experienced its initial growth spur in Hungary and
+                      Poland. As we looked to invest in emerging markets, we noticed these wonderful countries had low
+                      real estate prices, low unemployment rates, a young population, and low leverage rates when
+                      compared to Spain.</p>
+                    <ul class="statistics-list">
+                      <li class="stagger-item">14 Years</li>
+                      <li class="stagger-item">3 Countries</li>
+                      <li class="stagger-item">+7% Net Yields</li>
+                      <li class="stagger-item">400 Investors</li>
+                      <li class="stagger-item">800 Actives</li>
+                      <li class="stagger-item">160M€ GAV</li>
+                    </ul>
+                  </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <!-- sm = md bootrap
+          xsmall= sm bootrap -->
+
+    <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+     <!-- GSAP framworks -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+     <!-- Scrolltrigger plusgin -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+    <!-- Main script -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
