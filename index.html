@@ -21,7 +21,7 @@
     <!-- Main style app -->
     <link rel="stylesheet" href="./assets/css/style.css">
   </head>
-  <body>
+  <body id="scrollbar">
     <!-- Main header -->
     <div class="main-header-wrapper">
       <a class="logo" href="./index.html">
@@ -95,12 +95,24 @@
                 <span class="upper-title">Welcome</span>
               </div>
             </div>
-            <div class="row expanded align-center text-wrapper">
+            <div class="row expanded align-content-center text-wrapper">
               <div class="col-lg-12 text-center">
                 <h2 class="text">
                   <p><span class="serif-light italic">Smart</span> living starts with</p>
                   <p>smart <span class="serif-light italic">building</span></p>
                 </h2>
+                <button class="continue-btn">
+                  <span class="bg"></span>
+                    <span class="label">Continue</span>
+                    <div class="icon-container">
+                      <svg class="icon" width="35" height="11" viewBox="0 0 35 11" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <line y1="5.5" x2="34" y2="5.5" stroke="#232323" />
+                        <path d="M30 1L34.5 5.5L30 10" stroke="#232323" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </svg>
+                    </div>
+                </button>
               </div>
             </div>
             <div id="introVideo" class="image-wrapper">
@@ -157,7 +169,7 @@
                 </div>
               </div>
               <div class="row expanded justify-content-center text-container">
-                <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="col-lg-6 col-md-6 col-sm-12">
                   <p>The <span class="serif-light italic">future</span> of housing is already here.</p>
                   <p>Alongside our co-investors and customers, we develop <span
                     class="serif-light italic">sustainable</span> buildings just as technical as they are <span
@@ -356,7 +368,7 @@
                 </div>
               </div>
               <div class="row expanded more-insights collapse">
-                <div class="col-lg-12 offset-lg-0">
+                <div class="col-xl-10 offset-xl-2 col-lg-12">
                   <span class="insights-title stagger-item">Read more about it</span>
                   <div class="scroll-grid">
                     <ul class="insights-list">
