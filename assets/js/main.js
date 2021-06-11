@@ -1,30 +1,78 @@
 $(document).ready(function () {
-  // Force scrollbar on top and can't scrolling after refresh page.
+  var lastScrollTop = 0;
+  window.addEventListener("scroll", function(){ 
+   var currentScroll = window.pageYOffset; 
+   if (currentScroll > lastScrollTop){
+     gsap.to(".logo",{
+       duration:0.5,
+        opacity:0,
+     })
+   } else {
+    gsap.to(".logo",{
+      duration:0.5,
+      opacity:1,
+    })
+   }
+   lastScrollTop = currentScroll;
+  });
+  gsap.to(".sustainability-block-wrapper",{
+    scrollTrigger:{
+      trigger:".sustainability-block-wrapper",
+      start:"top center",
+      end:"bottom center",
+      onEnter:()=>{
+        $(".main-header-wrapper").addClass("change-color")
+        $(".menu-btn").addClass("light-btn")
+      },
+      onEnterBack:()=>{
+        $(".main-header-wrapper").addClass("change-color")
+        $(".menu-btn").addClass("light-btn")
+      },
+      onLeave:()=>{
+        $(".main-header-wrapper").removeClass("change-color")
+        $(".menu-btn").removeClass("light-btn")
+      },
+      onLeaveBack:()=>{
+        $(".main-header-wrapper").removeClass("change-color")
+        $(".menu-btn").removeClass("light-btn")
+      }
+    },
+  })
+  // Force page on top after refresh.
   if (history.scrollRestoration) {
-    document.getElementById("scrollbar").style.display = "block";
-    document.body.style.overflow = "hidden";
     history.scrollRestoration = "manual";
   } else {
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     };
   }
- // Intro animation after refresh page.
-  $(".continue-btn").click(() => {
+  
+   // Intro animation after refresh page.
+   $(".continue-btn").click(() => {
+    var int = setInterval(function () {
+      let videoContainer = document.querySelector("#introVideo")
+      let i = scrollY - videoContainer.offsetTop
+      window.scrollTo(0, scrollY);
+      scrollY += 6;
+      if (i >= 0) {
+        clearInterval(int);
+      }
+    }, 15);
+
     setTimeout(() => {
       document.getElementById("scrollbar").style.display = "block";
       document.body.style.overflow = "";
     }, 1500);
     $(".continue-btn").hide();
-    var i = 0;
-    var int = setInterval(function () {
-      window.scrollTo(0, i);
-      i += 8;
-      if (i >= 600) {
-        clearInterval(int);
-      }
-    }, 15);
+
+    gsap.from(".play-video",{
+      duration:2,
+      opacity:0,
+      delay:2,
+    })
+    
   });
+  
   let tl = gsap.timeline();
   tl.to(".home-header-wrapper .text-wrapper h2", {
     duration: 1,
@@ -63,35 +111,51 @@ $(document).ready(function () {
       },
       "-=0.4"
     );
-    // 
-  gsap.to(".header-video-container video", {
-    scrollTrigger: {
-      trigger: ".header-video-container video",
-      start: "top 90%",
-      end: "center center",
-      scrub: true,
-    },
-    scale: 1,
-  });
-  gsap.to(".home-header-wrapper .background-dark", {
-    scrollTrigger: {
-      trigger: ".home-header-wrapper .background-dark",
-      start: "top top",
-      end: "60% center",
-      scrub: true,
-    },
-    opacity: 1,
-  });
-  gsap.to(".home-header-wrapper .text-wrapper", {
-    scrollTrigger: {
-      trigger: ".home-header-wrapper .text-wrapper",
-      start: "top 33%",
-      end: "bottom top",
-      scrub: true,
-    },
-    y: 150,
-  });
-
+    
+  // Intro animation only run on PC
+  var mediaQuery =  window.matchMedia("(min-width: 1024px)")
+  intro(mediaQuery)
+  function intro (x){
+    if(x.matches){
+      document.getElementById("scrollbar").style.display = "block";
+      document.body.style.overflow = "hidden";
+      gsap.to(".header-video-container video", {
+        scrollTrigger: {
+          trigger: ".header-video-container video",
+          start: "top 90%",
+          end: "center center",
+          scrub: true,
+        },
+        scale: 1,
+      });
+      gsap.to(".home-header-wrapper .background-dark", {
+        scrollTrigger: {
+          trigger: ".home-header-wrapper .background-dark",
+          start: "top top",
+          end: "60% center",
+          scrub: true,
+        },
+        opacity: 1,
+      });
+      gsap.to(".home-header-wrapper .text-wrapper", {
+        scrollTrigger: {
+          trigger: ".home-header-wrapper .text-wrapper",
+          start: "top 33%",
+          end: "bottom top",
+          scrub: true,
+        },
+        y: 360,
+      });
+      gsap.to(".home-header-wrapper .image-wrapper .text-wrapper h2", {
+        scrollTrigger: {
+          trigger: ".home-header-wrapper .image-wrapper .text-wrapper h2",
+          scrub: true,
+        },
+        y: -200,
+      });
+    }
+  }
+  // cta-btn
   gsap.to(".cta-btn-wrapper", {
     scrollTrigger: {
       trigger: ".cta-btn-wrapper",
@@ -113,6 +177,30 @@ $(document).ready(function () {
     opacity: 1,
     y: -80,
   });
+  // Block image
+  const blockImages = gsap.utils.toArray('.block-img');
+  blockImages.forEach(image => {
+  gsap.to(image, { 
+    y: -60,
+    scrollTrigger: {
+      trigger: image,
+      scrub: 1
+    }
+  })
+});
+// Floating image
+const floatingImages = gsap.utils.toArray('.floating-img');
+floatingImages.forEach(image => {
+gsap.to(image, { 
+  y: -40,
+  scrollTrigger: {
+    trigger: image,
+    scrub: 1
+  }
+})
+});
+
+  // 
   gsap.from(".statistics-list li", {
     scrollTrigger: {
       trigger: ".statistics-list",
@@ -128,6 +216,14 @@ $(document).ready(function () {
     opacity: 0,
     stagger: 0.15,
   });
+  gsap.from(".about-block-wrapper .text-container .left-img-picture",{
+    scrollTrigger: {
+      trigger: ".about-block-wrapper .text-container .left-img-picture",
+    },
+    duration:1.5,
+    opacity:0,
+    scale:1.3,
+  })
   gsap.from(".sustainability-block-wrapper .more-insights .insights-list li", {
     scrollTrigger: {
       trigger: ".sustainability-block-wrapper .more-insights",
@@ -159,13 +255,12 @@ $(document).ready(function () {
   });
   gsap.from(".sustainability-block-wrapper .text-container", {
     scrollTrigger: {
-      start: "20px 70%",
+      start: "20px bottom",
       trigger: ".sustainability-block-wrapper .text-container",
     },
-    duration: 5,
-    ease: "power4",
+    duration: 2,
     opacity: 0,
-    y: 60,
+    y: 80,
   });
   gsap.from(".featured-work-footer-wrapper .work-list li", {
     scrollTrigger: {
@@ -176,17 +271,47 @@ $(document).ready(function () {
     y: 60,
     stagger: 0.15,
   });
-  // menu
-  $(".menu-btn-hitzone").mouseenter(() => {
-    $(".menu-wrapper").addClass("active");
-    gsap.from(".main-link", {
-      duration: 0.2,
-      y: 8,
-      opacity: 0,
-      stagger: 0.1,
-    });
-  });
-  $(".inner-menu").mouseleave(() => {
-    $(".menu-wrapper").removeClass("active");
-  });
+
+  // menu wraper
+  var menuOnPc = window.matchMedia("(min-width: 1024px)")
+  menuPc(menuOnPc)
+  function menuPc(x){
+    if(x.matches){
+      $(".menu-btn-hitzone").mouseenter(() => {
+        $(".menu-wrapper").addClass("active");
+        gsap.from(".main-link", {
+          duration: 0.2,
+          y: 8,
+          opacity: 0,
+          stagger: 0.1,
+        });
+      });
+      $(".inner-menu").mouseleave(() => {
+        $(".menu-wrapper").removeClass("active");
+      });  
+    }
+  }
+  var bugerMenu =  window.matchMedia("(max-width: 800px)")
+  buggerMenu(bugerMenu)
+  function buggerMenu (x){ 
+    
+    if(x.matches){
+      $(".menu-btn-hitzone").click(()=>{
+        if($(".menu-wrapper").hasClass("active")){
+          $(".menu-wrapper").removeClass("active")
+          $(".menu-wrapper .menu-btn .burguer span.top").css({"transform": "" });
+          $(".menu-wrapper .menu-btn .burguer span.bottom").css({"transform": "" })
+        }else{
+          $(".menu-wrapper").addClass("active")
+          $(".menu-wrapper .menu-btn .burguer span.top").css({"transform": "translate(0px, 4px) rotate(225deg)" });
+          $(".menu-wrapper .menu-btn .burguer span.bottom").css({"transform": "translate(0px, -3px) rotate(-45deg)" });
+        }
+      })
+      $(".page-main").click(()=>{
+        $(".menu-wrapper").removeClass("active")
+        $(".menu-wrapper .menu-btn .burguer span.top").css({"transform": "" });
+        $(".menu-wrapper .menu-btn .burguer span.bottom").css({"transform": "" })
+      })
+    }
+  }
 });
