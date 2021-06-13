@@ -1,44 +1,9 @@
 $(document).ready(function () {
-  var lastScrollTop = 0;
-  window.addEventListener("scroll", function(){ 
-   var currentScroll = window.pageYOffset; 
-   if (currentScroll > lastScrollTop){
-     gsap.to(".logo",{
-       duration:0.5,
-        opacity:0,
-     })
-   } else {
-    gsap.to(".logo",{
-      duration:0.5,
-      opacity:1,
-    })
-   }
-   lastScrollTop = currentScroll;
-  });
-  gsap.to(".sustainability-block-wrapper",{
-    scrollTrigger:{
-      trigger:".sustainability-block-wrapper",
-      start:"top center",
-      end:"bottom center",
-      onEnter:()=>{
-        $(".main-header-wrapper").addClass("change-color")
-        $(".menu-btn").addClass("light-btn")
-      },
-      onEnterBack:()=>{
-        $(".main-header-wrapper").addClass("change-color")
-        $(".menu-btn").addClass("light-btn")
-      },
-      onLeave:()=>{
-        $(".main-header-wrapper").removeClass("change-color")
-        $(".menu-btn").removeClass("light-btn")
-      },
-      onLeaveBack:()=>{
-        $(".main-header-wrapper").removeClass("change-color")
-        $(".menu-btn").removeClass("light-btn")
-      }
-    },
-  })
-  // Force page on top after refresh.
+  let scriptOnPc =  window.matchMedia("(min-width: 1025px)");
+  let scriptOnTablet = window.matchMedia("(min-width:740px) and (max-width: 1024px)")
+  let scripOnMobile = window.matchMedia("(max-width: 739px)")
+  let scriptOnTabletMobile =  window.matchMedia("(max-width: 1024px)");
+  // Force page alway on top after refresh.
   if (history.scrollRestoration) {
     history.scrollRestoration = "manual";
   } else {
@@ -46,33 +11,52 @@ $(document).ready(function () {
       window.scrollTo(0, 0);
     };
   }
-  
-   // Intro animation after refresh page.
-   $(".continue-btn").click(() => {
-    var int = setInterval(function () {
-      let videoContainer = document.querySelector("#introVideo")
-      let i = scrollY - videoContainer.offsetTop
-      window.scrollTo(0, scrollY);
-      scrollY += 6;
-      if (i >= 0) {
-        clearInterval(int);
-      }
-    }, 15);
 
-    setTimeout(() => {
-      document.getElementById("scrollbar").style.display = "block";
-      document.body.style.overflow = "";
-    }, 1500);
-    $(".continue-btn").hide();
-
-    gsap.from(".play-video",{
-      duration:2,
-      opacity:0,
-      delay:2,
-    })
-    
+  // logo scroll opacity
+  var lastScrollTop = 0;
+  window.addEventListener("scroll", function () {
+    var currentScroll = window.pageYOffset;
+    if (currentScroll > lastScrollTop) {
+      gsap.to(".logo", {
+        duration: 0.5,
+        opacity: 0,
+      });
+    } else {
+      gsap.to(".logo", {
+        duration: 2,
+        opacity: 1,
+      });
+    }
+    lastScrollTop = currentScroll;
   });
+
+  // logo change color 
+  gsap.to(".sustainability-block-wrapper", {
+    scrollTrigger: {
+      trigger: ".sustainability-block-wrapper",
+      start: "top center",
+      end: "bottom center",
+      onEnter: () => {
+        $(".main-header-wrapper").addClass("change-color");
+        $(".menu-btn").addClass("light-btn");
+      },
+      onEnterBack: () => {
+        $(".main-header-wrapper").addClass("change-color");
+        $(".menu-btn").addClass("light-btn");
+      },
+      onLeave: () => {
+        $(".main-header-wrapper").removeClass("change-color");
+        $(".menu-btn").removeClass("light-btn");
+      },
+      onLeaveBack: () => {
+        $(".main-header-wrapper").removeClass("change-color");
+        $(".menu-btn").removeClass("light-btn");
+      },
+    },
+  });
+
   
+  // timeline animation when access page.
   let tl = gsap.timeline();
   tl.to(".home-header-wrapper .text-wrapper h2", {
     duration: 1,
@@ -111,12 +95,62 @@ $(document).ready(function () {
       },
       "-=0.4"
     );
-    
-  // Intro animation only run on PC
-  var mediaQuery =  window.matchMedia("(min-width: 1024px)")
-  intro(mediaQuery)
-  function intro (x){
-    if(x.matches){
+
+    // Intro animation when click continue button.
+  $(".continue-btn").click(() => {
+
+    // play audio
+    $("#backgroundAudio, #birdAudio").each((i,audio)=>{
+      audio.play()
+    })
+    // scroll down
+    var int = setInterval(function () {
+      let videoContainer = document.querySelector("#introVideo");
+      let i = scrollY - videoContainer.offsetTop;
+      window.scrollTo(0, scrollY);
+      scrollY += 6;
+      if (i >= 0) {
+        $(".continue-btn").hide();
+        clearInterval(int);
+      }
+    }, 15);
+
+    // enable scroll
+    setTimeout(() => {
+      document.getElementById("scrollbar").style.display = "block";
+      document.body.style.overflow = "";
+    }, 1500);
+
+    // display play button
+    gsap.from(".play-video", {
+      duration: 2,
+      opacity: 0,
+      delay: 2,
+    });
+  });
+
+  //Play video button click
+  $(".play-video").click(() => {
+    gsap.to(".playFullVideo", {
+      duration: 1,
+      display: "flex",
+      opacity: 1,
+    });
+    $("#fullVideo")[0].play();
+  });
+  $(".playFullVideo").click(() => {
+    gsap.to(".playFullVideo", {
+      duration: 0.5,
+      display: "none",
+      opacity: 0,
+    });
+    $("#fullVideo")[0].pause();
+  });
+
+  // Intro animation scroll only run on PC.
+  intro(scriptOnPc);
+  function intro(mediaquery) {
+    if (mediaquery.matches) {
       document.getElementById("scrollbar").style.display = "block";
       document.body.style.overflow = "hidden";
       gsap.to(".header-video-container video", {
@@ -155,18 +189,24 @@ $(document).ready(function () {
       });
     }
   }
-  // cta-btn
-  gsap.to(".cta-btn-wrapper", {
-    scrollTrigger: {
-      trigger: ".cta-btn-wrapper",
-      start: "-10px bottom",
-      end: "bottom top",
-      toggleActions: "restart none restart none",
-    },
-    duration: 0.4,
-    scale: 1,
-    opacity: 1,
+
+  // cta-button display/hide
+  const ctaWrapper = gsap.utils.toArray(".cta-btn-wrapper");
+  ctaWrapper.forEach((cta) => {
+    gsap.from(cta, {
+      scrollTrigger: {
+        trigger: cta,
+        start: "-10px bottom",
+        end: "bottom top",
+        toggleActions: "restart none restart none",
+      },
+      duration: 0.8,
+      scale: 0,
+      opacity: 0,
+    });
   });
+  
+// project block text lazy load
   gsap.to(".projects-block-wrapper .text-container", {
     scrollTrigger: {
       trigger: ".projects-block-wrapper .text-container",
@@ -177,30 +217,32 @@ $(document).ready(function () {
     opacity: 1,
     y: -80,
   });
-  // Block image
-  const blockImages = gsap.utils.toArray('.block-img');
-  blockImages.forEach(image => {
-  gsap.to(image, { 
-    y: -60,
-    scrollTrigger: {
-      trigger: image,
-      scrub: 1
-    }
-  })
-});
-// Floating image
-const floatingImages = gsap.utils.toArray('.floating-img');
-floatingImages.forEach(image => {
-gsap.to(image, { 
-  y: -40,
-  scrollTrigger: {
-    trigger: image,
-    scrub: 1
-  }
-})
-});
 
-  // 
+  //Project block-block images parallax
+  const blockImages = gsap.utils.toArray(".block-img");
+  blockImages.forEach((image) => {
+    gsap.to(image, {
+      y: -60,
+      scrollTrigger: {
+        trigger: image,
+        scrub: 1,
+      },
+    });
+  });
+
+  // Floating image
+  const floatingImages = gsap.utils.toArray(".floating-img");
+  floatingImages.forEach((image) => {
+    gsap.to(image, {
+      y: -40,
+      scrollTrigger: {
+        trigger: image,
+        scrub: 1,
+      },
+    });
+  });
+
+  //Border bottom static list animation
   gsap.from(".statistics-list li", {
     scrollTrigger: {
       trigger: ".statistics-list",
@@ -216,14 +258,17 @@ gsap.to(image, {
     opacity: 0,
     stagger: 0.15,
   });
-  gsap.from(".about-block-wrapper .text-container .left-img-picture",{
+  // about block image lazy load
+  gsap.from(".about-block-wrapper .text-container .left-img-picture", {
     scrollTrigger: {
       trigger: ".about-block-wrapper .text-container .left-img-picture",
     },
-    duration:1.5,
-    opacity:0,
-    scale:1.3,
-  })
+    duration: 1.5,
+    opacity: 0,
+    scale: 1.3,
+  });
+
+  // sustainability image parallax scroll
   gsap.from(".sustainability-block-wrapper .more-insights .insights-list li", {
     scrollTrigger: {
       trigger: ".sustainability-block-wrapper .more-insights",
@@ -237,6 +282,7 @@ gsap.to(image, {
     y: 40,
     stagger: 0.15,
   });
+  // sustainability text animation
   gsap.from(".newsletter-block-wrapper .upper-title", {
     scrollTrigger: {
       trigger: ".newsletter-block-wrapper",
@@ -246,6 +292,7 @@ gsap.to(image, {
     opacity: 0,
     letterSpacing: "3em",
   });
+  // big number scale animation.
   gsap.to(".about-block-wrapper .big-number-container .number span", {
     scrollTrigger: {
       trigger: ".about-block-wrapper .big-number-container .number span",
@@ -253,6 +300,7 @@ gsap.to(image, {
     },
     scale: 1,
   });
+  // sustainability text lazy load
   gsap.from(".sustainability-block-wrapper .text-container", {
     scrollTrigger: {
       start: "20px bottom",
@@ -262,6 +310,8 @@ gsap.to(image, {
     opacity: 0,
     y: 80,
   });
+  // footer image scroll parallax.
+  
   gsap.from(".featured-work-footer-wrapper .work-list li", {
     scrollTrigger: {
       trigger: ".featured-work-footer-wrapper",
@@ -273,10 +323,11 @@ gsap.to(image, {
   });
 
   // menu wraper
-  var menuOnPc = window.matchMedia("(min-width: 1024px)")
-  menuPc(menuOnPc)
-  function menuPc(x){
-    if(x.matches){
+
+    // on PC
+  menuPc(scriptOnPc);
+  function menuPc(mediaquery) {
+    if (mediaquery.matches) {
       $(".menu-btn-hitzone").mouseenter(() => {
         $(".menu-wrapper").addClass("active");
         gsap.from(".main-link", {
@@ -288,30 +339,44 @@ gsap.to(image, {
       });
       $(".inner-menu").mouseleave(() => {
         $(".menu-wrapper").removeClass("active");
-      });  
+      });
     }
   }
-  var bugerMenu =  window.matchMedia("(max-width: 800px)")
-  buggerMenu(bugerMenu)
-  function buggerMenu (x){ 
-    
-    if(x.matches){
-      $(".menu-btn-hitzone").click(()=>{
-        if($(".menu-wrapper").hasClass("active")){
-          $(".menu-wrapper").removeClass("active")
-          $(".menu-wrapper .menu-btn .burguer span.top").css({"transform": "" });
-          $(".menu-wrapper .menu-btn .burguer span.bottom").css({"transform": "" })
-        }else{
-          $(".menu-wrapper").addClass("active")
-          $(".menu-wrapper .menu-btn .burguer span.top").css({"transform": "translate(0px, 4px) rotate(225deg)" });
-          $(".menu-wrapper .menu-btn .burguer span.bottom").css({"transform": "translate(0px, -3px) rotate(-45deg)" });
+    // on mobile & tablet
+  buggerMenu(scriptOnTabletMobile);
+  function buggerMenu(mediaquery) {
+    if (mediaquery.matches) {
+      $(".menu-btn-hitzone").click(() => {
+        if ($(".menu-wrapper").hasClass("active")) {
+          $(".menu-wrapper").removeClass("active");
+          $(".menu-wrapper .menu-btn .burguer span.top").css({ transform: "" });
+          $(".menu-wrapper .menu-btn .burguer span.bottom").css({
+            transform: "",
+          });
+        } else {
+          $(".menu-wrapper").addClass("active");
+          $(".menu-wrapper .menu-btn .burguer span.top").css({
+            transform: "translate(0px, 4px) rotate(225deg)",
+          });
+          $(".menu-wrapper .menu-btn .burguer span.bottom").css({
+            transform: "translate(0px, -3px) rotate(-45deg)",
+          });
+          gsap.from(".main-link", {
+            duration: 0.2,
+            y: 8,
+            opacity: 0,
+            stagger: 0.1,
+          });
         }
-      })
-      $(".page-main").click(()=>{
-        $(".menu-wrapper").removeClass("active")
-        $(".menu-wrapper .menu-btn .burguer span.top").css({"transform": "" });
-        $(".menu-wrapper .menu-btn .burguer span.bottom").css({"transform": "" })
-      })
+      });
+      // onclick body to close burguer menu.
+      $(".page-main").click(() => {
+        $(".menu-wrapper").removeClass("active");
+        $(".menu-wrapper .menu-btn .burguer span.top").css({ transform: "" });
+        $(".menu-wrapper .menu-btn .burguer span.bottom").css({
+          transform: "",
+        });
+      });
     }
   }
 });
