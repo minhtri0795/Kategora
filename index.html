@@ -18,12 +18,12 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <!-- Main style app -->
+    <!-- Main app style -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- Responsive -->
     <link rel="stylesheet" href="./assets/css/responsive.css">
   </head>
-  <body id="scrollbar">
+  <body id="homePage" class="disableScroll">
     <!-- Background audio -->
     <audio id="backgroundAudio" src="./assets/audio-video/transversal.mp3" loop></audio>
     <audio id="birdAudio" src="./assets/audio-video/header.mp3" loop></audio>
@@ -47,7 +47,7 @@
       </a>
     </div>
     <!-- Menu wraper -->
-    <div class="menu-wrapper dark-menu">
+    <div class="menu-wrapper">
       <div class="inner-menu">
         <div class="language-wrapper">
           <svg class="item" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,13 +67,13 @@
 
         <ul class="main-links">
           <li class="main-link active">
-            <a href="https://kategora.com/en/">Home</a>
+            <a href="./index.html">Home</a>
           </li>
           <li class="main-link">
-            <a href="https://kategora.com/en/about/">About</a>
+            <a href="./page/About.html">About</a>
           </li>
           <li class="main-link">
-            <a href="https://kategora.com/en/projects/">Projects</a>
+            <a href="">Projects</a>
           </li>
           <li class="main-link">
             <a href="https://kategora.com/en/expertise/">Expertise</a>
@@ -95,11 +95,13 @@
         <header class="page-header">
           <div class="home-header-wrapper">
             <span class="background-dark"></span>
+
             <div class="row expanded">
               <div class="col-lg-12 text-center">
                 <span class="upper-title">Welcome</span>
               </div>
             </div>
+
             <div class="row expanded align-center text-wrapper">
               <div class="col-lg-12 text-center">
                 <h2 class="text">
@@ -120,6 +122,7 @@
                 </button>
               </div>
             </div>
+
             <div id="introVideo" class="image-wrapper">
               <div class="header-video-container">
                 <video class="header-video" autoplay loop muted>
@@ -146,6 +149,7 @@
                 </div>
               </div>
             </div>
+
           </div>
         </header>
         <div class="playFullVideo">

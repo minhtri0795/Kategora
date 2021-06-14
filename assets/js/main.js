@@ -3,6 +3,7 @@ $(document).ready(function () {
   let scriptOnTablet = window.matchMedia("(min-width:740px) and (max-width: 1024px)")
   let scripOnMobile = window.matchMedia("(max-width: 739px)")
   let scriptOnTabletMobile =  window.matchMedia("(max-width: 1024px)");
+
   // Force page alway on top after refresh.
   if (history.scrollRestoration) {
     history.scrollRestoration = "manual";
@@ -30,12 +31,12 @@ $(document).ready(function () {
     lastScrollTop = currentScroll;
   });
 
-  // logo change color 
+  // Change color logo and menu
   gsap.to(".sustainability-block-wrapper", {
     scrollTrigger: {
       trigger: ".sustainability-block-wrapper",
-      start: "top center",
-      end: "bottom center",
+      // start: "top center",
+      // end: "bottom center",
       onEnter: () => {
         $(".main-header-wrapper").addClass("change-color");
         $(".menu-btn").addClass("light-btn");
@@ -54,8 +55,67 @@ $(document).ready(function () {
       },
     },
   });
+  // menu wraper
 
-  
+    // on PC
+    menuPc(scriptOnPc);
+    function menuPc(mediaquery) {
+      if (mediaquery.matches) {
+        $(".menu-btn-hitzone").mouseenter(() => {
+          $(".menu-wrapper").addClass("active");
+          gsap.from(".main-link", {
+            duration: 0.2,
+            y: 8,
+            opacity: 0,
+            stagger: 0.1,
+          });
+        });
+        $(".inner-menu").mouseleave(() => {
+          $(".menu-wrapper").removeClass("active");
+        });
+      }
+    }
+      // on mobile & tablet
+    buggerMenu(scriptOnTabletMobile);
+    function buggerMenu(mediaquery) {
+      if (mediaquery.matches) {
+        $(".menu-btn-hitzone").click(() => {
+          if ($(".menu-wrapper").hasClass("active")) {
+            $(".menu-wrapper").removeClass("active");
+            $(".menu-wrapper .menu-btn .burguer span.top").css({ transform: "" });
+            $(".menu-wrapper .menu-btn .burguer span.bottom").css({
+              transform: "",
+            });
+          } else {
+            $(".menu-wrapper").addClass("active");
+            $(".menu-wrapper .menu-btn .burguer span.top").css({
+              transform: "translate(0px, 4px) rotate(225deg)",
+            });
+            $(".menu-wrapper .menu-btn .burguer span.bottom").css({
+              transform: "translate(0px, -3px) rotate(-45deg)",
+            });
+            gsap.from(".main-link", {
+              duration: 0.2,
+              y: 8,
+              opacity: 0,
+              stagger: 0.1,
+            });
+          }
+        });
+        // onclick body to close burguer menu.
+        $(".page-main").click(() => {
+          $(".menu-wrapper").removeClass("active");
+          $(".menu-wrapper .menu-btn .burguer span.top").css({ transform: "" });
+          $(".menu-wrapper .menu-btn .burguer span.bottom").css({
+            transform: "",
+          });
+        });
+      }
+    }
+    // Run script at home page
+  const homePage = $("#homePage")
+  if(homePage[0]){
+
   // timeline animation when access page.
   let tl = gsap.timeline();
   tl.to(".home-header-wrapper .text-wrapper h2", {
@@ -107,19 +167,20 @@ $(document).ready(function () {
     var int = setInterval(function () {
       let videoContainer = document.querySelector("#introVideo");
       let i = scrollY - videoContainer.offsetTop;
-      window.scrollTo(0, scrollY);
       scrollY += 6;
+      window.scrollTo(0, scrollY);
+      
       if (i >= 0) {
         $(".continue-btn").hide();
         clearInterval(int);
       }
-    }, 15);
+    }, 14);
 
     // enable scroll
     setTimeout(() => {
-      document.getElementById("scrollbar").style.display = "block";
+      document.querySelector(".disableScroll").style.display = "block";
       document.body.style.overflow = "";
-    }, 1500);
+    }, 2000);
 
     // display play button
     gsap.from(".play-video", {
@@ -151,8 +212,10 @@ $(document).ready(function () {
   intro(scriptOnPc);
   function intro(mediaquery) {
     if (mediaquery.matches) {
-      document.getElementById("scrollbar").style.display = "block";
+      // hide and disable scrollbar
+      document.querySelector(".disableScroll").style.display = "block";
       document.body.style.overflow = "hidden";
+      // scale video whem scroll down
       gsap.to(".header-video-container video", {
         scrollTrigger: {
           trigger: ".header-video-container video",
@@ -162,6 +225,7 @@ $(document).ready(function () {
         },
         scale: 1,
       });
+
       gsap.to(".home-header-wrapper .background-dark", {
         scrollTrigger: {
           trigger: ".home-header-wrapper .background-dark",
@@ -321,62 +385,6 @@ $(document).ready(function () {
     y: 60,
     stagger: 0.15,
   });
-
-  // menu wraper
-
-    // on PC
-  menuPc(scriptOnPc);
-  function menuPc(mediaquery) {
-    if (mediaquery.matches) {
-      $(".menu-btn-hitzone").mouseenter(() => {
-        $(".menu-wrapper").addClass("active");
-        gsap.from(".main-link", {
-          duration: 0.2,
-          y: 8,
-          opacity: 0,
-          stagger: 0.1,
-        });
-      });
-      $(".inner-menu").mouseleave(() => {
-        $(".menu-wrapper").removeClass("active");
-      });
-    }
   }
-    // on mobile & tablet
-  buggerMenu(scriptOnTabletMobile);
-  function buggerMenu(mediaquery) {
-    if (mediaquery.matches) {
-      $(".menu-btn-hitzone").click(() => {
-        if ($(".menu-wrapper").hasClass("active")) {
-          $(".menu-wrapper").removeClass("active");
-          $(".menu-wrapper .menu-btn .burguer span.top").css({ transform: "" });
-          $(".menu-wrapper .menu-btn .burguer span.bottom").css({
-            transform: "",
-          });
-        } else {
-          $(".menu-wrapper").addClass("active");
-          $(".menu-wrapper .menu-btn .burguer span.top").css({
-            transform: "translate(0px, 4px) rotate(225deg)",
-          });
-          $(".menu-wrapper .menu-btn .burguer span.bottom").css({
-            transform: "translate(0px, -3px) rotate(-45deg)",
-          });
-          gsap.from(".main-link", {
-            duration: 0.2,
-            y: 8,
-            opacity: 0,
-            stagger: 0.1,
-          });
-        }
-      });
-      // onclick body to close burguer menu.
-      $(".page-main").click(() => {
-        $(".menu-wrapper").removeClass("active");
-        $(".menu-wrapper .menu-btn .burguer span.top").css({ transform: "" });
-        $(".menu-wrapper .menu-btn .burguer span.bottom").css({
-          transform: "",
-        });
-      });
-    }
-  }
+  
 });
