@@ -31,12 +31,12 @@ $(document).ready(function () {
     lastScrollTop = currentScroll;
   });
 
-  // Change color logo and menu
-  gsap.to(".sustainability-block-wrapper", {
+  // Change color logo and menu in dark zone
+  gsap.to(".dark-zone", {
     scrollTrigger: {
-      trigger: ".sustainability-block-wrapper",
-      // start: "top center",
-      // end: "bottom center",
+      trigger: ".dark-zone",
+      start: "top center",
+      end: "bottom center",
       onEnter: () => {
         $(".main-header-wrapper").addClass("change-color");
         $(".menu-btn").addClass("light-btn");
@@ -112,7 +112,7 @@ $(document).ready(function () {
         });
       }
     }
-    // Run script at home page
+    // Run script if home page
   const homePage = $("#homePage")
   if(homePage[0]){
 
