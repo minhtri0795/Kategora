@@ -1,289 +1,706 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Kategory</title>
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../assets/image/favicon-32x32.png"
-    />
-    <!-- Bootrap4 -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <!-- Main app style -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- Responsive -->
-    <link rel="stylesheet" href="../assets/css/responsive.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Kategory</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/image/favicon-32x32.png" />
+  <!-- Bootrap4 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <!-- Main app style -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- Responsive -->
+  <link rel="stylesheet" href="../assets/css/responsive.css">
 </head>
+
 <body>
-    <!-- Logo -->
-    <div class="main-header-wrapper">
-        <a  class="logo" href="./index.html">
-          <svg width="115" height="66" viewBox="0 0 115 66" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <title>Kategora Logo</title>
-            <path class="kategora-type" d="M13.9035 57.0949L12.4925 58.547V63.0123H10V50.1492H12.4925V55.2379L17.2756 50.1492H20.5573L15.6068 55.2939L21.0144 63.0123H17.9001L13.9035 57.0949Z" fill="#232323"/>
-            <path class="kategora-type" d="M29.8101 60.1616H24.8436L23.7993 63.0097H21.2324L26.1617 50.1465H28.4894L33.4186 63.0097H30.8517L29.8101 60.1616ZM29.0421 58.0488L27.3388 53.4183L25.6355 58.0488H29.0421Z" fill="#232323"/>
-            <path class="kategora-type" d="M36.004 52.2992H32.1377V50.1492H42.3655V52.2992H38.4992V63.0123H36.0067V52.2992H36.004Z" fill="#232323"/>
-            <path class="kategora-type" d="M43.627 50.1492H52.2046V52.2992H46.1195V55.1287H50.9956V57.2974H46.1195V60.8436H52.4066V63.0123H43.627V50.1492Z" fill="#232323"/>
-            <path class="kategora-type" d="M53.25 56.5781C53.25 52.7202 55.9445 50 59.739 50C62.8002 50 65.1997 51.7451 65.6594 54.2815L63.1669 54.7957C62.8374 53.1598 61.4636 52.1501 59.739 52.1501C57.4113 52.1501 55.7611 53.8392 55.7611 56.5781C55.7611 59.1864 57.3927 60.9875 59.739 60.9875C61.7001 60.9875 63.0739 59.8658 63.1855 58.158H58.9897V56.1358H65.8428V57.1269C65.8428 60.7477 63.4061 63.1535 59.7576 63.1535C55.9418 63.1588 53.25 60.4386 53.25 56.5781Z" fill="#232323"/>
-            <path class="kategora-type" d="M67.1387 56.5781C67.1387 52.7735 69.8889 50 73.6437 50C77.3824 50 80.1327 52.7735 80.1327 56.5781C80.1327 60.3827 77.3824 63.1562 73.6437 63.1562C69.8889 63.1589 67.1387 60.3827 67.1387 56.5781ZM77.6216 56.5781C77.6216 54.0231 75.9714 52.1501 73.6437 52.1501C71.3159 52.1501 69.6471 54.0257 69.6471 56.5781C69.6471 59.1331 71.3159 60.9875 73.6437 60.9875C75.9714 60.9901 77.6216 59.1331 77.6216 56.5781Z" fill="#232323"/>
-            <path class="kategora-type" d="M89.5696 63.0097L86.5085 57.7371H84.4916V63.0097H81.9991L81.9805 50.1465H86.9283C89.4394 50.1465 91.071 51.6359 91.071 53.9511C91.071 55.4032 90.319 56.6341 89.0541 57.2602L92.4634 63.0123H89.5696V63.0097ZM84.4942 55.587H86.5457C87.8291 55.587 88.5625 54.9795 88.5625 53.9511C88.5625 52.9227 87.8291 52.2966 86.5457 52.2966H84.4942V55.587Z" fill="#232323"/>
-            <path class="kategora-type" d="M101.391 60.1616H96.4247L95.3804 63.0097H92.8135L97.7427 50.1465H100.07L105 63.0097H102.433L101.391 60.1616ZM100.621 58.0488L98.9172 53.4183L97.2113 58.0488H100.621Z" fill="#232323"/>
-            <path d="M90.9776 28.5106V30.0941C83.0227 26.5561 68.0554 18.9286 56.8388 7.3921C45.6286 18.9221 30.6678 26.5496 22.7129 30.0844V28.5009C45.1268 16.4581 56.8388 0 56.8388 0C56.8388 0 68.554 16.471 90.9776 28.5106Z" fill="#232323"/>
-            <path d="M90.9776 31.5616V33.0516C81.736 30.765 63.6196 25.9336 56.8774 21.6667C50.1191 25.9433 31.9319 30.7875 22.7129 33.0677V31.5809C40.3179 25.8982 55.7966 15.3615 56.8452 14.6455V14.6036C56.8452 14.6036 56.8678 14.6197 56.8774 14.6262C56.8871 14.6197 56.9031 14.6036 56.9031 14.6036V14.6455C57.9518 15.3647 73.3951 25.8756 90.9776 31.5616Z" fill="#232323"/>
-            <path d="M90.9776 34.6352V36.1316H22.7129V34.6352C41.4887 32.2647 56.6683 28.8234 56.8388 28.7879V28.7815C56.8388 28.7815 56.8388 28.7815 56.8452 28.7815V28.7879C57.0157 28.8266 72.2017 32.2647 90.9776 34.6352Z" fill="#232323"/>
-          </svg>
-        </a>
+  <!-- Logo -->
+  <div class="main-header-wrapper">
+    <a class="logo" href="./index.html">
+      <svg width="115" height="66" viewBox="0 0 115 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <title>Kategora Logo</title>
+        <path class="kategora-type"
+          d="M13.9035 57.0949L12.4925 58.547V63.0123H10V50.1492H12.4925V55.2379L17.2756 50.1492H20.5573L15.6068 55.2939L21.0144 63.0123H17.9001L13.9035 57.0949Z"
+          fill="#232323" />
+        <path class="kategora-type"
+          d="M29.8101 60.1616H24.8436L23.7993 63.0097H21.2324L26.1617 50.1465H28.4894L33.4186 63.0097H30.8517L29.8101 60.1616ZM29.0421 58.0488L27.3388 53.4183L25.6355 58.0488H29.0421Z"
+          fill="#232323" />
+        <path class="kategora-type"
+          d="M36.004 52.2992H32.1377V50.1492H42.3655V52.2992H38.4992V63.0123H36.0067V52.2992H36.004Z" fill="#232323" />
+        <path class="kategora-type"
+          d="M43.627 50.1492H52.2046V52.2992H46.1195V55.1287H50.9956V57.2974H46.1195V60.8436H52.4066V63.0123H43.627V50.1492Z"
+          fill="#232323" />
+        <path class="kategora-type"
+          d="M53.25 56.5781C53.25 52.7202 55.9445 50 59.739 50C62.8002 50 65.1997 51.7451 65.6594 54.2815L63.1669 54.7957C62.8374 53.1598 61.4636 52.1501 59.739 52.1501C57.4113 52.1501 55.7611 53.8392 55.7611 56.5781C55.7611 59.1864 57.3927 60.9875 59.739 60.9875C61.7001 60.9875 63.0739 59.8658 63.1855 58.158H58.9897V56.1358H65.8428V57.1269C65.8428 60.7477 63.4061 63.1535 59.7576 63.1535C55.9418 63.1588 53.25 60.4386 53.25 56.5781Z"
+          fill="#232323" />
+        <path class="kategora-type"
+          d="M67.1387 56.5781C67.1387 52.7735 69.8889 50 73.6437 50C77.3824 50 80.1327 52.7735 80.1327 56.5781C80.1327 60.3827 77.3824 63.1562 73.6437 63.1562C69.8889 63.1589 67.1387 60.3827 67.1387 56.5781ZM77.6216 56.5781C77.6216 54.0231 75.9714 52.1501 73.6437 52.1501C71.3159 52.1501 69.6471 54.0257 69.6471 56.5781C69.6471 59.1331 71.3159 60.9875 73.6437 60.9875C75.9714 60.9901 77.6216 59.1331 77.6216 56.5781Z"
+          fill="#232323" />
+        <path class="kategora-type"
+          d="M89.5696 63.0097L86.5085 57.7371H84.4916V63.0097H81.9991L81.9805 50.1465H86.9283C89.4394 50.1465 91.071 51.6359 91.071 53.9511C91.071 55.4032 90.319 56.6341 89.0541 57.2602L92.4634 63.0123H89.5696V63.0097ZM84.4942 55.587H86.5457C87.8291 55.587 88.5625 54.9795 88.5625 53.9511C88.5625 52.9227 87.8291 52.2966 86.5457 52.2966H84.4942V55.587Z"
+          fill="#232323" />
+        <path class="kategora-type"
+          d="M101.391 60.1616H96.4247L95.3804 63.0097H92.8135L97.7427 50.1465H100.07L105 63.0097H102.433L101.391 60.1616ZM100.621 58.0488L98.9172 53.4183L97.2113 58.0488H100.621Z"
+          fill="#232323" />
+        <path
+          d="M90.9776 28.5106V30.0941C83.0227 26.5561 68.0554 18.9286 56.8388 7.3921C45.6286 18.9221 30.6678 26.5496 22.7129 30.0844V28.5009C45.1268 16.4581 56.8388 0 56.8388 0C56.8388 0 68.554 16.471 90.9776 28.5106Z"
+          fill="#232323" />
+        <path
+          d="M90.9776 31.5616V33.0516C81.736 30.765 63.6196 25.9336 56.8774 21.6667C50.1191 25.9433 31.9319 30.7875 22.7129 33.0677V31.5809C40.3179 25.8982 55.7966 15.3615 56.8452 14.6455V14.6036C56.8452 14.6036 56.8678 14.6197 56.8774 14.6262C56.8871 14.6197 56.9031 14.6036 56.9031 14.6036V14.6455C57.9518 15.3647 73.3951 25.8756 90.9776 31.5616Z"
+          fill="#232323" />
+        <path
+          d="M90.9776 34.6352V36.1316H22.7129V34.6352C41.4887 32.2647 56.6683 28.8234 56.8388 28.7879V28.7815C56.8388 28.7815 56.8388 28.7815 56.8452 28.7815V28.7879C57.0157 28.8266 72.2017 32.2647 90.9776 34.6352Z"
+          fill="#232323" />
+      </svg>
+    </a>
+  </div>
+  <!-- Menu wraper -->
+  <div class="menu-wrapper">
+    <div class="inner-menu">
+      <div class="language-wrapper">
+        <svg class="item" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M7.5 15C11.6168 15 15 11.6576 15 7.5C15 3.38315 11.6576 0 7.5 0C3.34239 0 0 3.38315 0 7.5C0 11.6168 3.38315 15 7.5 15ZM0.855978 7.90761H3.13859C3.22011 10.3533 3.9538 12.4728 5.05435 13.6957C2.69022 12.7582 1.01902 10.5571 0.855978 7.90761ZM7.5 0.855978C9.375 0.855978 10.9239 3.66848 11.0462 7.09239H3.9538C4.07609 3.66848 5.66576 0.855978 7.5 0.855978ZM11.087 7.90761C10.9647 11.3315 9.375 14.144 7.54076 14.144C5.70652 14.144 4.11685 11.3315 3.99457 7.90761H11.087ZM9.94565 13.6957C11.0462 12.4321 11.7799 10.3533 11.8614 7.90761H14.144C14.0217 10.5571 12.3098 12.7582 9.94565 13.6957ZM14.1848 7.09239H11.9022C11.8207 4.64674 11.087 2.52717 9.98641 1.30435C12.3098 2.20109 14.0217 4.44293 14.1848 7.09239ZM5.05435 1.30435C3.9538 2.56793 3.22011 4.64674 3.13859 7.09239H0.855978C1.01902 4.44293 2.69022 2.20109 5.05435 1.30435Z"
+            fill="white" />
+        </svg>
+        <ul class="language-links">
+          <li class=" item">
+            <a href="https://kategora.com/">es</a>
+          </li>
+          <li class="active item">
+            <a href="https://kategora.com/en/">en</a>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="main-links">
+        <li class="main-link active">
+          <a href="../index.html">Home</a>
+        </li>
+        <li class="main-link">
+          <a href="../page/About.html">About</a>
+        </li>
+        <li class="main-link">
+          <a href="">Projects</a>
+        </li>
+        <li class="main-link">
+          <a href="https://kategora.com/en/expertise/">Expertise</a>
+        </li>
+        <li class="main-link">
+          <a href="https://kategora.com/en/insights/">Insights</a>
+        </li>
+      </ul>
+      <button class="menu-btn">
+        <span class="burguer"><span class="top"></span><span class="bottom"></span></span>
+        <span class="label">M<br>e<br>n<br>u</span>
+      </button>
+      <span class="menu-btn-hitzone"></span>
     </div>
-    <!-- Menu wraper -->
-    <div class="menu-wrapper">
-        <div class="inner-menu">
-          <div class="language-wrapper">
-            <svg class="item" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M7.5 15C11.6168 15 15 11.6576 15 7.5C15 3.38315 11.6576 0 7.5 0C3.34239 0 0 3.38315 0 7.5C0 11.6168 3.38315 15 7.5 15ZM0.855978 7.90761H3.13859C3.22011 10.3533 3.9538 12.4728 5.05435 13.6957C2.69022 12.7582 1.01902 10.5571 0.855978 7.90761ZM7.5 0.855978C9.375 0.855978 10.9239 3.66848 11.0462 7.09239H3.9538C4.07609 3.66848 5.66576 0.855978 7.5 0.855978ZM11.087 7.90761C10.9647 11.3315 9.375 14.144 7.54076 14.144C5.70652 14.144 4.11685 11.3315 3.99457 7.90761H11.087ZM9.94565 13.6957C11.0462 12.4321 11.7799 10.3533 11.8614 7.90761H14.144C14.0217 10.5571 12.3098 12.7582 9.94565 13.6957ZM14.1848 7.09239H11.9022C11.8207 4.64674 11.087 2.52717 9.98641 1.30435C12.3098 2.20109 14.0217 4.44293 14.1848 7.09239ZM5.05435 1.30435C3.9538 2.56793 3.22011 4.64674 3.13859 7.09239H0.855978C1.01902 4.44293 2.69022 2.20109 5.05435 1.30435Z"
-                fill="white"/>
-            </svg>
-            <ul class="language-links">
-              <li class=" item">
-                <a href="https://kategora.com/">es</a>
-              </li>
-              <li class="active item">
-                <a href="https://kategora.com/en/">en</a>
-              </li>
-            </ul>
+  </div>
+  <div class="page-main">
+    <div class="about-page">
+      
+      <header class="page-header">
+        <div class="page-header-wrapper">
+          <div class="image-wrapper block-bg-cover">
+            <picture class='block-bg-cover'>
+              <img width='1500' height='2000' class='element-cover'
+                src='https://kategora.com/wp-content/uploads/fly-images/1330/kategora-about-final-1-1500x2000-c.jpg'
+                alt=''>
+            </picture>
           </div>
-  
-          <ul class="main-links">
-            <li class="main-link active">
-              <a href="../index.html">Home</a>
-            </li>
-            <li class="main-link">
-              <a href="../page/About.html">About</a>
-            </li>
-            <li class="main-link">
-              <a href="">Projects</a>
-            </li>
-            <li class="main-link">
-              <a href="https://kategora.com/en/expertise/">Expertise</a>
-            </li>
-            <li class="main-link">
-              <a href="https://kategora.com/en/insights/">Insights</a>
-            </li>
-          </ul>
-          <button class="menu-btn">
-            <span class="burguer"><span class="top"></span><span class="bottom"></span></span>
-            <span class="label">M<br>e<br>n<br>u</span>
-          </button>
-          <span class="menu-btn-hitzone"></span>
-        </div>
-    </div>
-    <div class="page-main">
-        <div class="about-page">
-            <header class="page-header">
-                <div class="page-header-wrapper">
-                    <div class="image-wrapper block-bg-cover">
-                        <picture class='block-bg-cover'>
-                            <img width='1500' height='2000' class='element-cover'
-                              src='https://kategora.com/wp-content/uploads/fly-images/1330/kategora-about-final-1-1500x2000-c.jpg'
-                              alt=''>
-                        </picture>
-                    </div>
 
-                    <div class="text-wrapper">
-                        <div class="row expanded justify-content-center">
-                            <div class="col-xl-10 col-sm-12">
-                              <span class="text upper-title">the approach</span>
-                              <span class="text main-title">
-                                <p>Our <span class="serif-light italic">architecture</span></p>
-                                <p>encourages <span class="serif-light italic">co-living</span></p>
-                              </span>
-                              <span class="text lower-title"></span>
-                            </div>
-                          </div>
-                    </div>
-
-                    <span class="overlay"></span>
-                </div>
-            </header>
-            <div class="page-content">
-              <section>
-                <div class="gross-asset-value-wrapper">
-                  <div class="row expanded">
-                    <div class="col-xl-6 col-md-9 col-sm-12">
-                      <h2 class="title is-inview">
-                        <p><span class="serif-normal italic">W</span>e currently manage real estate with a <span
-                          class="serif-normal italic">Gross Asset Value</span> that exceeds:</p>
-                      </h2>
-                    </div>
-                    <div class="col-xl-12">
-                      <span class="value"><span>€160.000.000</span></span>
-                      <span class="small-value"></span>  
-                    </div>
-                  </div>
-                </div>
-              </section>
-              
-              <section>
-                <div class="introduction-block-wrapper">
-                  <div class="row expand">
-                    <div class="col-xl-12 text-center">
-                      <span class="upper-title">The Approach</span>
-                    </div>
-                  </div>
-                  <div class="row expand">
-                    <div class="image-container col-xl-6 col-lg-5 col-md-12">
-                      <div class="inner-container">
-                        <div class="image-with-caption-wrapper bottom-right">
-                          <figure>
-                            <picture >
-                              <img width='1168' height='1500'
-                                src='../assets/image/kategora-about-1500x1500.jpg'
-                                alt='Co-living Coliving Design Architecture Sustainability'>
-                            </picture>
-                            <figcaption>
-                              <span class="caption">Project Denizen Bushwick NY, 2019</span>
-                              <span class="date"><span>in </span>2011</span>
-                            </figcaption>
-                          </figure>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-xl-5 offset-xl-1 col-lg-6 col-md-12">
-                      <p><span class="serif-medium">R</span>esidential properties, tourist apartments, and student
-                        residences all feature among our assets. Most importantly, they are all primed for profitability.
-                      </p>
-                      <p>The name of the game is know-how and opportunity. We promote and lead direct investments amidst
-                        major portfolios of real estate and assets while channeling investments through tailored corporate
-                        transactions.</p>
-                      <p>And there&#8217;s another reason why we are so bent on optimizing profitability for our clients:
-                        we also have skin in the game. We don&#8217;t just select investors to accompany you in each new
-                        project. Kategora is the lead and main investor. Of course we will lead the search for
-                        opportunities for purchase and rehabilitation, of course we will deliver innovative concepts.
-                        It&#8217;s in your best interest. And in our best interest too.</p>
-                      <ul class="statistics-list">
-                        <li class="stagger-item">14 Years</li>
-                        <li class="stagger-item">3 Countries</li>
-                        <li class="stagger-item">+7% Net Yields</li>
-                        <li class="stagger-item">400 Investors</li>
-                        <li class="stagger-item">800 Assets</li>
-                        <li class="stagger-item">160M€ GAV</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section>
-                <div class="statistics-wrapper">
-                  <div class="row expanded">
-                    <div class="col-xl-5 col-lg-7 col-sm-12 ">
-                      <h2 class="title">
-                        <p><span class="serif-normal italic">W</span>e have launched<br />
-                          <span class="serif-normal italic">&amp;</span> managed
-                        </p>
-                      </h2>
-                    </div>
-                    <div class="col-xl-12">
-                      <div class="row expanded statistics-cols">
-                        <div class="col-lg-3 col-md-6 col-6">
-                          <span class="upper-title">more than</span>
-                          <span class="title">20 investment vehicles</span>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-6">
-                          <span class="upper-title">that cover</span>
-                          <span class="title">800 Assets</span>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-6">
-                          <span class="upper-title">across all globe in</span>
-                          <span class="title">3 countries</span>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-6">
-                          <span class="upper-title">with a team of more than</span>
-                          <span class="title">60 professionals</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section>
-                <div class="the-history-wrapper">
-                  <div class="bg">
-                    <div class="row expanded">
-                      <div class="col-xl-12 text-center">
-                        <span class="upper-title">The History</span>
-                      </div>
-                    </div>
-                    <div class="row expanded">
-                      <div class="main-title-col col-xl-8 col-lg-7 col-md-12">
-                        <h2 class="main-title">
-                          <span class="line">
-                            <span class="inner">
-                              <span class="serif-normal">14 years</span>
-                            </span>
-                          </span>
-                          <br>
-                          <span class="line">
-                            <span class="inner">
-                              <span class="serif-normal italic">of</span> 
-                              <span class="sans-light">Kategora</span>
-                            </span>
-                          </span>
-                        </h2>
-                      </div>
-
-                      <div class="col-xl-3 offset-xl-1 col-lg-4 col-md-8 offset-md-4 col-sm-12">
-                        <p class="white subtitle">
-                          <p>2006 · <span class="serif-normal italic">The</span> Foundation</p>
-                        </p>
-                        <p>Kategora was born in Bilbao in 2006 but experienced its initial growth spur in Hungary and
-                          Poland. As we looked to invest in emerging markets, we noticed these wonderful countries had low
-                          real estate prices, low unemployment rates, a young population, and low leverage rates when
-                          compared to Spain.</p>
-                        <p>An ideal scenario to develop real estate projects and an excellent proving ground for the type
-                          of innovative concepts we had in mind.</p>
-                        <p>At this point, it was not common for investments to be made on tourist apartments and student
-                          residences. However, Kategora anticipated the turbulences everyone would soon face and leveraged
-                          the adaptability to economic cycles this type of real estate offers. And to great effect.</p>
-                        <p>You see, if you can anticipate, you can innovate.</p>
-                      </div>
-                    </div>
-                    <div class="row expanded"></div>
-                  </div>
-                </div>
-              </section>
+          <div class="text-wrapper">
+            <div class="row expanded justify-content-center">
+              <div class="col-xl-10 col-sm-12">
+                <span class="text upper-title">the approach</span>
+                <span class="text main-title">
+                  <p>Our <span class="serif-light italic">architecture</span></p>
+                  <p>encourages <span class="serif-light italic">co-living</span></p>
+                </span>
+                <span class="text lower-title"></span>
+              </div>
             </div>
+          </div>
+
+          <span class="overlay"></span>
         </div>
+      </header>
+
+      <main class="page-content">
+        <section>
+          <div class="gross-asset-value-wrapper">
+            <div class="row expanded">
+              <div class="col-xl-6 col-md-9 col-sm-12">
+                <h2 class="title is-inview">
+                  <p><span class="serif-normal italic">W</span>e currently manage real estate with a <span
+                      class="serif-normal italic">Gross Asset Value</span> that exceeds:</p>
+                </h2>
+              </div>
+              <div class="col-xl-12">
+                <span class="value"><span>€160.000.000</span></span>
+                <span class="small-value"></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="introduction-block-wrapper">
+            <div class="row expand">
+              <div class="col-xl-12 text-center">
+                <span class="upper-title">The Approach</span>
+              </div>
+            </div>
+            <div class="row expand">
+              <div class="image-container col-xl-6 col-lg-5 col-md-12">
+                <div class="inner-container">
+                  <div class="image-with-caption-wrapper bottom-right">
+                    <figure>
+                      <picture>
+                        <img width='1168' height='1500' src='../assets/image/kategora-about-1500x1500.jpg'
+                          alt='Co-living Coliving Design Architecture Sustainability'>
+                      </picture>
+                      <figcaption>
+                        <span class="caption">Project Denizen Bushwick NY, 2019</span>
+                        <span class="date"><span>in </span>2011</span>
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-5 offset-xl-1 col-lg-6 col-md-12">
+                <p><span class="serif-medium">R</span>esidential properties, tourist apartments, and student
+                  residences all feature among our assets. Most importantly, they are all primed for profitability.
+                </p>
+                <p>The name of the game is know-how and opportunity. We promote and lead direct investments amidst
+                  major portfolios of real estate and assets while channeling investments through tailored corporate
+                  transactions.</p>
+                <p>And there&#8217;s another reason why we are so bent on optimizing profitability for our clients:
+                  we also have skin in the game. We don&#8217;t just select investors to accompany you in each new
+                  project. Kategora is the lead and main investor. Of course we will lead the search for
+                  opportunities for purchase and rehabilitation, of course we will deliver innovative concepts.
+                  It&#8217;s in your best interest. And in our best interest too.</p>
+                <ul class="statistics-list">
+                  <li class="stagger-item">14 Years</li>
+                  <li class="stagger-item">3 Countries</li>
+                  <li class="stagger-item">+7% Net Yields</li>
+                  <li class="stagger-item">400 Investors</li>
+                  <li class="stagger-item">800 Assets</li>
+                  <li class="stagger-item">160M€ GAV</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="statistics-wrapper">
+            <div class="row expanded">
+              <div class="col-xl-5 col-lg-7 col-sm-12 ">
+                <h2 class="title">
+                  <p><span class="serif-normal italic">W</span>e have launched<br />
+                    <span class="serif-normal italic">&amp;</span> managed
+                  </p>
+                </h2>
+              </div>
+              <div class="col-xl-12">
+                <div class="row expanded statistics-cols">
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <span class="upper-title">more than</span>
+                    <span class="title">20 investment vehicles</span>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <span class="upper-title">that cover</span>
+                    <span class="title">800 Assets</span>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <span class="upper-title">across all globe in</span>
+                    <span class="title">3 countries</span>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <span class="upper-title">with a team of more than</span>
+                    <span class="title">60 professionals</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="the-history-wrapper">
+            <div class="bg">
+              <div class="row expanded">
+                <div class="col-xl-12 text-center">
+                  <span class="upper-title">The History</span>
+                </div>
+              </div>
+
+              <div class="row expanded">
+                <div class="main-title-col col-xl-8 col-lg-7 col-md-12">
+                  <h2 class="main-title">
+                    <span class="line">
+                      <span class="inner">
+                        <span class="serif-normal">14 years</span>
+                      </span>
+                    </span>
+                    <br>
+                    <span class="line">
+                      <span class="inner">
+                        <span class="serif-normal italic">of</span>
+                        <span class="sans-light">Kategora</span>
+                      </span>
+                    </span>
+                  </h2>
+                </div>
+
+                <div class="col-xl-3 offset-xl-1 col-lg-4 col-md-8 offset-md-4 col-sm-12">
+                  <p class="white subtitle">
+                  <p>2006 · <span class="serif-normal italic">The</span> Foundation</p>
+                  </p>
+                  <p>Kategora was born in Bilbao in 2006 but experienced its initial growth spur in Hungary and
+                    Poland. As we looked to invest in emerging markets, we noticed these wonderful countries had low
+                    real estate prices, low unemployment rates, a young population, and low leverage rates when
+                    compared to Spain.</p>
+                  <p>An ideal scenario to develop real estate projects and an excellent proving ground for the type
+                    of innovative concepts we had in mind.</p>
+                  <p>At this point, it was not common for investments to be made on tourist apartments and student
+                    residences. However, Kategora anticipated the turbulences everyone would soon face and leveraged
+                    the adaptability to economic cycles this type of real estate offers. And to great effect.</p>
+                  <p>You see, if you can anticipate, you can innovate.</p>
+                </div>
+              </div>
+
+              <div class="column-text row expanded">
+                <div class="col-xl-3 col-md-6 col-sm-12">
+                  <p>With the wheels in motion, we offered our product to
+                    investors through creative financial structures such as sale & lease-back,
+                    which allowed them to have a mortgage designed to be amortized through a secure lease.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row expanded image-container">
+              <div class="col-xl-8 offset-xl-4 col-md-12 col-sm-12">
+                <div class="image-with-caption-wrapper left-bottom">
+                  <figure>
+                    <picture>
+                      <img width='1500' height='1042' src='../assets/image/kategora-team-1500x1500.jpg'
+                        alt='Team meeting co-workers co-working enjoyable team building'>
+                    </picture>
+                    <figcaption>
+                      <span class="caption">Kategora team<br />
+                        annual meeting</span>
+                      <span class="date"><span>in </span>2020</span>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="investors-block-wrapper">
+            <div class="main-title-wrapper row expanded justify-content-center">
+              <div class="col-xl-8 col-lg-9 col-md-12 col-sm-12">
+                <h2 class="main-title">
+                  <p>Still, we knew <span class="serif-normal italic">investors</span> need their extra peace of
+                    mind, especially when working with <span class="serif-normal italic">new concepts</span>. So
+                    <span class="serif-normal italic">we developed</span> a software platform that allowed them to
+                    see how their investment was yielding at all times.
+                  </p>
+                </h2>
+              </div>
+            </div>
+            <div class="image-block row expanded">
+              <div class="image-container col-xl-5 offset-xl-1 col-md-12 col-sm-12">
+                <div class="image-with-caption-wrapper bottom-right">
+                  <figure>
+                    <picture>
+                      <img width='1079' height='1500' class='' src='../assets/image/kategora-about-02-3000x3000.jpg'
+                        alt='Co-living Coliving Design Architecture Sustainability'>
+                    </picture>
+                    <figcaption>
+                      <span class="caption">QDEA 2.0: the perfect <br />
+                        RE investor´s app</span>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="video-container">
+                  <div class="video-inner">
+                    <video muted autoplay playsinline loop>
+                      <source src="../assets/audio-video/qdea-app.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-block col-xl-5 offset-xl-1 col-lg-5 col-md-12 col-sm-12">
+                <p>This platform is called QDEA and allows real-time observation of several parameters of the
+                  investment performance such as financial statements and general ledge, and also gathers and serves
+                  digitalized copies of every lease agreement, title deeds, and all the other important documents.
+                </p>
+                <p>Soon after, we got the <span class="serif-medium">Price Waterhouse Coopers Spanish</span> <span
+                    class="serif-medium italic">New Co Award</span>.</p>
+                <img src="../assets/image/pwc.svg" alt="pwc"
+                  width="102" height="78">
+              </div>
+            </div>
+            <div class="row expanded justify-content-center">
+              <div class="two-cols-wrapper col-xl-9 col-lg-11 col-md-12 col-sm-12">
+                <p>And then 2008 hit. Developers, real estate agents, and hotel operators shipwrecked by the dozens.
+                  Thankfully, we were ready.</p>
+                <p>Remember, if you can anticipate...</p>
+                <p>Kategora repurposed its tourist apartments and apart-hotels for long-stay accommodation, offering
+                  — despite the seriousness of the situation — good returns to investors.</p>
+                <p>Once the crisis was over, from 2013 on, Kategora returned to the tourism field. Thanks to our
+                  ever-versatile assets, we were able to adjust and join the aparthotel market once again, obtaining
+                  excellent yields for investors.</p>
+                <p>Along this path, Kategora obtained the recognition of all the people who placed their trust with
+                  us. Today, our community brings together more than 400 investors throughout the world.</p>
+                <p>Thanks to their support, we continue to develop some of the most avant-garde residential,
+                  touristic and hybrid concepts on the market.</p>
+                <p>As we strive to continue being leaders and a reference in real estate, we made an unequivocal
+                  commitment to the sustainability of our buildings — because energy efficiency is both the key to
+                  the future and to our business.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="team-gallery-wrapper">
+            <div class="row expand">
+              <div class="col-xl-12 text-center">
+                <div class="upper-title">The team</div>
+              </div>
+            </div>
+            <div class="gallery-wrapper row expanded">
+              <div class="col-xl-3 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 col-sm-12">
+                <div class="titles-wrapper">
+                  <div class="title-container">
+                    <span class="role">
+                      <span class="inner">CEO & Founder</span>
+                    </span>
+                    <span class="name">
+                      <span class="inner">
+                      <p><span class="serif-normal italic">K</span>epa</p>
+                      <p><span class="serif-normal italic">Apraiz</span></p>
+                      </span>
+                    </span>
+                    <span class="description">
+                      <span class="inner">Kepa is the founding partner of Kategora. He has played a relevant role in
+                        start-up raising in Spain in the last years. He is involved in a relevant change in the way
+                        to do business with a sustainable, innovative and hi-tech perspective.</span>
+                      <span class="gradient"></span>
+                    </span>
+                    <button class="btn-expand-description">
+                      Know more 
+                      <svg width="56" height="56" viewBox="0 0 56 56" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M30.984 20.0843H29.64C29.64 23.1803 31.104 25.4843 33.672 26.7803L16.8 26.7803V28.1963L33.696 28.1963C31.128 29.4683 29.64 31.7963 29.64 34.8923H30.984C30.984 30.8123 33.96 28.1963 39.168 28.1963V26.7803C33.96 26.7803 30.984 24.1883 30.984 20.0843Z"
+                          fill="#F6F4F2" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="controllers-wrapper">
+                    <button class="right-btn stagger-item">
+                      <span class="hitzone"></span>
+                      <svg width="56" height="56" viewBox="0 0 56 56" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="28" cy="28" r="27.25" stroke="white" stroke-width="1.5" />
+                        <path
+                          d="M25.016 20.0843H26.36C26.36 23.1803 24.896 25.4843 22.328 26.7803L39.2 26.7803V28.1963L22.304 28.1963C24.872 29.4683 26.36 31.7963 26.36 34.8923H25.016C25.016 30.8123 22.04 28.1963 16.832 28.1963V26.7803C22.04 26.7803 25.016 24.1883 25.016 20.0843Z"
+                          fill="#F6F4F2" />
+                      </svg>
+                    </button>
+
+                    <button class="left-btn stagger-item">
+                      <span class="hitzone"></span>
+                      <svg width="56" height="56" viewBox="0 0 56 56" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="28" cy="28" r="27.25" stroke="white" stroke-width="1.5" />
+                        <path
+                          d="M30.984 20.0843H29.64C29.64 23.1803 31.104 25.4843 33.672 26.7803L16.8 26.7803V28.1963L33.696 28.1963C31.128 29.4683 29.64 31.7963 29.64 34.8923H30.984C30.984 30.8123 33.96 28.1963 39.168 28.1963V26.7803C33.96 26.7803 30.984 24.1883 30.984 20.0843Z"
+                          fill="#F6F4F2" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="photos-column col-xl-8 col-md-7 col-sm-12">
+                <div class="photos-wrapper">
+                  <div class="container photo-container left-btn">
+                      <picture>
+                        <img src="../assets/image/team-kepa-984x1404-c.jpg" alt="">
+                      </picture>
+                  </div>
+                  
+                  <div class="container photo-container trigger-next left-btn">
+                    <picture>
+                      <img src="../assets/image/kategora-team-agustin-v2-984x1404-c.jpg" alt="">
+                    </picture>
+                  </div>
+                  <div class="container photo-container left-btn">
+                    <picture>
+                      <img src="../assets/image/team-inigo-2-1-984x1404-c.jpg" alt="">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="contacts-gallery-wrapper">
+            <div class="row expanded">
+              <div class="col-xl-12 text-center">
+                <div class="upper-title">Contacts</div>
+              </div>
+            </div>
+
+            <div class="title-container row expanded">
+              <div class="col-xl-5 offset-xl-1 col-md-12 col-sm-12">
+                <h2 class="main-title"><span>Connect <br>to</span> <span class="city">
+                  <span class="mask"></span>
+                  <span class="label active">
+                    <p><span class="serif-medium italic">B</span>ilbao</p>
+                  </span>
+                  <!-- <span class="label ">
+                    <p><span class="serif-medium italic">B</span>udapest</p>
+                  </span>
+                  <span class="label ">
+                    <p><span class="serif-medium italic">W</span>arsaw</p>
+                  </span> -->
+              </h2>
+              </div>
+            </div>
+
+            <div class="slider-container">
+              <div class="selector-container">
+                <ul>
+                  <li class="active">Bilbao, <span>Spain</span></li>
+                  <li class="">Budapest, <span>Hungary</span></li>
+                  <li class="">Warsaw, <span>Poland</span></li>
+                </ul>
+              </div>
+
+              <div class="controllers-wrapper">
+                <button class="btn left-btn">
+                  <span class="hitzone"></span>
+                  <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="28" cy="28" r="27.25" stroke="white" stroke-width="1.5" />
+                    <path
+                      d="M25.016 20.0843H26.36C26.36 23.1803 24.896 25.4843 22.328 26.7803L39.2 26.7803V28.1963L22.304 28.1963C24.872 29.4683 26.36 31.7963 26.36 34.8923H25.016C25.016 30.8123 22.04 28.1963 16.832 28.1963V26.7803C22.04 26.7803 25.016 24.1883 25.016 20.0843Z"
+                      fill="#F6F4F2" />
+                  </svg>
+                </button>
+
+                <button class="btn right-btn">
+                  <span class="hitzone"></span>
+                  <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="28" cy="28" r="27.25" stroke="white" stroke-width="1.5" />
+                    <path
+                      d="M30.984 20.0843H29.64C29.64 23.1803 31.104 25.4843 33.672 26.7803L16.8 26.7803V28.1963L33.696 28.1963C31.128 29.4683 29.64 31.7963 29.64 34.8923H30.984C30.984 30.8123 33.96 28.1963 39.168 28.1963V26.7803C33.96 26.7803 30.984 24.1883 30.984 20.0843Z"
+                      fill="#F6F4F2" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="map-container">
+                <div class="map-item-container">
+                  <span class="mask"></span>
+                  <div class="map-item active">
+                    <a href="https://goo.gl/maps/9CLYBoZxTuq3CKi78" target="_blank">
+                      <picture>
+                        <img width='253' height='251'
+                          src='../assets/image/bilbao-location-253x251-c.jpg'
+                          alt='Co-living Coliving Design Architecture Sustainability'>
+                      </picture> 
+                      <span class="caption">Révész street 29.<br/>1138 Budapest, Hungary<br/>+36 1 613 92 04</span>
+                    </a>
+                  </div>
+                  <!-- <div class="map-item">
+                    <a href="https://goo.gl/maps/9CLYBoZxTuq3CKi78" target="_blank">
+                      <picture>
+                        <img width='253' height='251'
+                          src='../assets/image/kategora-budapest-253x251-c.jpg'
+                          alt='Co-living Coliving Design Architecture Sustainability'>
+                      </picture> 
+                      <span class="caption">Révész street 29.<br/>1138 Budapest, Hungary<br/>+36 1 613 92 04</span>
+                    </a>
+                  </div> -->
+                  <!-- <div class="map-item ">
+                    <a href="https://goo.gl/maps/9CLYBoZxTuq3CKi78" target="_blank">
+                      <picture>
+                        <img width='253' height='251'
+                          src='../assets/image/kategora-warsaw-253x251-c.jpg'
+                          alt='Co-living Coliving Design Architecture Sustainability'>
+                      </picture> 
+                      <span class="caption">Révész street 29.<br/>1138 Budapest, Hungary<br/>+36 1 613 92 04</span>
+                    </a>
+                  </div> -->
+                </div>
+              </div>
+
+              <div class="slider-inner">
+                <div class="slider-location active">
+                  <div class="slide active ">
+                    <span class="mask"></span>
+                    <div class="block-bg-cover">
+                      <picture>
+                        <img width='980' height='918' class='slide-image element-cover'
+                          src='../assets/image/office-bilbao-01-980x918.jpg'
+                          alt='Co-working coworking work spaces team building'>
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="slide  portrait">
+                    <span class="mask"></span>
+                    <div class="block-bg-cover">
+                      <picture>
+                        <img width='613' height='918' class='slide-image element-cover'
+                          src='../assets/image/office-bilbao-02-980x918.jpg'
+                          alt='Co-working coworking work spaces team building'>
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="slide ">
+                    <span class="mask"></span>
+                    <div class="block-bg-cover">
+                      <picture>
+                        <img width='980' height='918' class='slide-image element-cover'
+                          src='../assets/image/office-bilbao-03-980x918.jpg'
+                          alt='office work spaces creative places the brand to be'>
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="slide ">
+                    <span class="mask"></span>
+                    <div class="block-bg-cover">
+                      <picture>
+                        <img width='980' height='918' class='slide-image element-cover'
+                          src='../assets/image/office-bilbao-04-980x918.jpg'
+                          alt='co-working co-living coworking coliving investment design architecture'>
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contacts-container row expanded align-items-end">
+              <div class="col-xl-4 offset-xl-2 offset-lg-1 col-lg-4 col-md-6 col-sm-12">
+                <ul class="social">
+                  <li>
+                    <a class="item" href="https://www.linkedin.com/company/kategora-investments/">LinkedIn</a></li>
+                  <li>
+                    <button class="item">Newsletter</button>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-xl-4 col-md-6 col-sm-12">
+                <ul class="contacts">
+                  <li class="stagger-item"><a href="tel:+34 944 24 53 78">+34 944 24 53 78</a></li>
+                  <li class="stagger-item"><a href="mailto:info@kategora.com">info@kategora.com</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="featured-work-footer-wrapper">
+          <div class="row expanded no-gutters">
+            <div class="work-list-wrapper grid-3 col-xl-12">
+                <h2 class="title">Featured Work</h2>
+                <div class="scroll-grid">
+                  <ul class="work-list">
+                    <li>
+                      <a href="https://kategora.com/en/projects/nivaria-beach/">
+                        <picture class=''>
+                          <img width='237' height='306' class=''
+                            src='../assets/image/nivaria-beach-footer-237x306-c.jpg'
+                            alt='luxury. sea views.'>
+                        </picture>
+                        <h3 class="work-title">Nivaria Beach</h3>
+                        <span class="description">Apartments &amp; Villas
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://kategora.com/en/projects/ura/">
+                        <picture class=''>
+                          <img width='237' height='306' class=''
+                            src='../assets/image/ura-footer-237x306-c.jpg'
+                            alt='Smart Building. City Center. Prime.'>
+                        </picture>
+                        <h3 class="work-title">URA</h3>
+                        <span class="description">The city to be in.</span>
+                      </a>
+                    </li>
+                    <li class="soon">
+                      <picture class=''>
+                        <img width='237' height='306' class=''
+                          src='../assets/image/kirali-budapest-footer-237x306-c.jpg'
+                          alt='Co-living Coliving Design Architecture Sustainability'>
+                      </picture>
+                      <h3 class="work-title">Kiraly Budapest</h3>
+                      <span class="description">Available soon</span>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+          <div class="row expanded">
+            <div class="col-xl-12 lower-footer">
+              <ul class="legal-list">
+                <li class="legal-item">
+                  <a href="https://kategora.com/en/privacy-policy/">Privacy Policy</a>
+                </li>
+                <li class="legal-item">
+                  <a href="https://kategora.com/en/legal-notice/">Legal Notice</a>
+                </li>
+                <li class="legal-item">
+                  <a href="https://kategora.com/en/cookies-consent/">Cookies Consent</a>
+                </li>
+              </ul>
+              <span class="made-by-buro"><a href="https://burocratik.com" target="_blank"
+                  rel="external nofollow noopener">Made
+                  By Büro</a>
+                </span>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-    <!--
+  </div>
+  <!--
           xxlarge, xlarge, large = col-xl- bootrap
           largeMax, medium = col-lg- bootrap
           small = col-md- bootrap
           xsmall= col-sm- bootrap 
           xxsmall = col- bootrap-->
 
-    <!-- Jquery -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-     <!-- GSAP framworks -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-     <!-- Scrolltrigger plusgin -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
-    <!-- Main script -->
-    <script src="../assets/js/main.js"></script>
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- GSAP framworks -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+  <!-- Scrolltrigger plusgin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+  <!-- Main script -->
+  <script src="../assets/js/main.js"></script>
 </body>
+
 </html>

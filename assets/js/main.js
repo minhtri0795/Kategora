@@ -35,8 +35,8 @@ $(document).ready(function () {
   gsap.to(".dark-zone", {
     scrollTrigger: {
       trigger: ".dark-zone",
-      start: "top center",
-      end: "bottom center",
+      // start: "top center",
+      // end: "bottom center",
       onEnter: () => {
         $(".main-header-wrapper").addClass("change-color");
         $(".menu-btn").addClass("light-btn");
@@ -112,7 +112,9 @@ $(document).ready(function () {
         });
       }
     }
-    // Run script if home page
+
+
+  // Run script if home page
   const homePage = $("#homePage")
   if(homePage[0]){
 
@@ -374,8 +376,8 @@ $(document).ready(function () {
     opacity: 0,
     y: 80,
   });
+
   // footer image scroll parallax.
-  
   gsap.from(".featured-work-footer-wrapper .work-list li", {
     scrollTrigger: {
       trigger: ".featured-work-footer-wrapper",
