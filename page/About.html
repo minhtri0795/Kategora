@@ -100,9 +100,11 @@
       <span class="menu-btn-hitzone"></span>
     </div>
   </div>
+
   <div class="page-main">
+
     <div class="about-page">
-      
+
       <header class="page-header">
         <div class="page-header-wrapper">
           <div class="image-wrapper block-bg-cover">
@@ -241,7 +243,7 @@
                 </div>
               </div>
 
-              <div class="row expanded">
+              <div class="row expanded main-title-wrapper">
                 <div class="main-title-col col-xl-8 col-lg-7 col-md-12">
                   <h2 class="main-title">
                     <span class="line">
@@ -291,7 +293,7 @@
                 <div class="image-with-caption-wrapper left-bottom">
                   <figure>
                     <picture>
-                      <img width='1500' height='1042' src='../assets/image/kategora-team-1500x1500.jpg'
+                      <img lazy width='1500' height='1042' data-src='../assets/image/kategora-team-1500x1500.jpg'
                         alt='Team meeting co-workers co-working enjoyable team building'>
                     </picture>
                     <figcaption>
@@ -324,7 +326,7 @@
                 <div class="image-with-caption-wrapper bottom-right">
                   <figure>
                     <picture>
-                      <img width='1079' height='1500' class='' src='../assets/image/kategora-about-02-3000x3000.jpg'
+                      <img lazy width='1079' height='1500' class='' data-src='../assets/image/kategora-about-02-3000x3000.jpg'
                         alt='Co-living Coliving Design Architecture Sustainability'>
                     </picture>
                     <figcaption>
@@ -349,7 +351,7 @@
                 </p>
                 <p>Soon after, we got the <span class="serif-medium">Price Waterhouse Coopers Spanish</span> <span
                     class="serif-medium italic">New Co Award</span>.</p>
-                <img src="../assets/image/pwc.svg" alt="pwc"
+                <img lazy data-src="../assets/image/pwc.svg" alt="pwc"
                   width="102" height="78">
               </div>
             </div>
@@ -383,7 +385,7 @@
               </div>
             </div>
             <div class="gallery-wrapper row expanded">
-              <div class="col-xl-3 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 col-sm-12">
+              <div class="col-xl-3 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 col-sm-12 ">
                 <div class="titles-wrapper">
                   <div class="title-container">
                     <span class="role">
@@ -411,7 +413,7 @@
                       </svg>
                     </button>
                   </div>
-                  <div class="controllers-wrapper">
+                  <div class="controllers-wrapper hide-on-mobile">
                     <button class="right-btn stagger-item">
                       <span class="hitzone"></span>
                       <svg width="56" height="56" viewBox="0 0 56 56" fill="none"
@@ -422,7 +424,7 @@
                           fill="#F6F4F2" />
                       </svg>
                     </button>
-
+  
                     <button class="left-btn stagger-item">
                       <span class="hitzone"></span>
                       <svg width="56" height="56" viewBox="0 0 56 56" fill="none"
@@ -436,24 +438,47 @@
                   </div>
                 </div>
               </div>
-              <div class="photos-column col-xl-8 col-md-7 col-sm-12">
+              <div class="photos-column col-xl-8 col-md-7 col-sm-12 ">
                 <div class="photos-wrapper">
                   <div class="container photo-container left-btn">
                       <picture>
-                        <img src="../assets/image/team-kepa-984x1404-c.jpg" alt="">
+                        <img lazy data-src="../assets/image/team-kepa-984x1404-c.jpg" alt="">
                       </picture>
                   </div>
                   
                   <div class="container photo-container trigger-next left-btn">
                     <picture>
-                      <img src="../assets/image/kategora-team-agustin-v2-984x1404-c.jpg" alt="">
+                      <img lazy data-src="../assets/image/kategora-team-agustin-v2-984x1404-c.jpg" alt="">
                     </picture>
                   </div>
                   <div class="container photo-container left-btn">
                     <picture>
-                      <img src="../assets/image/team-inigo-2-1-984x1404-c.jpg" alt="">
+                      <img lazy data-src="../assets/image/team-inigo-2-1-984x1404-c.jpg" alt="">
                     </picture>
                   </div>
+                </div>
+                <div class="controllers-wrapper mobile">
+                  <button class="right-btn stagger-item">
+                    <span class="hitzone"></span>
+                    <svg width="56" height="56" viewBox="0 0 56 56" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="28" cy="28" r="27.25" stroke="white" stroke-width="1.5" />
+                      <path
+                        d="M25.016 20.0843H26.36C26.36 23.1803 24.896 25.4843 22.328 26.7803L39.2 26.7803V28.1963L22.304 28.1963C24.872 29.4683 26.36 31.7963 26.36 34.8923H25.016C25.016 30.8123 22.04 28.1963 16.832 28.1963V26.7803C22.04 26.7803 25.016 24.1883 25.016 20.0843Z"
+                        fill="#F6F4F2" />
+                    </svg>
+                  </button>
+
+                  <button class="left-btn stagger-item">
+                    <span class="hitzone"></span>
+                    <svg width="56" height="56" viewBox="0 0 56 56" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="28" cy="28" r="27.25" stroke="white" stroke-width="1.5" />
+                      <path
+                        d="M30.984 20.0843H29.64C29.64 23.1803 31.104 25.4843 33.672 26.7803L16.8 26.7803V28.1963L33.696 28.1963C31.128 29.4683 29.64 31.7963 29.64 34.8923H30.984C30.984 30.8123 33.96 28.1963 39.168 28.1963V26.7803C33.96 26.7803 30.984 24.1883 30.984 20.0843Z"
+                        fill="#F6F4F2" />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -522,8 +547,8 @@
                   <div class="map-item active">
                     <a href="https://goo.gl/maps/9CLYBoZxTuq3CKi78" target="_blank">
                       <picture>
-                        <img width='253' height='251'
-                          src='../assets/image/bilbao-location-253x251-c.jpg'
+                        <img lazy width='253' height='251'
+                        data-src='../assets/image/bilbao-location-253x251-c.jpg'
                           alt='Co-living Coliving Design Architecture Sustainability'>
                       </picture> 
                       <span class="caption">Révész street 29.<br/>1138 Budapest, Hungary<br/>+36 1 613 92 04</span>
@@ -532,8 +557,8 @@
                   <!-- <div class="map-item">
                     <a href="https://goo.gl/maps/9CLYBoZxTuq3CKi78" target="_blank">
                       <picture>
-                        <img width='253' height='251'
-                          src='../assets/image/kategora-budapest-253x251-c.jpg'
+                        <img lazy width='253' height='251'
+                          data-src='../assets/image/kategora-budapest-253x251-c.jpg'
                           alt='Co-living Coliving Design Architecture Sustainability'>
                       </picture> 
                       <span class="caption">Révész street 29.<br/>1138 Budapest, Hungary<br/>+36 1 613 92 04</span>
@@ -542,8 +567,8 @@
                   <!-- <div class="map-item ">
                     <a href="https://goo.gl/maps/9CLYBoZxTuq3CKi78" target="_blank">
                       <picture>
-                        <img width='253' height='251'
-                          src='../assets/image/kategora-warsaw-253x251-c.jpg'
+                        <img lazy width='253' height='251'
+                          data-src='../assets/image/kategora-warsaw-253x251-c.jpg'
                           alt='Co-living Coliving Design Architecture Sustainability'>
                       </picture> 
                       <span class="caption">Révész street 29.<br/>1138 Budapest, Hungary<br/>+36 1 613 92 04</span>
@@ -558,8 +583,8 @@
                     <span class="mask"></span>
                     <div class="block-bg-cover">
                       <picture>
-                        <img width='980' height='918' class='slide-image element-cover'
-                          src='../assets/image/office-bilbao-01-980x918.jpg'
+                        <img lazy width='980' height='918' class='slide-image element-cover'
+                        data-src='../assets/image/office-bilbao-01-980x918.jpg'
                           alt='Co-working coworking work spaces team building'>
                       </picture>
                     </div>
@@ -568,8 +593,8 @@
                     <span class="mask"></span>
                     <div class="block-bg-cover">
                       <picture>
-                        <img width='613' height='918' class='slide-image element-cover'
-                          src='../assets/image/office-bilbao-02-980x918.jpg'
+                        <img lazy width='613' height='918' class='slide-image element-cover'
+                        data-src='../assets/image/office-bilbao-02-980x918.jpg'
                           alt='Co-working coworking work spaces team building'>
                       </picture>
                     </div>
@@ -578,8 +603,8 @@
                     <span class="mask"></span>
                     <div class="block-bg-cover">
                       <picture>
-                        <img width='980' height='918' class='slide-image element-cover'
-                          src='../assets/image/office-bilbao-03-980x918.jpg'
+                        <img lazy width='980' height='918' class='slide-image element-cover'
+                        data-src='../assets/image/office-bilbao-03-980x918.jpg'
                           alt='office work spaces creative places the brand to be'>
                       </picture>
                     </div>
@@ -588,8 +613,8 @@
                     <span class="mask"></span>
                     <div class="block-bg-cover">
                       <picture>
-                        <img width='980' height='918' class='slide-image element-cover'
-                          src='../assets/image/office-bilbao-04-980x918.jpg'
+                        <img lazy width='980' height='918' class='slide-image element-cover'
+                        data-src='../assets/image/office-bilbao-04-980x918.jpg'
                           alt='co-working co-living coworking coliving investment design architecture'>
                       </picture>
                     </div>
@@ -629,8 +654,8 @@
                     <li>
                       <a href="https://kategora.com/en/projects/nivaria-beach/">
                         <picture class=''>
-                          <img width='237' height='306' class=''
-                            src='../assets/image/nivaria-beach-footer-237x306-c.jpg'
+                          <img lazy width='237' height='306' class=''
+                          data-src='../assets/image/nivaria-beach-footer-237x306-c.jpg'
                             alt='luxury. sea views.'>
                         </picture>
                         <h3 class="work-title">Nivaria Beach</h3>
@@ -641,8 +666,8 @@
                     <li>
                       <a href="https://kategora.com/en/projects/ura/">
                         <picture class=''>
-                          <img width='237' height='306' class=''
-                            src='../assets/image/ura-footer-237x306-c.jpg'
+                          <img lazy width='237' height='306' class=''
+                          data-src='../assets/image/ura-footer-237x306-c.jpg'
                             alt='Smart Building. City Center. Prime.'>
                         </picture>
                         <h3 class="work-title">URA</h3>
@@ -651,8 +676,8 @@
                     </li>
                     <li class="soon">
                       <picture class=''>
-                        <img width='237' height='306' class=''
-                          src='../assets/image/kirali-budapest-footer-237x306-c.jpg'
+                        <img lazy width='237' height='306' class=''
+                        data-src='../assets/image/kirali-budapest-footer-237x306-c.jpg'
                           alt='Co-living Coliving Design Architecture Sustainability'>
                       </picture>
                       <h3 class="work-title">Kiraly Budapest</h3>
@@ -683,6 +708,7 @@
           </div>
         </div>
       </footer>
+
     </div>
   </div>
   <!--

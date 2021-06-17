@@ -60,6 +60,35 @@
     -webkit-transform: scale(1);
             transform: scale(1);
   }
+  .gross-asset-value-wrapper .value {
+    font-size: 14vw;
+  }
+  .the-history-wrapper .main-title-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .contacts-gallery-wrapper .slider-container {
+    margin-top: 40px;
+  }
+  .contacts-gallery-wrapper .slider-container .selector-container {
+    position: absolute;
+    top: -2%;
+    margin-left: 6.25%;
+    width: 93.75%;
+    padding-left: calc(16.4px + .21176vw);
+    padding-right: calc(16.4px + .21176vw);
+    margin-bottom: 0;
+  }
+  .contacts-gallery-wrapper .slider-container .selector-container ul {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .contacts-gallery-wrapper .slider-container .slider-inner .slide {
+    width: 70%;
+  }
 }
 
 @media (min-width: 740px) and (max-width: 1023px) {
@@ -171,9 +200,69 @@
   .featured-work-footer-wrapper .legal-list {
     margin-bottom: 30px;
   }
+  /*<===== ABOUT PAGE ======>*/
+  .introduction-block-wrapper .image-with-caption-wrapper.bottom-right {
+    top: auto;
+    margin-bottom: 35px;
+  }
+  .introduction-block-wrapper .image-with-caption-wrapper.bottom-right figcaption {
+    position: relative;
+    top: auto;
+    margin-top: 20px;
+  }
+  .the-history-wrapper .bg {
+    padding-bottom: 220px;
+  }
+  .the-history-wrapper .main-title-col .main-title {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  .image-with-caption-wrapper.left-bottom figcaption {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-top: 15px;
+  }
+  .investors-block-wrapper .image-block .image-container .video-container {
+    width: 29vw;
+    top: 60%;
+  }
+  .team-gallery-wrapper .photos-wrapper .container {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40vw;
+            flex: 0 0 40vw;
+    max-width: 40vw;
+    padding: 0;
+    margin-right: 30px;
+  }
+  .team-gallery-wrapper .photos-wrapper .container:nth-child(2) {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 32vw;
+            flex: 0 0 32vw;
+    max-width: 32vw;
+  }
+  .contacts-gallery-wrapper .slider-container .slider-inner {
+    height: 62vh;
+    min-height: 500px;
+  }
+  .contacts-gallery-wrapper .slider-container .slider-inner .slider-location.active {
+    margin-left: 115px;
+  }
+  .contacts-gallery-wrapper .slider-container .map-container {
+    width: 638px;
+  }
+  .contacts-gallery-wrapper .slider-container .map-container .map-item-container {
+    bottom: -10%;
+  }
+  .contacts-gallery-wrapper .contacts-container {
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 739px) {
+  .hide-on-mobile {
+    display: none;
+  }
   .row {
     padding-left: 13.33333px;
     padding-right: 13.33333px;
@@ -306,11 +395,190 @@
   .about-block-wrapper .text-container .left-img-picture {
     margin: 20px 0;
   }
+  .featured-work-footer-wrapper .lower-footer {
+    margin-top: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .featured-work-footer-wrapper .legal-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 30px;
+  }
+  .featured-work-footer-wrapper .made-by-buro {
+    margin-right: 0;
+  }
+  /*<======= ABOUT PAGE ======> */
+  .gross-asset-value-wrapper {
+    padding-top: 80px;
+  }
+  .introduction-block-wrapper {
+    padding-top: 100px;
+  }
+  .introduction-block-wrapper .image-with-caption-wrapper {
+    top: auto;
+    margin-bottom: 80px;
+  }
+  .statistics-wrapper {
+    padding-top: 100px;
+    padding-bottom: 80px;
+    margin-top: 0;
+  }
+  .the-history-wrapper .bg {
+    padding-top: 80px;
+    padding-bottom: 220px;
+  }
+  .the-history-wrapper .upper-title {
+    letter-spacing: 1.3em;
+  }
+  .the-history-wrapper .main-title-col .main-title {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  .image-with-caption-wrapper.left-bottom figcaption {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-top: 15px;
+  }
+  .investors-block-wrapper .image-block .image-container .video-container {
+    width: 36vw;
+    top: 50%;
+  }
+  .investors-block-wrapper .image-block .text-block {
+    margin-top: 80px;
+  }
+  .investors-block-wrapper .two-cols-wrapper {
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+  .team-gallery-wrapper {
+    padding: 80px 0;
+  }
+  .team-gallery-wrapper .upper-title {
+    letter-spacing: 1.3em;
+  }
+  .team-gallery-wrapper .gallery-wrapper {
+    padding: 0 calc(24.4px + 4.44706vw);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .team-gallery-wrapper .photos-wrapper .container {
+    -webkit-box-flex: inherit;
+        -ms-flex: inherit;
+            flex: inherit;
+    max-width: inherit;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    width: 100%;
+    margin-right: 30px;
+    padding: 0;
+  }
+  .team-gallery-wrapper .photos-wrapper .container:nth-child(2) {
+    -webkit-box-flex: inherit;
+        -ms-flex: inherit;
+            flex: inherit;
+    max-width: inherit;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    width: 80%;
+    padding: 0;
+  }
+  .team-gallery-wrapper .controllers-wrapper.mobile {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: -26px;
+    width: calc(100% + 52px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    pointer-events: none;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    padding-left: .625rem;
+    padding-right: .625rem;
+  }
+  .team-gallery-wrapper .controllers-wrapper.mobile button {
+    width: 52px;
+    height: 52px;
+    pointer-events: visible;
+  }
+  .team-gallery-wrapper .controllers-wrapper.mobile button svg circle {
+    fill: #fff;
+  }
+  .team-gallery-wrapper .controllers-wrapper.mobile button svg path {
+    fill: #232323;
+  }
+  .contacts-gallery-wrapper {
+    padding: 80px 0;
+  }
+  .contacts-gallery-wrapper .upper-title {
+    letter-spacing: 1.3em;
+  }
+  .contacts-gallery-wrapper .slider-container .selector-container {
+    margin-left: 0;
+    padding-left: .625rem;
+    padding-right: .625rem;
+  }
+  .contacts-gallery-wrapper .slider-container .map-container {
+    width: 100%;
+    padding-left: calc(13.33333px + .625rem);
+    padding-right: calc(13.33333px + .625rem);
+  }
+  .contacts-gallery-wrapper .slider-container .map-container .map-item-container {
+    bottom: -30%;
+    width: 36%;
+  }
+  .contacts-gallery-wrapper .slider-container .slider-inner {
+    height: 52vh;
+    min-height: 400px;
+  }
+  .contacts-gallery-wrapper .slider-container .slider-inner .slider-location.active {
+    margin-left: 56px;
+  }
+  .contacts-gallery-wrapper .block-bg-cover {
+    left: -30px;
+  }
+  .contacts-gallery-wrapper .contacts-container {
+    margin-top: 40px;
+  }
+  .contacts-gallery-wrapper .contacts-container .social {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contacts-gallery-wrapper .contacts-container .contacts {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-bottom: 0;
+  }
 }
 
 @media only screen and (orientation: portrait) {
   .home-header-wrapper .image-wrapper {
     height: 60vh;
+  }
+  .page-header-wrapper {
+    height: 120vh;
   }
 }
 /*# sourceMappingURL=responsive.css.map */
