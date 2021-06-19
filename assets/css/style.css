@@ -1112,7 +1112,7 @@ section {
 .projects-block-wrapper .text-container {
   position: relative;
   margin-top: calc(44.4px + 15.03529vw);
-  opacity: 0;
+  opacity: 1;
 }
 
 .projects-block-wrapper .text-container p {
@@ -2058,7 +2058,9 @@ section {
   position: relative;
 }
 
-.page-header-wrapper .image-wrapper image {
+.page-header-wrapper .image-wrapper img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   will-change: transform;
   -webkit-transform-origin: center;
           transform-origin: center;
@@ -2116,6 +2118,9 @@ section {
   color: #fff;
   line-height: 1.1em;
   letter-spacing: -.03em;
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 .page-header-wrapper .text-wrapper .main-title p {
@@ -2180,8 +2185,8 @@ section {
   display: block;
   -webkit-transform-origin: left;
           transform-origin: left;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
   will-change: transform;
 }
 
@@ -2306,14 +2311,19 @@ section {
   width: 100%;
   height: 1px;
   background-color: #000;
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
   -webkit-transform-origin: left;
           transform-origin: left;
   -webkit-transition: -webkit-transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: -webkit-transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.introduction-block-wrapper .statistics-list li.enter-viewport:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 /*Static block*/

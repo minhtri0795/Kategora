@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../assets/css/responsive.css">
 </head>
 
-<body>
+<body id="about-page">
   <!-- Logo -->
   <div class="main-header-wrapper">
     <a class="logo" href="./index.html">
@@ -107,7 +107,7 @@
 
       <header class="page-header">
         <div class="page-header-wrapper">
-          <div class="image-wrapper block-bg-cover">
+          <div class="image-wrapper block-bg-cover" data-scroll data-scroll-call="parallax" >
             <picture class='block-bg-cover'>
               <img width='1500' height='2000' class='element-cover'
                 src='https://kategora.com/wp-content/uploads/fly-images/1330/kategora-about-final-1-1500x2000-c.jpg'
@@ -137,13 +137,13 @@
           <div class="gross-asset-value-wrapper">
             <div class="row expanded">
               <div class="col-xl-6 col-md-9 col-sm-12">
-                <h2 class="title is-inview">
+                <h2 class="title is-inview" data-scroll data-scroll-call="fade-in">
                   <p><span class="serif-normal italic">W</span>e currently manage real estate with a <span
                       class="serif-normal italic">Gross Asset Value</span> that exceeds:</p>
                 </h2>
               </div>
               <div class="col-xl-12">
-                <span class="value"><span>€160.000.000</span></span>
+                <span class="value"><span data-scale-down-type>€160.000.000</span></span>
                 <span class="small-value"></span>
               </div>
             </div>
@@ -154,15 +154,15 @@
           <div class="introduction-block-wrapper">
             <div class="row expand">
               <div class="col-xl-12 text-center">
-                <span class="upper-title">The Approach</span>
+                <span class="upper-title" data-type-letter-spacing>The Approach</span>
               </div>
             </div>
-            <div class="row expand">
+            <div class="row expand" data-scroll data-scroll-call="parallax">
               <div class="image-container col-xl-6 col-lg-5 col-md-12">
                 <div class="inner-container">
                   <div class="image-with-caption-wrapper bottom-right">
                     <figure>
-                      <picture>
+                      <picture data-scroll data-scroll-call="scale-center">
                         <img width='1168' height='1500' src='../assets/image/kategora-about-1500x1500.jpg'
                           alt='Co-living Coliving Design Architecture Sustainability'>
                       </picture>
@@ -175,7 +175,7 @@
                 </div>
               </div>
 
-              <div class="col-xl-5 offset-xl-1 col-lg-6 col-md-12">
+              <div class="col-xl-5 offset-xl-1 col-lg-6 col-md-12" data-scroll data-scroll-call="fade-in">
                 <p><span class="serif-medium">R</span>esidential properties, tourist apartments, and student
                   residences all feature among our assets. Most importantly, they are all primed for profitability.
                 </p>
@@ -187,7 +187,7 @@
                   project. Kategora is the lead and main investor. Of course we will lead the search for
                   opportunities for purchase and rehabilitation, of course we will deliver innovative concepts.
                   It&#8217;s in your best interest. And in our best interest too.</p>
-                <ul class="statistics-list">
+                <ul class="statistics-list"data-scroll data-scroll-call="stagger-in">
                   <li class="stagger-item">14 Years</li>
                   <li class="stagger-item">3 Countries</li>
                   <li class="stagger-item">+7% Net Yields</li>
@@ -204,14 +204,14 @@
           <div class="statistics-wrapper">
             <div class="row expanded">
               <div class="col-xl-5 col-lg-7 col-sm-12 ">
-                <h2 class="title">
+                <h2 class="title" data-scroll data-scroll-call="fade-in">
                   <p><span class="serif-normal italic">W</span>e have launched<br />
                     <span class="serif-normal italic">&amp;</span> managed
                   </p>
                 </h2>
               </div>
               <div class="col-xl-12">
-                <div class="row expanded statistics-cols">
+                <div class="row expanded statistics-cols" data-stagger-up>
                   <div class="col-lg-3 col-md-6 col-6">
                     <span class="upper-title">more than</span>
                     <span class="title">20 investment vehicles</span>
@@ -239,7 +239,7 @@
             <div class="bg">
               <div class="row expanded">
                 <div class="col-xl-12 text-center">
-                  <span class="upper-title">The History</span>
+                  <span class="upper-title" data-type-letter-spacing>The History</span>
                 </div>
               </div>
 
@@ -290,11 +290,11 @@
 
             <div class="row expanded image-container">
               <div class="col-xl-8 offset-xl-4 col-md-12 col-sm-12">
-                <div class="image-with-caption-wrapper left-bottom">
+                <div class="image-with-caption-wrapper left-bottom" data-scroll data-scroll-call="scale-center">
                   <figure>
                     <picture>
                       <img lazy width='1500' height='1042' data-src='../assets/image/kategora-team-1500x1500.jpg'
-                        alt='Team meeting co-workers co-working enjoyable team building'>
+                        alt='Team meeting co-workers co-working enjoyable team building' data-scroll data-scroll-call="parallax">
                     </picture>
                     <figcaption>
                       <span class="caption">Kategora team<br />
@@ -310,7 +310,7 @@
 
         <section>
           <div class="investors-block-wrapper">
-            <div class="main-title-wrapper row expanded justify-content-center">
+            <div class="main-title-wrapper row expanded justify-content-center" data-scroll data-scroll-call="fade-in">
               <div class="col-xl-8 col-lg-9 col-md-12 col-sm-12">
                 <h2 class="main-title">
                   <p>Still, we knew <span class="serif-normal italic">investors</span> need their extra peace of
@@ -323,7 +323,7 @@
             </div>
             <div class="image-block row expanded">
               <div class="image-container col-xl-5 offset-xl-1 col-md-12 col-sm-12">
-                <div class="image-with-caption-wrapper bottom-right">
+                <div class="image-with-caption-wrapper bottom-right" data-scroll data-scroll-call="parallax">
                   <figure>
                     <picture>
                       <img lazy width='1079' height='1500' class='' data-src='../assets/image/kategora-about-02-3000x3000.jpg'
@@ -381,7 +381,7 @@
           <div class="team-gallery-wrapper">
             <div class="row expand">
               <div class="col-xl-12 text-center">
-                <div class="upper-title">The team</div>
+                <div class="upper-title" data-type-letter-spacing>The team</div>
               </div>
             </div>
             <div class="gallery-wrapper row expanded">
@@ -489,7 +489,7 @@
           <div class="contacts-gallery-wrapper">
             <div class="row expanded">
               <div class="col-xl-12 text-center">
-                <div class="upper-title">Contacts</div>
+                <div class="upper-title" data-type-letter-spacing>Contacts</div>
               </div>
             </div>
 
@@ -579,7 +579,7 @@
 
               <div class="slider-inner">
                 <div class="slider-location active">
-                  <div class="slide active ">
+                  <div class="slide active" data-scroll data-scroll-call="scale-center">
                     <span class="mask"></span>
                     <div class="block-bg-cover">
                       <picture>
@@ -650,7 +650,7 @@
             <div class="work-list-wrapper grid-3 col-xl-12">
                 <h2 class="title">Featured Work</h2>
                 <div class="scroll-grid">
-                  <ul class="work-list">
+                  <ul class="work-list" data-stagger-up>
                     <li>
                       <a href="https://kategora.com/en/projects/nivaria-beach/">
                         <picture class=''>
