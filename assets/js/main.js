@@ -60,29 +60,31 @@ $(document).ready(function () {
   });
 
   // Change color logo and menu in dark zone
-  // gsap.to(".dark-zone", {
-  //   scrollTrigger: {
-  //     trigger: ".dark-zone",
-  //     // start: "top center",
-  //     // end: "bottom center",
-  //     onEnter: () => {
-  //       $(".main-header-wrapper").addClass("change-color");
-  //       $(".menu-btn").addClass("light-btn");
-  //     },
-  //     onEnterBack: () => {
-  //       $(".main-header-wrapper").addClass("change-color");
-  //       $(".menu-btn").addClass("light-btn");
-  //     },
-  //     onLeave: () => {
-  //       $(".main-header-wrapper").removeClass("change-color");
-  //       $(".menu-btn").removeClass("light-btn");
-  //     },
-  //     onLeaveBack: () => {
-  //       $(".main-header-wrapper").removeClass("change-color");
-  //       $(".menu-btn").removeClass("light-btn");
-  //     },
-  //   },
-  // });
+  const darkZone = $(".dark-zone")
+  darkZone.each((i,darkSection)=>{
+    ScrollTrigger.create({
+      trigger: darkSection ,
+        // start: "top center",
+        // end: "bottom center",
+        onEnter: () => {
+          $(".main-header-wrapper").addClass("change-color");
+          $(".menu-btn").addClass("light-btn");
+        },
+        onEnterBack: () => {
+          $(".main-header-wrapper").addClass("change-color");
+          $(".menu-btn").addClass("light-btn");
+        },
+        onLeave: () => {
+          $(".main-header-wrapper").removeClass("change-color");
+          $(".menu-btn").removeClass("light-btn");
+        },
+        onLeaveBack: () => {
+          $(".main-header-wrapper").removeClass("change-color");
+          $(".menu-btn").removeClass("light-btn");
+        },
+    })
+  })
+  
 
   // Menu wraper event
   // on PC
@@ -170,7 +172,7 @@ $(document).ready(function () {
         gsap.from (scrollItem,{
           duration:1,
           scrollTrigger: scrollItem,
-          opacity:0,
+          opacity:0.6,
           scale:0.8,
           ease: "power2.out",
         })
@@ -386,19 +388,14 @@ $(document).ready(function () {
     });
     
     // sustainability border bottom
-    gsap.from(
-      ".sustainability-block-wrapper .more-insights",
-      {
-        scrollTrigger: {
-          trigger: ".sustainability-block-wrapper .more-insights",
+    ScrollTrigger.create({
+      trigger: ".sustainability-block-wrapper .more-insights",
           onEnter: function () {
             $(".sustainability-block-wrapper .more-insights").addClass(
               "enter-viewport"
             );
           },
-        },
-      }
-    );
+    })
   }
 
   // About page intro 
@@ -430,5 +427,21 @@ $(document).ready(function () {
       opacity:0,
       x:30
     },"-=0.5")
+
+    gsap.from(".the-history-wrapper .main-title .line",{
+      scrollTrigger:{
+        trigger:".the-history-wrapper .main-title",
+        onEnter:()=>{
+          $(".the-history-wrapper .main-title").addClass("enter-viewport")
+        }
+      },
+      duration:1,
+      delay:0.2,
+      y:-20,
+      opacity:0,
+      scale:1.1,
+      stagger:0.2
+    })
   }
 });
+
