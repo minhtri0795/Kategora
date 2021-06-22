@@ -4099,5 +4099,73 @@ section {
   outline: none;
   border: none;
   cursor: pointer;
+  padding: 0 6px;
+}
+
+.kategora-timeline-wrapper .controllers-wrapper button .hitzone {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+}
+
+.kategora-timeline-wrapper .controllers-wrapper button svg {
+  pointer-events: none;
+  overflow: visible;
+}
+
+.kategora-timeline-wrapper .controllers-wrapper button svg circle {
+  -webkit-transition: fill 1s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: fill 1s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1), fill 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1), fill 1s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  stroke: transparent;
+  fill: #f6f4f2;
+}
+
+.kategora-timeline-wrapper .controllers-wrapper button svg path {
+  fill: #232323;
+}
+
+.kategora-timeline-wrapper .controllers-wrapper button:hover circle {
+  fill: #232323;
+}
+
+.kategora-timeline-wrapper .controllers-wrapper button:hover path {
+  fill: #f6f4f2;
+}
+
+.kategora-timeline-wrapper .images-container {
+  position: absolute;
+  width: 430vw;
+  height: 100%;
+  max-height: 650px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.kategora-timeline-wrapper .images-container picture {
+  position: relative;
+}
+
+.kategora-timeline-wrapper .images-container picture:nth-child(2n) {
+  top: 45%;
+}
+
+.kategora-timeline-wrapper .images-container img {
+  position: relative;
+  max-width: 350px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -443,5 +443,14 @@ $(document).ready(function () {
       stagger:0.2
     })
   }
+
+  // project page
+  $(".landscape-img",).each((i,img)=>{
+    setInterval(() => {
+      gsap.to(img,{
+        x: "-=20"
+      })
+    }, 20);
+  })
 });
 

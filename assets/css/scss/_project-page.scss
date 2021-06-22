@@ -423,6 +423,56 @@
             outline: none;
             border: none;
             cursor: pointer;
+            padding: 0 6px;
+            .hitzone {
+                position: absolute;
+                top: -10%;
+                left: -10%;
+                width: 120%;
+                height: 120%;
+            }
+            svg {
+                pointer-events: none;
+                overflow: visible;
+                circle {
+                    transition: transform 1s cubic-bezier(.165,.84,.44,1),fill 1s cubic-bezier(.165,.84,.44,1);
+                    transform-origin: center;
+                    stroke: transparent;
+                    fill: #f6f4f2;
+                }
+                path {
+                    fill:#232323
+                }
+            }
+            &:hover {
+                circle {
+                    
+                    fill:#232323
+                }
+                path {
+                    fill: #f6f4f2;
+                }
+            }
+        }
+    }
+    .images-container {
+        position: absolute;
+        width: 430vw;
+        height: 100%;
+        max-height: 650px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        cursor: grab;
+        picture {
+            position: relative;
+            &:nth-child(2n){
+                top: 45%;
+            }
+        }
+        img {
+            position: relative;
+            max-width: 350px;
         }
     }
 }
