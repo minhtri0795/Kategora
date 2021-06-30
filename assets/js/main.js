@@ -40,6 +40,103 @@ $(document).ready(function () {
       window.scrollTo(0, 0);
     };
   }
+  // EFFECT HANDLE
+$("[data-scroll]").each((i,scrollItem)=>{
+  let effect = scrollItem.getAttribute("data-scroll-call") 
+  switch (effect) {
+    case 'fade-in':
+      gsap.from(scrollItem,{
+        scrollTrigger: scrollItem,
+        duration:1,
+        y:60,
+        opacity:0,
+        ease: "power2.out",
+      })
+      break
+    case 'parallax':
+      gsap.to(scrollItem, {
+        y: -60,
+        scrollTrigger: {
+          trigger: scrollItem,
+          scrub: 1,
+        },
+      });
+      break
+    case 'scale-center':
+      gsap.from (scrollItem,{
+        duration:1,
+        scrollTrigger: scrollItem,
+        opacity:0.6,
+        scale:0.8,
+        ease: "power2.out",
+      })
+      break
+    case 'stagger-in':
+      gsap.from(".stagger-item",{
+        scrollTrigger:{
+          trigger: scrollItem,
+          onEnter: ()=> {
+            $(".stagger-item").each(function (i, el) {
+              setTimeout(function () {
+                el.classList.add("enter-viewport");
+              }, i * 100);
+            });
+          },
+        },
+        y: 40,
+        opacity: 0,
+        stagger: 0.1,
+      })
+      break
+  }
+})
+$("[data-type-letter-spacing]").each((i,letterSpacingItem)=>{
+  gsap.from(letterSpacingItem, {
+    scrollTrigger: {
+      trigger: letterSpacingItem,
+      start:"top 80%",
+    },
+    duration: 1.5,
+    ease: "power2.out",
+    opacity: 0,
+    letterSpacing: "3em",
+  });
+})
+$("[data-stagger-up]").each((i,staggerItem)=>{
+  gsap.from(staggerItem.children, {
+      scrollTrigger: {
+        trigger: staggerItem,
+        end: "bottom bottom",
+        scrub:2,
+      },
+      duration:2,
+      ease:"power2.out",
+      y: 80,
+      // opacity:0,
+      stagger: 0.2,
+    });
+})
+$("[data-scale-down-type]").each((i,scaleDownItem)=>{
+  gsap.to(scaleDownItem, {
+    scrollTrigger: {
+      trigger: scaleDownItem,
+      scrub: 1,
+      end:"top top",
+    },
+    scale: 1,
+  });
+})
+
+  window.addEventListener("scroll",()=>{
+    const dark = document.querySelectorAll(".dark-zone")
+    dark.forEach((el)=>{
+      if(scrollY-el.offsetTop>=650 && scrollY-el.offsetTop<=650+el.clientHeight){
+        $(".menu-btn").addClass("light-btn");
+      }else {
+        $(".menu-btn").removeClass("light-btn");
+      }
+  })
+})
 
   // logo scroll opacity
   var lastScrollTop = 0;
@@ -47,43 +144,43 @@ $(document).ready(function () {
     var currentScroll = window.pageYOffset;
     if (currentScroll > lastScrollTop) {
       gsap.to(".logo", {
-        duration: 0.5,
+        duration: 0.8,
         opacity: 0,
       });
     } else {
       gsap.to(".logo", {
-        duration: 2,
+        duration: 1,
         opacity: 1,
       });
     }
     lastScrollTop = currentScroll;
   });
 
-  // Change color logo and menu in dark zone
-  const darkZone = $(".dark-zone")
-  darkZone.each((i,darkSection)=>{
-    ScrollTrigger.create({
-      trigger: darkSection ,
-        // start: "top center",
-        // end: "bottom center",
-        onEnter: () => {
-          $(".main-header-wrapper").addClass("change-color");
-          $(".menu-btn").addClass("light-btn");
-        },
-        onEnterBack: () => {
-          $(".main-header-wrapper").addClass("change-color");
-          $(".menu-btn").addClass("light-btn");
-        },
-        onLeave: () => {
-          $(".main-header-wrapper").removeClass("change-color");
-          $(".menu-btn").removeClass("light-btn");
-        },
-        onLeaveBack: () => {
-          $(".main-header-wrapper").removeClass("change-color");
-          $(".menu-btn").removeClass("light-btn");
-        },
-    })
-  })
+  // // Change color logo and menu in dark zone
+  // const darkZone = $(".dark-zone")
+  // darkZone.each((i,darkSection)=>{
+  //   ScrollTrigger.create({
+  //     trigger: darkSection ,
+  //       // start: "top center",
+  //       // end: "bottom center",
+  //       onEnter: () => {
+  //         $(".main-header-wrapper").addClass("change-color");
+  //         $(".menu-btn").addClass("light-btn");
+  //       },
+  //       onEnterBack: () => {
+  //         $(".main-header-wrapper").addClass("change-color");
+  //         $(".menu-btn").addClass("light-btn");
+  //       },
+  //       onLeave: () => {
+  //         $(".main-header-wrapper").removeClass("change-color");
+  //         $(".menu-btn").removeClass("light-btn");
+  //       },
+  //       onLeaveBack: () => {
+  //         $(".main-header-wrapper").removeClass("change-color");
+  //         $(".menu-btn").removeClass("light-btn");
+  //       },
+  //   })
+  // })
   
 
   // Menu wraper event
@@ -146,91 +243,7 @@ $(document).ready(function () {
       });
     }
   }
-  // EFFECT HANDLE
-  $("[data-scroll]").each((i,scrollItem)=>{
-    let effect = scrollItem.getAttribute("data-scroll-call") 
-    switch (effect) {
-      case 'fade-in':
-        gsap.from(scrollItem,{
-          scrollTrigger: scrollItem,
-          duration:1,
-          y:60,
-          opacity:0,
-          ease: "power2.out",
-        })
-        break
-      case 'parallax':
-        gsap.to(scrollItem, {
-          y: -60,
-          scrollTrigger: {
-            trigger: scrollItem,
-            scrub: 1,
-          },
-        });
-        break
-      case 'scale-center':
-        gsap.from (scrollItem,{
-          duration:1,
-          scrollTrigger: scrollItem,
-          opacity:0.6,
-          scale:0.8,
-          ease: "power2.out",
-        })
-        break
-      case 'stagger-in':
-        gsap.from(".stagger-item",{
-          scrollTrigger:{
-            trigger: scrollItem,
-            onEnter: ()=> {
-              $(".stagger-item").each(function (i, el) {
-                setTimeout(function () {
-                  el.classList.add("enter-viewport");
-                }, i * 100);
-              });
-            },
-          },
-          y: 40,
-          opacity: 0,
-          stagger: 0.1,
-        })
-        break
-    }
-  })
-  $("[data-type-letter-spacing]").each((i,letterSpacingItem)=>{
-    gsap.from(letterSpacingItem, {
-      scrollTrigger: {
-        trigger: letterSpacingItem,
-        start:"top 80%",
-      },
-      duration: 1.5,
-      ease: "power2.out",
-      opacity: 0,
-      letterSpacing: "3em",
-    });
-  })
-  $("[data-stagger-up]").each((i,staggerItem)=>{
-    gsap.from(staggerItem.children, {
-        scrollTrigger: {
-          trigger: staggerItem,
-          end: "bottom bottom",
-        },
-        duration:2,
-        ease:"power2.out",
-        y: 40,
-        opacity:0,
-        stagger: 0.15,
-      });
-  })
-  $("[data-scale-down-type]").each((i,scaleDownItem)=>{
-    gsap.to(scaleDownItem, {
-      scrollTrigger: {
-        trigger: scaleDownItem,
-        scrub: 1,
-        end:"top top",
-      },
-      scale: 1,
-    });
-  })
+  
  // CTA-button show/hide
  const ctaWrapper = gsap.utils.toArray(".cta-btn-wrapper");
  ctaWrapper.forEach((cta) => {
@@ -307,7 +320,7 @@ $(document).ready(function () {
           clearInterval(int);
         }
       }, 14);
-
+      
       // enable scroll when complete
       setTimeout(() => {
         document.querySelector(".disableScroll").style.display = "block";
@@ -445,12 +458,19 @@ $(document).ready(function () {
   }
 
   // project page
-  $(".landscape-img",).each((i,img)=>{
-    setInterval(() => {
-      gsap.to(img,{
-        x: "-=20"
-      })
-    }, 20);
-  })
+
+  // $(".landscape-img",).each((i,img)=>{
+  //   setInterval(() => {
+  //     gsap.to(img, {
+  //       x: "-=2",
+  //     })
+  //   }, 20);
+  // });
+  // setInterval(() => {
+  //   gsap.to('.timeline-container',{
+  //     x: "-=1.8",
+  //   })
+  // }, 20);
+  
 });
 
