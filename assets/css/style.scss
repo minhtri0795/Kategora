@@ -139,6 +139,11 @@ section {
 .row.expanded {
   max-width: none;
 }
+
+row.collapse{
+  padding-left:0;
+  padding-right:0;
+}
 .italic {
   font-style: italic;
 }
@@ -165,6 +170,16 @@ section {
 }
 
 // Mixin scss 
+@mixin mainTitle ($color) {
+  font-family: Matter;
+  font-weight: 400;
+  font-size: calc(26.4px + 5.50588vw);
+  font-weight: 300;
+  color: $color;
+  line-height: 1em;
+  letter-spacing: -.03em;
+}
+
 @mixin upperTitle ($color) {
   position: relative;
   left: 10px;
@@ -177,15 +192,6 @@ section {
   letter-spacing: 2.3em;
   text-transform: uppercase;
   opacity: 1;
-}
-@mixin mainTitle ($color) {
-  font-family: Matter;
-  font-weight: 400;
-  font-size: calc(26.4px + 5.50588vw);
-  font-weight: 300;
-  color: $color;
-  line-height: 1em;
-  letter-spacing: -.03em;
 }
 @mixin pageHeader {
     position: relative;
@@ -1595,5 +1601,8 @@ section {
 @import '../css/scss/about-page';
 
 /* <====== ************* PROJECT PAGE ************* ======> */ 
-@import '../css/scss/project-page'
+@import '../css/scss/project-page';
+
+/* <====== *********** EXPERTISE PAGE ************ ======> */ 
+@import '../css/scss/experst-page';
  

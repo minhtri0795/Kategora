@@ -55,7 +55,7 @@ $("[data-scroll]").each((i,scrollItem)=>{
       break
     case 'parallax':
       gsap.to(scrollItem, {
-        y: -60,
+        y: -40,
         scrollTrigger: {
           trigger: scrollItem,
           scrub: 1,
@@ -125,6 +125,17 @@ $("[data-scale-down-type]").each((i,scaleDownItem)=>{
     },
     scale: 1,
   });
+})
+$("[data-split-reveal-type]").each((i, revealItem)=>{
+  gsap.from(revealItem.children,{
+    scrollTrigger:revealItem,
+    duration:1,
+    y:-14,
+    x:14,
+    opacity:0,
+    stagger:0.1,
+  })
+  
 })
 
   window.addEventListener("scroll",()=>{
@@ -459,18 +470,79 @@ $("[data-scale-down-type]").each((i,scaleDownItem)=>{
 
   // project page
 
-  // $(".landscape-img",).each((i,img)=>{
-  //   setInterval(() => {
-  //     gsap.to(img, {
-  //       x: "-=2",
-  //     })
-  //   }, 20);
-  // });
-  // setInterval(() => {
-  //   gsap.to('.timeline-container',{
-  //     x: "-=1.8",
-  //   })
-  // }, 20);
-  
+  // Intro timeline
+  const projectPage = $("#project-page")
+  if(projectPage[0]){
+    tl=gsap.timeline()
+    tl.fromTo('.page-header-wrapper .upper-title',{
+      duration:2,
+      scaleX:1.2,
+      opacity:0,
+    },{
+      duration:2,
+      scaleX:1,
+      opacity:1,
+    }).fromTo(['.page-header-wrapper .main-title','.page-header-wrapper .lower-title'],{
+      duration:2,
+      opacity:0,
+      y:40,
+    },{
+      duration:2,
+      opacity:1,
+      y:0,
+    },'-=1.5')
+
+
+    $(".landscape-img",).each((i,img)=>{
+      setInterval(() => {
+        gsap.to(img, {
+          x: "-=2",
+        })
+      }, 20);
+    });
+    setInterval(() => {
+      gsap.to('.timeline-container',{
+        x: "-=1.8",
+      })
+    }, 20);
+
+    gsap.to(".page-header-wrapper",{
+      scrollTrigger:{
+        trigger:'.page-header-wrapper',
+        scrub:true,
+        // markers:true,
+        start:'center center',
+      },
+      y:400,
+    })
+    gsap.to(".page-header-wrapper .text-wrapper",{
+      scrollTrigger:{
+        trigger:'.page-header-wrapper .text-wrapper',
+        scrub:true,
+        start:'center center'
+      },
+      y:-12,
+    })
+  }
+
+
+  /*Expertise Page*/ 
+  let expertisePage =  $("#expertise-page")
+  if(expertisePage[0]){
+    let line = document.querySelectorAll(".expertise-list-wrapper .line")
+    line.forEach((lineitem,i)=>{
+      lineitem.addEventListener('click',()=>{
+        let innerContent = $(".expertise-list-wrapper .inner-content")
+        let innerText = $(".layout-1,.layout-2")
+        console.log(innerText)
+        // innerContent.toggleClass('expand');
+          if(innerContent[i].getAttribute("style")==="height:0"){
+            innerContent[i].setAttribute("style", `height:${innerText[i].clientHeight}px`);
+          }else{
+            innerContent[i].setAttribute("style", "height:0");
+          }
+      })
+    })
+  }
 });
 

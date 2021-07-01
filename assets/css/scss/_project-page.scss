@@ -1,3 +1,7 @@
+[data-split-reveal-type] span{
+  display: inline-block;
+  text-indent: 0;
+}
 .projects-page {
   background-color: #131d18;
 }
@@ -166,6 +170,7 @@
       color: #fff;
       line-height: 1.1em;
       text-transform: uppercase;
+      margin-bottom: 0;
     }
   }
   .big-col {
@@ -284,7 +289,7 @@
       width: 125%;
       max-width: 125%;
       left: -20%;
-      top: -5%;
+      top: 0;
     }
   }
   .right-layout {
@@ -300,13 +305,22 @@
         max-width: 125%;
         right: 0;
         left: -3%;
-        top: -5%;
+        top: 0;
         z-index: 1;
       }
     }
   }
   &.soon-project {
     filter: grayscale(1);
+    a{
+    user-select: none;
+    cursor: default ;
+    }
+    .statistics-list,.starting-price,.text-container{
+      opacity:0.4;
+      user-select: none;
+      cursor: default;
+    }
     .cta-btn-wrapper {
       .background {
         background-color: white;
@@ -550,11 +564,11 @@
         justify-items: center;
         flex-direction: column;
         width: 40vw;
-        background-image: linear-gradient(
-          90deg,
-          #232323 10%,
-          hsla(0, 0%, 100%, 0) 0
-        );
+        // background-image: linear-gradient(
+        //   90deg,
+        //   #232323 10%,
+        //   hsla(0, 0%, 100%, 0) 0
+        // );
         background-position: top;
         background-size: 8px 1px;
         background-repeat: repeat-x;
@@ -704,6 +718,7 @@
       }
       color: black;
       line-height: 1.4em;
+      margin:0;
     }
   }
   .upper-title {
@@ -799,7 +814,6 @@
         color: #232323;
         line-height: 1.1em;
         text-transform: uppercase;
-        margin-right: calc(17.4px + 0.74118vw);
         a {
           position: relative;
           text-decoration: none;
