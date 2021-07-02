@@ -3538,8 +3538,8 @@ row.collapse {
   background-color: #131d18;
 }
 
-.page-header {
-  position: relative;
+.projects-page .page-header-wrapper {
+  height: 100vh;
 }
 
 .projects-page .page-content {
@@ -4563,11 +4563,19 @@ row.collapse {
 .cta-footer-wrapper .main-container picture {
   position: relative;
   display: block;
+  -webkit-transition: -webkit-transform 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: -webkit-transform 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 3s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.cta-footer-wrapper .main-container picture :hover {
+.cta-footer-wrapper .main-container picture:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
+  -webkit-transition: -webkit-transform 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: -webkit-transform 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 3s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .cta-footer-wrapper .main-container picture img {
@@ -4695,6 +4703,14 @@ row.collapse {
 }
 
 /* <====== *********** EXPERTISE PAGE ************ ======> */
+.experts-page {
+  background-color: #131d18;
+}
+
+.experts-page .page-header-wrapper {
+  height: 100vh;
+}
+
 .expertise-list-wrapper {
   position: relative;
   padding: calc(34.4px + 9.74118vw) 0;
@@ -4737,6 +4753,20 @@ row.collapse {
   position: relative;
 }
 
+.expertise-list-wrapper .vectors-list-container .cta-btn-wrapper {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.expertise-list-wrapper .vectors-list-container .cta-btn-wrapper .icons-container {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
 .expertise-list-wrapper .vectors-list {
   position: relative;
   margin-top: calc(22.9px + 3.65294vw);
@@ -4754,7 +4784,7 @@ row.collapse {
   letter-spacing: -.02em;
   cursor: pointer;
   -webkit-perspective: 1000;
-  perspective: 1000;
+          perspective: 1000;
   margin-bottom: calc(22.9px + 3.65294vw);
 }
 
@@ -4764,14 +4794,21 @@ row.collapse {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  z-index: 1;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-flow: wrap;
-  flex-flow: wrap;
+      flex-flow: wrap;
+  z-index: 1;
+  opacity: 0.4;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.expertise-list-wrapper .vectors-list li .line:hover {
+  opacity: 1;
 }
 
 .expertise-list-wrapper .vectors-list li video {
@@ -4789,6 +4826,10 @@ row.collapse {
   z-index: 1;
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.74, 0.1, 0, 0.96);
+  transition: -webkit-transform 1s cubic-bezier(0.74, 0.1, 0, 0.96);
+  transition: transform 1s cubic-bezier(0.74, 0.1, 0, 0.96);
+  transition: transform 1s cubic-bezier(0.74, 0.1, 0, 0.96), -webkit-transform 1s cubic-bezier(0.74, 0.1, 0, 0.96);
 }
 
 .expertise-list-wrapper .vectors-list li img {
@@ -4807,13 +4848,15 @@ row.collapse {
   position: relative;
   height: 0;
   overflow: hidden;
-  -webkit-transition: height 1s cubic-bezier(0.86, 0.26, 0.2, 0.87);
-  transition: height 1s cubic-bezier(0.86, 0.26, 0.2, 0.87);
+  -webkit-transition: height 1s cubic-bezier(0.74, 0.1, 0, 0.96);
+  transition: height 1s cubic-bezier(0.74, 0.1, 0, 0.96);
 }
 
 .expertise-list-wrapper .inner-content .layout-1, .expertise-list-wrapper .inner-content .layout-2 {
   padding-top: calc(26.4px + 5.50588vw);
   padding-bottom: calc(20.4px + 2.32941vw);
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .expertise-list-wrapper .inner-content .main-phrase {
@@ -4826,8 +4869,8 @@ row.collapse {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: calc(17.4px + .74118vw);
 }
 
@@ -4850,5 +4893,45 @@ row.collapse {
   color: #f6f4f2;
   line-height: 1.2em;
   letter-spacing: 0;
+}
+
+.expertise-list-wrapper .inner-content .col-layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.expertise-list-wrapper .inner-content .layout-2 .item-container {
+  padding: 0 calc(18.4px + 1.27059vw);
+}
+
+#expertise-page .cta-footer-wrapper {
+  border-top: 1px solid rgba(246, 244, 242, 0.2);
+  background-color: #193243;
+}
+
+#expertise-page .cta-footer-wrapper .banner-container .title {
+  color: white;
+}
+
+#expertise-page .cta-footer-wrapper .upper-title, #expertise-page .cta-footer-wrapper .kategora-timeline-wrapper .title-container .middle-title, .kategora-timeline-wrapper .title-container #expertise-page .cta-footer-wrapper .middle-title, #expertise-page .cta-footer-wrapper .kategora-timeline-wrapper .title-container .lower-title, .kategora-timeline-wrapper .title-container #expertise-page .cta-footer-wrapper .lower-title {
+  color: white;
+}
+
+#expertise-page .cta-footer-wrapper .main-container .title p {
+  color: white;
+}
+
+#expertise-page .cta-footer-wrapper .lower-footer-container a {
+  color: white;
+}
+
+#expertise-page .cta-footer-wrapper .lower-footer-container a::after {
+  background-color: white;
 }
 /*# sourceMappingURL=style.css.map */

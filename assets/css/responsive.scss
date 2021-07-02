@@ -98,7 +98,31 @@
     }
   }
 
-  /*PROJECT PAGE*/ 
+  .expertise-list-wrapper {
+    .vectors-list {
+      li {
+        .line{
+          font-size: 10vw;
+        }
+        video{
+          box-ordinal-group: 3;
+          order: 2;
+        }
+        .inner{
+          order: 3;
+          &:first-of-type{
+            -webkit-box-ordinal-group: 2;
+            order: 1;
+          }
+        }
+        &:last-child{
+          video{
+            order:-1
+          }
+        }
+      }
+    }
+  }
 }
 
 // <==== FOR TABLET ======>
@@ -323,6 +347,17 @@
   }
 }
 
+/*Expertise page*/ 
+.expertise-list-wrapper {
+  .inner-content {
+    .layout-2 {
+      .item-container{
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+  }
+}
 }
 
 // <==== FOR MOBILE =====>
@@ -766,6 +801,19 @@
     }
     }
   }
+
+  /*EXPERTISE PAGE*/ 
+  .expertise-list-wrapper {
+    .inner-content {
+      .layout-2 {
+        .item-container{
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
 }
 
 // <==== FOR PORTRAIT SCREEN ====>

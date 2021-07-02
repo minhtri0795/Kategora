@@ -2,13 +2,12 @@
   display: inline-block;
   text-indent: 0;
 }
+
 .projects-page {
   background-color: #131d18;
-}
-.page-header {
-  position: relative;
-}
-.projects-page {
+  .page-header-wrapper{
+    height: 100vh;
+  }
   .page-content {
     background-color: #131d18;
     &::before {
@@ -746,8 +745,10 @@
     picture {
       position: relative;
       display: block;
-      :hover{
+      transition: transform 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      &:hover{
           transform: scale(1.02);
+          transition: transform 3s cubic-bezier(0.165, 0.84, 0.44, 1);
       }
       img {
         width: 100%;
