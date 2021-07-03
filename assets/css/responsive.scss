@@ -98,13 +98,16 @@
     }
   }
 
+
+  /*Expertise page*/ 
   .expertise-list-wrapper {
     .vectors-list {
       li {
         .line{
           font-size: 10vw;
+          opacity: 1;
         }
-        video{
+        img{
           box-ordinal-group: 3;
           order: 2;
         }
@@ -116,7 +119,7 @@
           }
         }
         &:last-child{
-          video{
+          img{
             order:-1
           }
         }
@@ -343,18 +346,6 @@
     }
     img{
       max-width: 250px;
-    }
-  }
-}
-
-/*Expertise page*/ 
-.expertise-list-wrapper {
-  .inner-content {
-    .layout-2 {
-      .item-container{
-        padding-left: 15px;
-        padding-right: 15px;
-      }
     }
   }
 }
@@ -801,19 +792,6 @@
     }
     }
   }
-
-  /*EXPERTISE PAGE*/ 
-  .expertise-list-wrapper {
-    .inner-content {
-      .layout-2 {
-        .item-container{
-          padding-left: 0;
-          padding-right: 0;
-        }
-      }
-    }
-  }
-
 }
 
 // <==== FOR PORTRAIT SCREEN ====>

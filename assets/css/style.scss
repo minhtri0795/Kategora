@@ -140,7 +140,7 @@ section {
   max-width: none;
 }
 
-row.collapse{
+.row.no-pd{
   padding-left:0;
   padding-right:0;
 }
@@ -317,6 +317,22 @@ row.collapse{
       }
     }
   }
+  &.active {
+    pointer-events: visible;
+    .inner-menu {
+      pointer-events: visible;
+      &:before {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+      }
+    }
+    .language-wrapper {
+      opacity: 1;
+    }
+    .main-links {
+      opacity: 1;
+    }
+  }
   .main-links {
     position: relative;
     padding: calc(22.9px + 3.65294vw) 0 calc(17.9px + 1.00588vw)
@@ -444,22 +460,7 @@ row.collapse{
     box-shadow: none;
   }
 }
-.menu-wrapper.active {
-  pointer-events: visible;
-  .inner-menu {
-    pointer-events: visible;
-    &:before {
-      opacity: 1;
-      transform: scale(1) translateX(0);
-    }
-  }
-  .language-wrapper {
-    opacity: 1;
-  }
-  .main-links {
-    opacity: 1;
-  }
-}
+
 
 // <==== HOME PAGE CONTENT ====>
 
@@ -1516,7 +1517,7 @@ row.collapse{
   }
   .lower-footer {
     position: relative;
-    margin-top: calc(18.4px + 1.27059vw);
+    margin-top: calc(12.4px + 1.27059vw);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1605,4 +1606,7 @@ row.collapse{
 
 /* <====== *********** EXPERTISE PAGE ************ ======> */ 
 @import '../css/scss/experst-page';
+
+/* <====== *********** INSIGHTS PAGE ************ ======> */ 
+@import '../css/scss/insights';
  

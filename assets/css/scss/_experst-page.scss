@@ -94,17 +94,22 @@
                 z-index: 1;
                 transform-origin: 50% 50%;
                 transition: transform 1s cubic-bezier(.74,.1,0,.96);
+                @media (max-width:739px) {
+                    display: none;
+                }
             }
             img {
                 position: relative;
                 margin: 0 10px;
                 top: -5px;
-                display: inline-block;
                 height: calc(26.9px + 5.77059vw);
                 width: auto;
                 pointer-events: visible;
                 cursor: auto;
                 display: none;
+                @media (max-width:739px) {
+                    display: inline-block;
+                }
             }
         }
     }
@@ -155,6 +160,14 @@
         .layout-2 {
             .item-container {
                 padding: 0 calc(18.4px + 1.27059vw);
+                @media (min-width: 740px) and (max-width: 1023px) {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+                @media (max-width: 739px){
+                    padding-left: 0px;
+                    padding-right: 0px;
+                }
             }
         }
     }

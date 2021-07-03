@@ -539,6 +539,18 @@
       margin-bottom: calc(21.4px + 2.85882vw);
     }
     .titles-wrapper {
+      $height:528px;
+      max-height: $height;
+      overflow: hidden;
+      &.view-more{
+        max-height: 580px;
+      }
+      @media (min-width: 740px) and (max-width: 1023px) {
+        max-height: 400px;
+      }
+      @media (max-width: 739px){
+        max-height: 300px;
+      }
       .title-container {
         position: relative;
         z-index: 1;
@@ -612,6 +624,10 @@
       color: #fff;
       line-height: 1.4em;
       overflow: hidden;
+      transition: height 0.3s ease;
+      &.view-more{
+        height:235px
+      }
       .inner {
         display: block;
         position: relative;
@@ -705,15 +721,18 @@
       white-space: nowrap;
       .container {
         position: relative;
-        flex: 0 0 28vw;
-        max-width: 28vw;
-        margin-right: 40px;
+        flex: 0 0 26vw;
+        max-width: 26vw;
+        margin-right: 35px;
         overflow: hidden;
+        padding-left: 0;
+        padding-right: 0;
         picture {
           position: relative;
-          display: block;
+          display: inline-block;
           pointer-events: none;
           width: 100%;
+          margin-right:-5px;
           img {
             width: 100%;
           }

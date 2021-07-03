@@ -28,7 +28,7 @@ $(document).ready(function () {
         }
       });
     },
-    { rootMargin: "0px 0px 100px 0px" }
+    { rootMargin: "0px 0px 200px 0px" }
   );
   // Observe từng tấm ảnh và chờ nó xuất hiện trên màn hình
   lazyImages.forEach((lazyImage) => {
@@ -488,6 +488,51 @@ ctaWrapper.forEach((cta) => {
       scale: 1.1,
       stagger: 0.2,
     });
+
+    // slide project 
+    let picture = $(".photos-wrapper picture")
+    let titleContent = $(".team-gallery-wrapper .title-container")
+    let nextBtn = $(".team-gallery-wrapper .left-btn")
+    let prevBtn = $(".team-gallery-wrapper .right-btn")
+    let moreBtn = $(".btn-expand-description")
+    let size = picture.length/3;
+    console.log(size)
+      nextBtn.click(()=>{
+        if (size-1){
+          gsap.to(picture,{
+            duration:0.6,
+            xPercent: "-=100",
+            ease:"power3.in"
+          })
+          gsap.to(titleContent,{
+            duration:0.6,
+            yPercent: "-=100",
+            ease:"power3.in"
+          })
+          size--;
+        }
+      })
+      prevBtn.click(()=>{
+        if (size<picture.length/3){
+          gsap.to(picture,{
+            duration:0.6,
+            xPercent: "+=100",
+            ease: "power3.in",
+          })
+          gsap.to(titleContent,{
+            duration:0.6,
+            yPercent: "+=100",
+            ease:"power3.in"
+          })
+          size++;
+        }
+      })
+      moreBtn.click(()=>{
+        let titleContent = $(".team-gallery-wrapper .title-container .description")
+        let titleWrapper = $(".team-gallery-wrapper .titles-wrapper")
+        titleContent.toggleClass("view-more")
+        titleWrapper.toggleClass("view-more")
+      })
   }
 
   // project page
@@ -637,7 +682,6 @@ ctaWrapper.forEach((cta) => {
       video.each((i, videoEl) => {
         videoEl.addEventListener("mouseenter", () => {
           let randomRotate = Math.floor(Math.random() * 20 - 10);
-          console.log(randomRotate);
           videoEl.play();
           videoEl.setAttribute(
             "style",
@@ -675,4 +719,26 @@ ctaWrapper.forEach((cta) => {
     }
     ctaCursor(scriptOnPc);
   }
+
+  /******** INSIGHTS PAGE *********** */
+
+  let border = $(".border-option")
+  let catogeries = $(".filters-wrapper .categories")
+  border.hover(function(){
+    (function(){
+      gsap.to(catogeries[0].children,{
+        duration:0.3,
+        opacity:1,
+        visibility: 'inherit',
+        stagger:0.1,
+        delay:0.3,
+      })
+    })()
+    this.setAttribute("style",`height:${catogeries[0].clientHeight+this.clientHeight}px`)
+  },function(){
+    this.removeAttribute("style")
+    Array.from(catogeries[0].children).forEach((el)=>{
+      el.removeAttribute("style")
+    })
+  })
 });
