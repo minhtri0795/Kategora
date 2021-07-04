@@ -270,11 +270,14 @@
             flex: 0 0 32vw;
     max-width: 32vw;
   }
+  .contacts-gallery-wrapper .slider-container .controllers-wrapper {
+    width: 600px;
+  }
   .contacts-gallery-wrapper .slider-container .slider-inner {
     height: 62vh;
     min-height: 500px;
   }
-  .contacts-gallery-wrapper .slider-container .slider-inner .slider-location.active {
+  .contacts-gallery-wrapper .slider-container .slider-inner .slider-location {
     margin-left: 115px;
   }
   .contacts-gallery-wrapper .slider-container .map-container {
@@ -575,6 +578,9 @@
   .contacts-gallery-wrapper .upper-title {
     letter-spacing: 1.3em;
   }
+  .contacts-gallery-wrapper .slider-container .controllers-wrapper {
+    width: 315px;
+  }
   .contacts-gallery-wrapper .slider-container .selector-container {
     margin-left: 0;
     padding-left: .625rem;
@@ -593,8 +599,11 @@
     height: 52vh;
     min-height: 400px;
   }
-  .contacts-gallery-wrapper .slider-container .slider-inner .slider-location.active {
+  .contacts-gallery-wrapper .slider-container .slider-inner .slider-location {
     margin-left: 56px;
+  }
+  .contacts-gallery-wrapper .slider-container .slider-inner .slide {
+    padding: 0;
   }
   .contacts-gallery-wrapper .block-bg-cover {
     left: -30px;

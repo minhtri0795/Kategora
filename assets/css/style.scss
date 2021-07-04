@@ -144,6 +144,10 @@ section {
   padding-left:0;
   padding-right:0;
 }
+.col-no-pd{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 .italic {
   font-style: italic;
 }
@@ -218,6 +222,7 @@ section {
   pointer-events: none;
   .logo {
     pointer-events: visible;
+    transition: visibility 0.2s ease;
   }
   svg {
     path {

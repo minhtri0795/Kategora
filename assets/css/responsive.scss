@@ -308,10 +308,13 @@
   }
   .contacts-gallery-wrapper {
     .slider-container {
+      .controllers-wrapper{
+        width: 600px;
+      }
       .slider-inner {
         height: 62vh;
         min-height: 500px;
-        .slider-location.active {
+        .slider-location {
           margin-left: 115px;
         }
       }
@@ -351,7 +354,9 @@
 }
 }
 
-// <==== FOR MOBILE =====>
+
+
+// <==== ***********FOR MOBILE************* =====>
 @media (max-width: 739px) {
   .hide-on-mobile {
     display:none;
@@ -655,6 +660,9 @@
       letter-spacing: 1.3em;
     }
     .slider-container{
+      .controllers-wrapper{
+        width: 315px;
+      }
       .selector-container {
         margin-left: 0;
         padding-left: .625rem;
@@ -672,8 +680,11 @@
       .slider-inner {
         height: 52vh;
         min-height: 400px;
-        .slider-location.active{
+        .slider-location{
           margin-left: 56px;
+        }
+        .slide{
+          padding: 0;
         }
       }
     }

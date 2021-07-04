@@ -147,32 +147,33 @@ $(document).ready(function () {
       gsap.to(".logo", {
         duration: 0.8,
         opacity: 0,
+        visibility: "hidden",
       });
     } else {
       gsap.to(".logo", {
         duration: 1,
         opacity: 1,
+        visibility: "inherit",
       });
     }
     lastScrollTop = currentScroll;
-  }); 
-
-// CTA-button show/hide
-const ctaWrapper = gsap.utils.toArray(".cta-btn-wrapper");
-ctaWrapper.forEach((cta) => {
-  gsap.from(cta, {
-    scrollTrigger: {
-      trigger: cta,
-      start: "-10px bottom",
-      end: "bottom top",
-      toggleActions: "restart none restart none",
-    },
-    duration: 0.8,
-    scale: 0.4,
-    opacity: 0,
   });
-});
 
+  // CTA-button show/hide
+  const ctaWrapper = gsap.utils.toArray(".cta-btn-wrapper");
+  ctaWrapper.forEach((cta) => {
+    gsap.from(cta, {
+      scrollTrigger: {
+        trigger: cta,
+        start: "-10px bottom",
+        end: "bottom top",
+        toggleActions: "restart none restart none",
+      },
+      duration: 0.8,
+      scale: 0.4,
+      opacity: 0,
+    });
+  });
 
   window.addEventListener("scroll", () => {
     const dark = document.querySelectorAll(".dark-zone");
@@ -215,7 +216,7 @@ ctaWrapper.forEach((cta) => {
   // })
 
   // MENU HANDLE
-    // On PC
+  // On PC
   function menuPc(mediaquery) {
     if (mediaquery.matches) {
       $(".menu-btn-hitzone").mouseenter(() => {
@@ -234,7 +235,7 @@ ctaWrapper.forEach((cta) => {
   }
   menuPc(scriptOnPc);
 
-    // On mobile & tablet
+  // On mobile & tablet
   function buggerMenu(mediaquery) {
     if (mediaquery.matches) {
       $(".menu-btn-hitzone").click(() => {
@@ -473,7 +474,7 @@ ctaWrapper.forEach((cta) => {
         },
         "-=0.5"
       );
-    parallaxHeader(340,scriptOnPc)
+    parallaxHeader(340, scriptOnPc);
     gsap.from(".the-history-wrapper .main-title .line", {
       scrollTrigger: {
         trigger: ".the-history-wrapper .main-title",
@@ -489,50 +490,155 @@ ctaWrapper.forEach((cta) => {
       stagger: 0.2,
     });
 
-    // slide project 
-    let picture = $(".photos-wrapper picture")
-    let titleContent = $(".team-gallery-wrapper .title-container")
-    let nextBtn = $(".team-gallery-wrapper .left-btn")
-    let prevBtn = $(".team-gallery-wrapper .right-btn")
-    let moreBtn = $(".btn-expand-description")
-    let size = picture.length/3;
-    console.log(size)
-      nextBtn.click(()=>{
-        if (size-1){
-          gsap.to(picture,{
-            duration:0.6,
-            xPercent: "-=100",
-            ease:"power3.in"
-          })
-          gsap.to(titleContent,{
-            duration:0.6,
-            yPercent: "-=100",
-            ease:"power3.in"
-          })
-          size--;
+    //Team member slide.
+    let picture = $(".photos-wrapper picture");
+    let titleContent = $(".team-gallery-wrapper .title-container");
+    let nextBtn = $(".team-gallery-wrapper .left-btn");
+    let prevBtn = $(".team-gallery-wrapper .right-btn");
+    let moreBtn = $(".btn-expand-description");
+    let size = picture.length / 3;
+
+    nextBtn.click(() => {
+      if (size - 1) {
+        gsap.to(picture, {
+          duration: 0.6,
+          xPercent: "-=100",
+          ease: "power3.in",
+        });
+        gsap.to(titleContent, {
+          duration: 0.6,
+          yPercent: "-=100",
+          ease: "power3.in",
+        });
+        size--;
+      } else {
+        gsap.to(picture, {
+          duration: 0.6,
+          xPercent: "",
+          ease: "power3.in",
+        });
+        gsap.to(titleContent, {
+          duration: 0.6,
+          yPercent: "0",
+          ease: "power3.in",
+        });
+        size = picture.length / 3;
+      }
+    });
+    prevBtn.click(() => {
+      if (size < picture.length / 3) {
+        gsap.to(picture, {
+          duration: 0.6,
+          xPercent: "+=100",
+          ease: "power3.in",
+        });
+        gsap.to(titleContent, {
+          duration: 0.6,
+          yPercent: "+=100",
+          ease: "power3.in",
+        });
+        size++;
+      }
+    });
+    moreBtn.click(() => {
+      let titleContent = $(
+        ".team-gallery-wrapper .title-container .description"
+      );
+      let titleWrapper = $(".team-gallery-wrapper .titles-wrapper");
+      titleContent.toggleClass("view-more");
+      setTimeout(() => {
+        titleWrapper.toggleClass("view-more");
+      }, 50);
+    });
+
+
+    // Map location slider.
+    let slideLocation = $(".slider-location");
+    let rightBtn = $(".slider-container .right-btn");
+    let leftBtn = $(".slider-container .left-btn");
+
+    slideLocation.each(function (i, slideInner) {
+      let slideItem = slideInner.children;
+      let size = slideInner.children.length;
+      rightBtn.click(function () {
+        // handle: add/remove active class
+        let slideActive = checkActive(slideItem);
+        if (slideActive.nextElementSibling) {
+          slideActive.classList.remove("active");
+          slideActive.nextElementSibling.classList.add("active");
         }
-      })
-      prevBtn.click(()=>{
-        if (size<picture.length/3){
-          gsap.to(picture,{
-            duration:0.6,
+        // check if end of slider.
+        if (size - 1) {
+          gsap.to(slideItem, {
+            xPercent: "-=100",
+            duration: 0.7,
+          });
+          size--;
+        } 
+      });
+      leftBtn.click(function () {
+        // handle: add/remove active class.
+        let slideActive = checkActive(slideItem);
+        if (slideActive.previousElementSibling) {
+          slideActive.classList.remove("active");
+          slideActive.previousElementSibling.classList.add("active");
+        }
+        // check if start of slider.
+        if (size < slideInner.children.length) {
+          gsap.to(slideItem, {
             xPercent: "+=100",
-            ease: "power3.in",
-          })
-          gsap.to(titleContent,{
-            duration:0.6,
-            yPercent: "+=100",
-            ease:"power3.in"
-          })
+            duration: 0.7,
+          });
           size++;
         }
-      })
-      moreBtn.click(()=>{
-        let titleContent = $(".team-gallery-wrapper .title-container .description")
-        let titleWrapper = $(".team-gallery-wrapper .titles-wrapper")
-        titleContent.toggleClass("view-more")
-        titleWrapper.toggleClass("view-more")
-      })
+      });
+    });
+
+    // Handle change city.
+    let selcectorItem = $(".slider-container .selector-item");
+    let city = $(".contacts-gallery-wrapper .city .label");
+    let mask = document.querySelectorAll(".slider-container .mask")
+    console.log(mask)
+    selcectorItem.each(function (i, slector) {
+      slector.addEventListener("click", function () {
+        // gsap.set(mask,{
+        //   transform: 'scaleY(0)',
+        //   height:'100%',
+        //   delay:0.5
+        // })
+        tl= gsap.timeline()
+        tl.fromTo(mask,{
+          transform: 'scaleY(100%)',
+          duration:1,
+        },{
+          height:'0',
+          delay:0.6,
+        })
+        .to(slideLocation, { yPercent: -i * 100,},"-=1")
+        .set(mask,{
+          transform: 'scaleY(0)',
+          height:'100%',
+        })
+        // hand change city name and selector
+        let selActive = checkActive(selcectorItem);
+        let activeCity = checkActive(city);
+        selActive.classList.remove("active");
+        slector.classList.add("active");
+        activeCity.classList.remove("active");
+        city[i].classList.add("active");
+      });
+    });
+
+    function checkActive(elementCheck) {
+      Array.from(elementCheck);
+      let activeEl = [];
+      for (i of elementCheck) {
+        if (i.className.includes("active")) {
+          activeEl.push(i);
+        }
+      }
+      return activeEl[0];
+    }
   }
 
   // project page
@@ -579,13 +685,13 @@ ctaWrapper.forEach((cta) => {
         x: "-=1.8",
       });
     }, 20);
-    parallaxHeader(340,scriptOnPc)
+    parallaxHeader(340, scriptOnPc);
   }
 
-   /*PARALLLAX HEADER*/ 
+  /*PARALLLAX HEADER*/
 
-  function parallaxHeader(yOffset, mediaquery){
-    if(mediaquery.matches){
+  function parallaxHeader(yOffset, mediaquery) {
+    if (mediaquery.matches) {
       gsap.to(".page-header-wrapper", {
         scrollTrigger: {
           trigger: ".page-header-wrapper",
@@ -595,7 +701,7 @@ ctaWrapper.forEach((cta) => {
         },
         y: yOffset,
       });
-    
+
       gsap.to(".page-header-wrapper .text-wrapper", {
         scrollTrigger: {
           trigger: ".page-header-wrapper .text-wrapper",
@@ -656,8 +762,8 @@ ctaWrapper.forEach((cta) => {
         },
         "-=1.5"
       );
-      parallaxHeader(340,scriptOnPc)
-      
+    parallaxHeader(340, scriptOnPc);
+
     let line = document.querySelectorAll(".expertise-list-wrapper .line");
     line.forEach((lineitem, i) => {
       lineitem.addEventListener("click", () => {
@@ -677,7 +783,7 @@ ctaWrapper.forEach((cta) => {
     });
 
     // handle video function
-    function handleVideo(){
+    function handleVideo() {
       let video = $(".vector-img");
       video.each((i, videoEl) => {
         videoEl.addEventListener("mouseenter", () => {
@@ -722,23 +828,34 @@ ctaWrapper.forEach((cta) => {
 
   /******** INSIGHTS PAGE *********** */
 
-  let border = $(".border-option")
-  let catogeries = $(".filters-wrapper .categories")
-  border.hover(function(){
-    (function(){
-      gsap.to(catogeries[0].children,{
-        duration:0.3,
-        opacity:1,
-        visibility: 'inherit',
-        stagger:0.1,
-        delay:0.3,
-      })
-    })()
-    this.setAttribute("style",`height:${catogeries[0].clientHeight+this.clientHeight}px`)
-  },function(){
-    this.removeAttribute("style")
-    Array.from(catogeries[0].children).forEach((el)=>{
-      el.removeAttribute("style")
-    })
-  })
+  let border = $(".border-option");
+  let catogeries = $(".filters-wrapper .categories");
+  border.hover(
+    function () {
+      (function () {
+        gsap.to(catogeries[0].children, {
+          duration: 0.3,
+          opacity: 1,
+          visibility: "inherit",
+          stagger: 0.1,
+          delay: 0.3,
+        });
+      })();
+      this.setAttribute(
+        "style",
+        `height:${catogeries[0].clientHeight + this.clientHeight}px`
+      );
+    },
+    function () {
+      gsap.to(catogeries[0].children, {
+        opacity: 0,
+        visibility: "hiden",
+        delay:0,
+      });
+      this.removeAttribute("style");
+      Array.from(catogeries[0].children).forEach((el) => {
+        el.removeAttribute("style");
+      });
+    }
+  );
 });
