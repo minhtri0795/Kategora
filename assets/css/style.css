@@ -4277,6 +4277,10 @@ section {
   max-width: 370px;
 }
 
+.kategora-timeline-wrapper .images-container img.portrait-img {
+  max-width: 300px;
+}
+
 .kategora-timeline-wrapper .timeline-container {
   position: relative;
   left: 25vw;
@@ -4311,7 +4315,7 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 40vw;
+  width: 46vw;
 }
 
 .kategora-timeline-wrapper .timeline-container .timeline-labels li .inner {
@@ -4392,10 +4396,16 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 40vw;
+  width: 46vw;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(10%, #232323), color-stop(0, rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(90deg, #232323 10%, rgba(255, 255, 255, 0) 0);
   background-position: top;
   background-size: 8px 1px;
   background-repeat: repeat-x;
+}
+
+.kategora-timeline-wrapper .timeline-container .timeline-dots li:last-child {
+  width: auto;
 }
 
 .kategora-timeline-wrapper .timeline-container .timeline-dots li .inner {
@@ -5184,7 +5194,7 @@ section {
   left: 0;
   width: 100%;
   padding: 0 calc(19.4px + 1.8vw) 15px 15px;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .filters-wrapper .categories li {

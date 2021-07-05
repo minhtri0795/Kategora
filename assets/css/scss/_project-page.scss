@@ -490,6 +490,9 @@
     img {
       position: relative;
       max-width: 370px;
+      &.portrait-img{
+        max-width: 300px;
+      }
     }
   }
   .timeline-container {
@@ -508,7 +511,7 @@
         align-items: flex-start;
         justify-items: center;
         flex-direction: column;
-        width: 40vw;
+        width: 46vw;
         .inner {
           display: inline-flex;
           align-items: center;
@@ -562,15 +565,18 @@
         align-items: flex-start;
         justify-items: center;
         flex-direction: column;
-        width: 40vw;
-        // background-image: linear-gradient(
-        //   90deg,
-        //   #232323 10%,
-        //   hsla(0, 0%, 100%, 0) 0
-        // );
+        width: 46vw;
+        background-image: linear-gradient(
+          90deg,
+          #232323 10%,
+          hsla(0, 0%, 100%, 0) 0
+        );
         background-position: top;
         background-size: 8px 1px;
         background-repeat: repeat-x;
+        &:last-child{
+          width: auto;
+        }
         .inner {
           position: relative;
           display: inline-flex;

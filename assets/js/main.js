@@ -2,36 +2,26 @@ $(document).ready(function () {
   // Query selector for script
   let scriptOnPc = window.matchMedia("(min-width: 1025px)");
   let scriptOnTabletMobile = window.matchMedia("(max-width: 1024px)");
-  let scriptOnTablet = window.matchMedia(
-    "(min-width:740px) and (max-width: 1024px)"
-  );
-  let scripOnMobile = window.matchMedia("(max-width: 739px)");
-
   // Lazy loading
-  const lazyImages = document.querySelectorAll("[lazy]");
+  const lazyImages = $("[lazy]");
   const lazyImageObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
-        // tấm ảnh này đã xuất hiện trên màn hình
         if (entry.isIntersecting) {
           const lazyImage = entry.target;
           const src = lazyImage.dataset.src;
-
           lazyImage.tagName.toLowerCase() === "img"
-            ? // <img>: copy data-src sang src
+            ? 
               (lazyImage.src = src)
-            : // copy xong rồi thì bỏ attribute lazy đi
+            : 
               lazyImage.removeAttribute("lazy");
-
-          // job done, không cần observe nó nữa
           observer.unobserve(lazyImage);
         }
       });
     },
     { rootMargin: "0px 0px 200px 0px" }
   );
-  // Observe từng tấm ảnh và chờ nó xuất hiện trên màn hình
-  lazyImages.forEach((lazyImage) => {
+  lazyImages.each((i,lazyImage) => {
     lazyImageObserver.observe(lazyImage);
   });
 
@@ -43,95 +33,109 @@ $(document).ready(function () {
       window.scrollTo(0, 0);
     };
   }
+
+
   // EFFECT HANDLE
   $("[data-scroll]").each((i, scrollItem) => {
-    let effect = scrollItem.getAttribute("data-scroll-call");
-    switch (effect) {
-      case "fade-in":
-        gsap.from(scrollItem, {
-          scrollTrigger: scrollItem,
-          duration: 1,
-          y: 60,
-          opacity: 0,
-          ease: "power2.out",
-        });
-        break;
-      case "parallax":
-        gsap.to(scrollItem, {
-          y: -40,
-          scrollTrigger: {
-            trigger: scrollItem,
-            scrub: 1,
-          },
-        });
-        break;
-      case "scale-center":
-        gsap.from(scrollItem, {
-          duration: 1,
-          scrollTrigger: scrollItem,
-          opacity: 0.6,
-          scale: 0.8,
-          ease: "power2.out",
-        });
-        break;
-      case "stagger-in":
-        gsap.from(".stagger-item", {
-          scrollTrigger: {
-            trigger: scrollItem,
-            onEnter: () => {
-              $(".stagger-item").each(function (i, el) {
-                setTimeout(function () {
-                  el.classList.add("enter-viewport");
-                }, i * 100);
-              });
-            },
-          },
-          y: 40,
-          opacity: 0,
-          stagger: 0.1,
-        });
-        break;
-      case "data-type-letter-spacing":
-        gsap.from(scrollItem, {
-          scrollTrigger: {
-            trigger: scrollItem,
-            start: "top 80%",
-          },
-          duration: 1.5,
-          ease: "power2.out",
-          opacity: 0,
-          letterSpacing: "3em",
-        });
-    }
+    let type = scrollItem.getAttribute("data-scroll-call");
+    ScrollTrigger.create({
+      trigger:scrollItem,
+      onEnter: effectHandle(type,scrollItem),
+      once: true,
+    })
   });
-  $("[data-stagger-up]").each((i, staggerItem) => {
-    gsap.from(staggerItem.children, {
-      scrollTrigger: {
-        trigger: staggerItem,
-        end: "bottom bottom",
-        scrub: 2,
-      },
-      duration: 2,
-      ease: "power2.out",
-      y: 80,
-      // opacity:0,
-      stagger: 0.2,
-    });
-  });
-  $("[data-scale-down-type]").each((i, scaleDownItem) => {
-    gsap.to(scaleDownItem, {
-      scrollTrigger: {
-        trigger: scaleDownItem,
-        scrub: 1,
-        end: "top top",
-      },
-      scale: 1,
-    });
-  });
+
+  function effectHandle(type,scrollItem){
+  let effectType = {
+    'fade-in': function(){
+      gsap.from(scrollItem, {
+        scrollTrigger: scrollItem,
+        duration: 1,
+        y: 60,
+        opacity: 0,
+        ease: "power2.out",
+      });
+    },
+    'parallax':function(){
+      gsap.to(scrollItem, {
+        y: -40,
+        scrollTrigger: {
+          trigger: scrollItem,
+          scrub: 1,
+        },
+      });
+    },
+    'data-type-letter-spacing' : function(){
+      gsap.from(scrollItem, {
+        scrollTrigger: {
+          trigger: scrollItem,
+          start: "top 80%",
+        },
+        duration: 1.5,
+        ease: "power2.out",
+        opacity: 0,
+        letterSpacing: "3em",
+      });
+    },
+    "scale-center": function(){
+      gsap.from(scrollItem, {
+        duration: 1,
+        scrollTrigger: scrollItem,
+        opacity: 0.6,
+        scale: 0.8,
+        ease: "power2.out",
+      });
+    },
+    'data-stagger-up':function(){
+      gsap.from(scrollItem.children, {
+        scrollTrigger: {
+          trigger: scrollItem,
+          end: "bottom bottom",
+          scrub: 2,
+        },
+        duration: 2,
+        ease: "power2.out",
+        y: 80,
+        stagger: 0.2,
+      });
+    },
+    "stagger-in":function(){
+      gsap.from(".stagger-item", {
+        scrollTrigger: {
+          trigger: scrollItem,
+          onEnter: () => {
+            $(".stagger-item").each(function (i, el) {
+              setTimeout(function () {
+                el.classList.add("enter-viewport");
+              }, i * 100);
+            });
+          },
+        },
+        y: 40,
+        opacity: 0,
+        stagger: 0.1,
+      });
+    },
+    'data-scale-down-type':function(){
+      gsap.to(scrollItem, {
+        scrollTrigger: {
+          trigger: scrollItem,
+          scrub: 1,
+          end: "top top",
+        },
+        scale: 1,
+      });
+    },
+    // 'data-split-reveal-type':function(){
+      
+    // }
+  }
+  return effectType[type];
+  }
   $("[data-split-reveal-type]").each((i, revealItem) => {
     gsap.from(revealItem.children, {
       scrollTrigger: revealItem,
-      duration: 1,
+      duration: 1.5,
       y: -14,
       x: 14,
       opacity: 0,
@@ -145,15 +149,15 @@ $(document).ready(function () {
     var currentScroll = window.pageYOffset;
     if (currentScroll > lastScrollTop) {
       gsap.to(".logo", {
-        duration: 0.8,
+        duration: 0.6,
         opacity: 0,
-        visibility: "hidden",
+        display: "none",
       });
     } else {
       gsap.to(".logo", {
-        duration: 1,
+        duration: 0.6,
         opacity: 1,
-        visibility: "inherit",
+        display: "block",
       });
     }
     lastScrollTop = currentScroll;
@@ -601,11 +605,6 @@ $(document).ready(function () {
     console.log(mask)
     selcectorItem.each(function (i, slector) {
       slector.addEventListener("click", function () {
-        // gsap.set(mask,{
-        //   transform: 'scaleY(0)',
-        //   height:'100%',
-        //   delay:0.5
-        // })
         tl= gsap.timeline()
         tl.fromTo(mask,{
           transform: 'scaleY(100%)',
@@ -642,6 +641,7 @@ $(document).ready(function () {
   }
 
   // project page
+
   // Intro timeline
   const projectPage = $("#project-page");
   if (projectPage[0]) {
@@ -672,31 +672,53 @@ $(document).ready(function () {
       },
       "-=1.5"
     );
-
-    $(".landscape-img").each((i, img) => {
-      setInterval(() => {
-        gsap.to(img, {
-          x: "-=2",
-        });
-      }, 20);
-    });
-    setInterval(() => {
-      gsap.to(".timeline-container", {
-        x: "-=1.8",
-      });
-    }, 20);
     parallaxHeader(340, scriptOnPc);
+
+    // slide project
+    let nextBtn = $(".kategora-timeline-wrapper .controllers-wrapper .right-btn");
+    let prevBtn = $(".kategora-timeline-wrapper .controllers-wrapper .left-btn");
+    let imageLine = $(".kategora-timeline-wrapper .images-container")
+    let timeLine = $(".kategora-timeline-wrapper .timeline-container")
+    let xTranslate = 0
+    let vw = window.innerWidth/100;
+    nextBtn.click(function(){  
+    if(xTranslate<(imageLine[0].clientWidth-(60*vw))){
+      gsap.to([imageLine,timeLine], {
+        duration:2,
+        x: `-=${40*vw}`,
+        ease:'power3'
+      });
+      xTranslate += 40*vw;
+    }else {
+      gsap.to([imageLine,timeLine], {
+        duration:5,
+        x: 0,
+        ease:'power3'
+      });
+      xTranslate = 0;
+    }
+    })
+
+    prevBtn.click(function(){
+    if (xTranslate>0){
+      gsap.to([imageLine,timeLine], {
+        duration:2,
+        x: `+= ${40*vw}`,
+        ease:'power3'
+      });
+      xTranslate -= 40*vw; 
+    }
+    })
+    
+      
   }
-
   /*PARALLLAX HEADER*/
-
   function parallaxHeader(yOffset, mediaquery) {
     if (mediaquery.matches) {
       gsap.to(".page-header-wrapper", {
         scrollTrigger: {
           trigger: ".page-header-wrapper",
           scrub: true,
-          // markers:true,
           start: "center center",
         },
         y: yOffset,
@@ -766,7 +788,7 @@ $(document).ready(function () {
 
     let line = document.querySelectorAll(".expertise-list-wrapper .line");
     line.forEach((lineitem, i) => {
-      lineitem.addEventListener("click", () => {
+      lineitem.addEventListener("click",function () {
         let innerContent = $(".expertise-list-wrapper .inner-content");
         let innerText = $(".layout-1,.layout-2");
         if (innerContent[i].getAttribute("style") === "height:0") {
@@ -774,9 +796,11 @@ $(document).ready(function () {
             "style",
             `height:${innerText[i].clientHeight}px`
           );
+          this.style.opacity = '1'
           handleVideo()[i].play();
         } else {
           innerContent[i].setAttribute("style", "height:0");
+          this.style.opacity = ''
           handleVideo()[i].pause();
         }
       });
