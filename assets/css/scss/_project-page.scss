@@ -435,11 +435,20 @@
     justify-content: center;
     z-index: 100;
     button {
+      position: relative;
       background: none;
       outline: none;
       border: none;
       cursor: pointer;
       padding: 0 6px;
+      &:hover {
+        circle {
+          fill: #232323;
+        }
+        path {
+          fill: #f6f4f2;
+        }
+      }
       .hitzone {
         position: absolute;
         top: -10%;
@@ -461,14 +470,7 @@
           fill: #232323;
         }
       }
-      &:hover {
-        circle {
-          fill: #232323;
-        }
-        path {
-          fill: #f6f4f2;
-        }
-      }
+      
     }
   }
   .images-container {

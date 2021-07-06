@@ -11,17 +11,15 @@ $(document).ready(function () {
           const lazyImage = entry.target;
           const src = lazyImage.dataset.src;
           lazyImage.tagName.toLowerCase() === "img"
-            ? 
-              (lazyImage.src = src)
-            : 
-              lazyImage.removeAttribute("lazy");
+            ? (lazyImage.src = src)
+            : lazyImage.removeAttribute("lazy");
           observer.unobserve(lazyImage);
         }
       });
     },
     { rootMargin: "0px 0px 200px 0px" }
   );
-  lazyImages.each((i,lazyImage) => {
+  lazyImages.each((i, lazyImage) => {
     lazyImageObserver.observe(lazyImage);
   });
 
@@ -34,103 +32,112 @@ $(document).ready(function () {
     };
   }
 
-
   // EFFECT HANDLE
   $("[data-scroll]").each((i, scrollItem) => {
     let type = scrollItem.getAttribute("data-scroll-call");
     ScrollTrigger.create({
-      trigger:scrollItem,
-      onEnter: effectHandle(type,scrollItem),
+      trigger: scrollItem,
+      onEnter: effectHandle(type, scrollItem),
       once: true,
-    })
+    });
   });
 
-  function effectHandle(type,scrollItem){
-  let effectType = {
-    'fade-in': function(){
-      gsap.from(scrollItem, {
-        scrollTrigger: scrollItem,
-        duration: 1,
-        y: 60,
-        opacity: 0,
-        ease: "power2.out",
-      });
-    },
-    'parallax':function(){
-      gsap.to(scrollItem, {
-        y: -40,
-        scrollTrigger: {
-          trigger: scrollItem,
-          scrub: 1,
-        },
-      });
-    },
-    'data-type-letter-spacing' : function(){
-      gsap.from(scrollItem, {
-        scrollTrigger: {
-          trigger: scrollItem,
-          start: "top 80%",
-        },
-        duration: 1.5,
-        ease: "power2.out",
-        opacity: 0,
-        letterSpacing: "3em",
-      });
-    },
-    "scale-center": function(){
-      gsap.from(scrollItem, {
-        duration: 1,
-        scrollTrigger: scrollItem,
-        opacity: 0.6,
-        scale: 0.8,
-        ease: "power2.out",
-      });
-    },
-    'data-stagger-up':function(){
-      gsap.from(scrollItem.children, {
-        scrollTrigger: {
-          trigger: scrollItem,
-          end: "bottom bottom",
-          scrub: 2,
-        },
-        duration: 2,
-        ease: "power2.out",
-        y: 80,
-        stagger: 0.2,
-      });
-    },
-    "stagger-in":function(){
-      gsap.from(".stagger-item", {
-        scrollTrigger: {
-          trigger: scrollItem,
-          onEnter: () => {
-            $(".stagger-item").each(function (i, el) {
-              setTimeout(function () {
-                el.classList.add("enter-viewport");
-              }, i * 100);
-            });
+  function effectHandle(type, scrollItem) {
+    let effectType = {
+      "fade-in": function () {
+        gsap.from(scrollItem, {
+          scrollTrigger: scrollItem,
+          duration: 1,
+          y: 60,
+          opacity: 0,
+          ease: "power2.out",
+        });
+      },
+      'parallax': function () {
+        gsap.to(scrollItem, {
+          y: -40,
+          scrollTrigger: {
+            trigger: scrollItem,
+            scrub: 1,
           },
-        },
-        y: 40,
-        opacity: 0,
-        stagger: 0.1,
-      });
-    },
-    'data-scale-down-type':function(){
-      gsap.to(scrollItem, {
-        scrollTrigger: {
-          trigger: scrollItem,
-          scrub: 1,
-          end: "top top",
-        },
-        scale: 1,
-      });
-    },
-    // 'data-split-reveal-type':function(){
-      
-    // }
-  }
-  return effectType[type];
+        });
+      },
+      "data-type-letter-spacing": function () {
+        gsap.from(scrollItem, {
+          scrollTrigger: {
+            trigger: scrollItem,
+            start: "top 80%",
+          },
+          duration: 1.5,
+          ease: "power2.out",
+          opacity: 0,
+          letterSpacing: "3em",
+        });
+      },
+      "scale-center": function () {
+        gsap.from(scrollItem, {
+          duration: 1,
+          scrollTrigger: scrollItem,
+          opacity: 0.6,
+          scale: 0.8,
+          ease: "power2.out",
+        });
+      },
+      "data-stagger-up": function () {
+        gsap.from(scrollItem.children, {
+          scrollTrigger: {
+            trigger: scrollItem,
+            end: "bottom bottom",
+            scrub: 2,
+          },
+          duration: 2,
+          ease: "power2.out",
+          y: 80,
+          stagger: 0.2,
+        });
+      },
+      "stagger-in": function () {
+        gsap.from(scrollItem.children, {
+          scrollTrigger: {
+            trigger: scrollItem.children,
+            onEnter: () => {
+              $(scrollItem.children).each(function (i, el) {
+                setTimeout(function () {
+                  el.classList.add("enter-viewport");
+                }, i * 100);
+              });
+            },
+          },
+          y: 40,
+          opacity: 0,
+          stagger: 0.1,
+        });
+      },
+      "data-scale-down-type": function () {
+        gsap.to(scrollItem, {
+          scrollTrigger: {
+            trigger: scrollItem,
+            scrub: 1,
+            end: "top top",
+          },
+          scale: 1,
+        });
+      },
+      'toggleDisplay':function(){
+        gsap.from(scrollItem, {
+          scrollTrigger: {
+            trigger: scrollItem,
+            start: "-10px bottom",
+            end: "bottom top",
+            toggleActions: "restart none restart none",
+          },
+          duration: 0.8,
+          scale: 0.4,
+          opacity: 0,
+        });
+      }
+    };
+    return effectType[type];
   }
   $("[data-split-reveal-type]").each((i, revealItem) => {
     gsap.from(revealItem.children, {
@@ -142,86 +149,48 @@ $(document).ready(function () {
       stagger: 0.1,
     });
   });
-
-  // logo scroll opacity
-  var lastScrollTop = 0;
-  window.addEventListener("scroll", function () {
+  
+  let lastScrollTop = 0;
+  window.addEventListener("scroll", () => {
+    // scroll change logo opacity.
     var currentScroll = window.pageYOffset;
     if (currentScroll > lastScrollTop) {
-      gsap.to(".logo", {
-        duration: 0.6,
-        opacity: 0,
-        display: "none",
-      });
+      $(".logo").attr("style","opacity: 0; pointer-events: none;")
     } else {
-      gsap.to(".logo", {
-        duration: 0.6,
-        opacity: 1,
-        display: "block",
-      });
+      $(".logo")[0].removeAttribute("style")
     }
     lastScrollTop = currentScroll;
-  });
 
-  // CTA-button show/hide
-  const ctaWrapper = gsap.utils.toArray(".cta-btn-wrapper");
-  ctaWrapper.forEach((cta) => {
-    gsap.from(cta, {
-      scrollTrigger: {
-        trigger: cta,
-        start: "-10px bottom",
-        end: "bottom top",
-        toggleActions: "restart none restart none",
-      },
-      duration: 0.8,
-      scale: 0.4,
-      opacity: 0,
+    // change color logo/menu in dark zone.
+    const darkZone = document.querySelectorAll(".dark-zone");
+    darkZone.forEach((el) => {
+      isDarkZone(scriptOnTabletMobile, el);
     });
   });
 
-  window.addEventListener("scroll", () => {
-    const dark = document.querySelectorAll(".dark-zone");
-    dark.forEach((el) => {
-      if (
-        scrollY - el.offsetTop >= 650 &&
-        scrollY - el.offsetTop <= 650 + el.clientHeight
-      ) {
-        $(".menu-btn").addClass("light-btn");
-      } else {
-        $(".menu-btn").removeClass("light-btn");
-      }
-    });
-  });
+  function isDarkZone(mediaquery, darkzone) {
+    let menuWrapper = $(".menu-btn");
+    let logo = $(".main-header-wrapper");
+    if (mediaquery.matches) {
+      ScrollTrigger.create({
+        trigger: darkzone,
+        start: "top top",
+        onEnter: function () {
+          menuWrapper.addClass("light-btn");
+          logo.addClass("change-color");
+        },
+        onLeave: function () {
+          menuWrapper.removeClass("light-btn");
+          logo.removeClass("change-color");
+        },
+      });
+    }
+  }
 
-  // // Change color logo and menu in dark zone
-  // const darkZone = $(".dark-zone")
-  // darkZone.each((i,darkSection)=>{
-  //   ScrollTrigger.create({
-  //     trigger: darkSection ,
-  //       // start: "top center",
-  //       // end: "bottom center",
-  //       onEnter: () => {
-  //         $(".main-header-wrapper").addClass("change-color");
-  //         $(".menu-btn").addClass("light-btn");
-  //       },
-  //       onEnterBack: () => {
-  //         $(".main-header-wrapper").addClass("change-color");
-  //         $(".menu-btn").addClass("light-btn");
-  //       },
-  //       onLeave: () => {
-  //         $(".main-header-wrapper").removeClass("change-color");
-  //         $(".menu-btn").removeClass("light-btn");
-  //       },
-  //       onLeaveBack: () => {
-  //         $(".main-header-wrapper").removeClass("change-color");
-  //         $(".menu-btn").removeClass("light-btn");
-  //       },
-  //   })
-  // })
-
-  // MENU HANDLE
-  // On PC
-  function menuPc(mediaquery) {
+  // menu handle
+  menuHandle(scriptOnPc);
+  function menuHandle(mediaquery) {
+    // menu for PC
     if (mediaquery.matches) {
       $(".menu-btn-hitzone").mouseenter(() => {
         $(".menu-wrapper").addClass("active");
@@ -235,56 +204,32 @@ $(document).ready(function () {
       $(".inner-menu").mouseleave(() => {
         $(".menu-wrapper").removeClass("active");
       });
-    }
-  }
-  menuPc(scriptOnPc);
-
-  // On mobile & tablet
-  function buggerMenu(mediaquery) {
-    if (mediaquery.matches) {
+    } 
+    // menu for Tablet/Mobile
+    else {
       $(".menu-btn-hitzone").click(() => {
-        // click to hide menu
-        if ($(".menu-wrapper").hasClass("active")) {
-          $(".menu-wrapper").removeClass("active");
-          $(".menu-wrapper .menu-btn .burguer span.top").css({ transform: "" });
-          $(".menu-wrapper .menu-btn .burguer span.bottom").css({
-            transform: "",
-          });
-        }
-        // click to show menu
-        else {
-          $(".menu-wrapper").addClass("active");
-          $(".menu-wrapper .menu-btn .burguer span.top").css({
-            transform: "translate(0px, 4px) rotate(225deg)",
-          });
-          $(".menu-wrapper .menu-btn .burguer span.bottom").css({
-            transform: "translate(0px, -3px) rotate(-45deg)",
-          });
-          gsap.from(".menu-wrapper.active .main-link", {
-            duration: 0.2,
-            delay: 0.3,
-            y: 8,
-            opacity: 0,
-            stagger: 0.1,
-          });
-        }
+        $(".menu-wrapper").toggleClass("active");
+        gsap.from(".menu-wrapper.active .main-link", {
+              duration: 0.2,
+              delay: 0.3,
+              y: 8,
+              opacity: 0,
+              stagger: 0.1,
+            });
       });
-      // onclick body to close burguer menu.
+      // click body to close menu.
       $(".page-main").click(() => {
         $(".menu-wrapper").removeClass("active");
-        $(".menu-wrapper .menu-btn .burguer span.top").css({ transform: "" });
-        $(".menu-wrapper .menu-btn .burguer span.bottom").css({
-          transform: "",
-        });
       });
     }
   }
-  buggerMenu(scriptOnTabletMobile);
 
-  // Script for HomePage.
+
+
+  /*<=============HOME PAGE ============>*/
   const homePage = $("#homePage");
   if (homePage[0]) {
-    // timeline animation when access home page.
+    // intro animation after refresh page.
     let tl = gsap.timeline();
     tl.to(".home-header-wrapper .text-wrapper h2", {
       duration: 1,
@@ -330,7 +275,7 @@ $(document).ready(function () {
       $("#backgroundAudio, #birdAudio").each((i, audio) => {
         audio.play();
       });
-      // intro auto scroll down animation.
+      //auto scroll down animation.
       var int = setInterval(function () {
         let videoContainer = document.querySelector("#introVideo");
         let i = scrollY - videoContainer.offsetTop;
@@ -356,15 +301,13 @@ $(document).ready(function () {
         delay: 2,
       });
     });
-
-    // intro only PC screen
     intro(scriptOnPc);
     function intro(mediaquery) {
       if (mediaquery.matches) {
         // hide and disable scrollbar
         document.querySelector(".disableScroll").style.display = "block";
         document.body.style.overflow = "hidden";
-        // scale video whem scroll down
+        // scale video when scroll down
         gsap.to(".header-video-container video", {
           scrollTrigger: {
             trigger: ".header-video-container video",
@@ -384,6 +327,7 @@ $(document).ready(function () {
           },
           opacity: 1,
         });
+
         gsap.to(".home-header-wrapper .text-wrapper", {
           scrollTrigger: {
             trigger: ".home-header-wrapper .text-wrapper",
@@ -393,6 +337,7 @@ $(document).ready(function () {
           },
           y: 360,
         });
+        
         gsap.to(".home-header-wrapper .image-wrapper .text-wrapper h2", {
           scrollTrigger: {
             trigger: ".home-header-wrapper .image-wrapper .text-wrapper h2",
@@ -421,19 +366,9 @@ $(document).ready(function () {
       });
       $("#fullVideo")[0].pause();
     });
-
-    // sustainability border bottom
-    ScrollTrigger.create({
-      trigger: ".sustainability-block-wrapper .more-insights",
-      onEnter: function () {
-        $(".sustainability-block-wrapper .more-insights").addClass(
-          "enter-viewport"
-        );
-      },
-    });
   }
 
-  // About page intro
+  /*<===========ABOUT PAGE ========>*/ 
   const aboutPage = $("#about-page");
   if (aboutPage[0]) {
     tl = gsap.timeline();
@@ -479,21 +414,6 @@ $(document).ready(function () {
         "-=0.5"
       );
     parallaxHeader(340, scriptOnPc);
-    gsap.from(".the-history-wrapper .main-title .line", {
-      scrollTrigger: {
-        trigger: ".the-history-wrapper .main-title",
-        onEnter: () => {
-          $(".the-history-wrapper .main-title").addClass("enter-viewport");
-        },
-      },
-      duration: 1,
-      delay: 0.2,
-      y: -20,
-      opacity: 0,
-      scale: 1.1,
-      stagger: 0.2,
-    });
-
     //Team member slide.
     let picture = $(".photos-wrapper picture");
     let titleContent = $(".team-gallery-wrapper .title-container");
@@ -517,13 +437,13 @@ $(document).ready(function () {
         size--;
       } else {
         gsap.to(picture, {
-          duration: 0.6,
-          xPercent: "",
+          duration: 1,
+          xPercent: 0,
           ease: "power3.in",
         });
         gsap.to(titleContent, {
-          duration: 0.6,
-          yPercent: "0",
+          duration: 1,
+          yPercent: 0,
           ease: "power3.in",
         });
         size = picture.length / 3;
@@ -544,6 +464,8 @@ $(document).ready(function () {
         size++;
       }
     });
+
+
     moreBtn.click(() => {
       let titleContent = $(
         ".team-gallery-wrapper .title-container .description"
@@ -554,7 +476,6 @@ $(document).ready(function () {
         titleWrapper.toggleClass("view-more");
       }, 50);
     });
-
 
     // Map location slider.
     let slideLocation = $(".slider-location");
@@ -578,7 +499,7 @@ $(document).ready(function () {
             duration: 0.7,
           });
           size--;
-        } 
+        }
       });
       leftBtn.click(function () {
         // handle: add/remove active class.
@@ -601,23 +522,26 @@ $(document).ready(function () {
     // Handle change city.
     let selcectorItem = $(".slider-container .selector-item");
     let city = $(".contacts-gallery-wrapper .city .label");
-    let mask = document.querySelectorAll(".slider-container .mask")
-    console.log(mask)
+    let mask = document.querySelectorAll(".slider-container .mask");
     selcectorItem.each(function (i, slector) {
       slector.addEventListener("click", function () {
-        tl= gsap.timeline()
-        tl.fromTo(mask,{
-          transform: 'scaleY(100%)',
-          duration:1,
-        },{
-          height:'0',
-          delay:0.6,
-        })
-        .to(slideLocation, { yPercent: -i * 100,},"-=1")
-        .set(mask,{
-          transform: 'scaleY(0)',
-          height:'100%',
-        })
+        tl = gsap.timeline();
+        tl.fromTo(
+          mask,
+          {
+            transform: "scaleY(100%)",
+            duration: 1,
+          },
+          {
+            height: "0",
+            delay: 0.6,
+          }
+        )
+          .to(slideLocation, { yPercent: -i * 100 }, "-=1")
+          .set(mask, {
+            transform: "scaleY(0)",
+            height: "100%",
+          });
         // hand change city name and selector
         let selActive = checkActive(selcectorItem);
         let activeCity = checkActive(city);
@@ -675,42 +599,45 @@ $(document).ready(function () {
     parallaxHeader(340, scriptOnPc);
 
     // slide project
-    let nextBtn = $(".kategora-timeline-wrapper .controllers-wrapper .right-btn");
-    let prevBtn = $(".kategora-timeline-wrapper .controllers-wrapper .left-btn");
-    let imageLine = $(".kategora-timeline-wrapper .images-container")
-    let timeLine = $(".kategora-timeline-wrapper .timeline-container")
-    let xTranslate = 0
-    let vw = window.innerWidth/100;
-    nextBtn.click(function(){  
-    if(xTranslate<(imageLine[0].clientWidth-(60*vw))){
-      gsap.to([imageLine,timeLine], {
-        duration:2,
-        x: `-=${40*vw}`,
-        ease:'power3'
-      });
-      xTranslate += 40*vw;
-    }else {
-      gsap.to([imageLine,timeLine], {
-        duration:5,
-        x: 0,
-        ease:'power3'
-      });
-      xTranslate = 0;
-    }
-    })
+    let nextBtn = $(
+      ".kategora-timeline-wrapper .controllers-wrapper .right-btn"
+    );
+    let prevBtn = $(
+      ".kategora-timeline-wrapper .controllers-wrapper .left-btn"
+    );
+    let imageLine = $(".kategora-timeline-wrapper .images-container");
+    let timeLine = $(".kategora-timeline-wrapper .timeline-container");
+    let xTranslate = 0;
+    let vw = window.innerWidth / 100;
+    nextBtn.click(function (e) {
+      e.stopPropagation()
+      if (xTranslate < imageLine[0].clientWidth - 60 * vw) {
+        gsap.to([imageLine, timeLine], {
+          duration: 2,
+          x: `-=${40 * vw}`,
+          ease: "power3",
+        });
+        xTranslate += 40 * vw;
+      } else {
+        gsap.to([imageLine, timeLine], {
+          duration: 5,
+          x: 0,
+          ease: "power3",
+        });
+        xTranslate = 0;
+      }
+    });
 
-    prevBtn.click(function(){
-    if (xTranslate>0){
-      gsap.to([imageLine,timeLine], {
-        duration:2,
-        x: `+= ${40*vw}`,
-        ease:'power3'
-      });
-      xTranslate -= 40*vw; 
-    }
-    })
-    
-      
+    prevBtn.click(function () {
+      if (xTranslate > 0) {
+        gsap.to([imageLine, timeLine], {
+          duration: 2,
+          x: `+= ${40 * vw}`,
+          ease: "power3",
+        });
+        xTranslate -= 40 * vw;
+      }
+    });
   }
   /*PARALLLAX HEADER*/
   function parallaxHeader(yOffset, mediaquery) {
@@ -788,7 +715,7 @@ $(document).ready(function () {
 
     let line = document.querySelectorAll(".expertise-list-wrapper .line");
     line.forEach((lineitem, i) => {
-      lineitem.addEventListener("click",function () {
+      lineitem.addEventListener("click", function () {
         let innerContent = $(".expertise-list-wrapper .inner-content");
         let innerText = $(".layout-1,.layout-2");
         if (innerContent[i].getAttribute("style") === "height:0") {
@@ -796,11 +723,11 @@ $(document).ready(function () {
             "style",
             `height:${innerText[i].clientHeight}px`
           );
-          this.style.opacity = '1'
+          this.style.opacity = "1";
           handleVideo()[i].play();
         } else {
           innerContent[i].setAttribute("style", "height:0");
-          this.style.opacity = ''
+          this.style.opacity = "";
           handleVideo()[i].pause();
         }
       });
@@ -836,7 +763,7 @@ $(document).ready(function () {
           gsap.to(ctaCursor, {
             x: e.clientX,
             y: e.clientY,
-            delay: 0.05,
+            delay: 0.03,
           });
           // hide custom cursor
           if (e.pageY <= 820 || e.pageY >= 2160) {
@@ -856,15 +783,15 @@ $(document).ready(function () {
   let catogeries = $(".filters-wrapper .categories");
   border.hover(
     function () {
-      (function () {
         gsap.to(catogeries[0].children, {
           duration: 0.3,
           opacity: 1,
           visibility: "inherit",
           stagger: 0.1,
           delay: 0.3,
+          pointerEvents: 'visible',
         });
-      })();
+      ;
       this.setAttribute(
         "style",
         `height:${catogeries[0].clientHeight + this.clientHeight}px`
@@ -874,7 +801,7 @@ $(document).ready(function () {
       gsap.to(catogeries[0].children, {
         opacity: 0,
         visibility: "hiden",
-        delay:0,
+        delay: 0,
       });
       this.removeAttribute("style");
       Array.from(catogeries[0].children).forEach((el) => {

@@ -20,9 +20,9 @@
     />
     <!-- Main app style -->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/responsive.css">
     <!-- Responsive -->
-    
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+
   </head>
   <body id="homePage" class="disableScroll">
     <!-- Background audio -->
@@ -51,16 +51,16 @@
     <div class="menu-wrapper">
       <div class="inner-menu">
         <div class="language-wrapper">
-          <svg class="item" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M7.5 15C11.6168 15 15 11.6576 15 7.5C15 3.38315 11.6576 0 7.5 0C3.34239 0 0 3.38315 0 7.5C0 11.6168 3.38315 15 7.5 15ZM0.855978 7.90761H3.13859C3.22011 10.3533 3.9538 12.4728 5.05435 13.6957C2.69022 12.7582 1.01902 10.5571 0.855978 7.90761ZM7.5 0.855978C9.375 0.855978 10.9239 3.66848 11.0462 7.09239H3.9538C4.07609 3.66848 5.66576 0.855978 7.5 0.855978ZM11.087 7.90761C10.9647 11.3315 9.375 14.144 7.54076 14.144C5.70652 14.144 4.11685 11.3315 3.99457 7.90761H11.087ZM9.94565 13.6957C11.0462 12.4321 11.7799 10.3533 11.8614 7.90761H14.144C14.0217 10.5571 12.3098 12.7582 9.94565 13.6957ZM14.1848 7.09239H11.9022C11.8207 4.64674 11.087 2.52717 9.98641 1.30435C12.3098 2.20109 14.0217 4.44293 14.1848 7.09239ZM5.05435 1.30435C3.9538 2.56793 3.22011 4.64674 3.13859 7.09239H0.855978C1.01902 4.44293 2.69022 2.20109 5.05435 1.30435Z"
               fill="white"/>
           </svg>
           <ul class="language-links">
-            <li class=" item">
+            <li>
               <a href="https://kategora.com/">es</a>
             </li>
-            <li class="active item">
+            <li class="active">
               <a href="https://kategora.com/en/">en</a>
             </li>
           </ul>
@@ -90,11 +90,13 @@
         <span class="menu-btn-hitzone"></span>
       </div>
     </div>
+
     <!-- ============= CONTENT ============= -->
     <div class="page-main">
       <div class="home-page">
         <header class="page-header">
           <div class="home-header-wrapper">
+
             <span class="background-dark"></span>
 
             <div class="row expanded">
@@ -103,7 +105,7 @@
               </div>
             </div>
 
-            <div class="row expanded align-center text-wrapper">
+            <div class="text-wrapper row expanded justify-content-center">
               <div class="col-lg-12 text-center">
                 <h2 class="text">
                   <p><span class="serif-light italic">Smart</span> living starts with</p>
@@ -131,7 +133,7 @@
                     type="video/mp4">
                 </video>
               </div>
-              <div class="row expanded align-center text-wrapper">
+              <div class="text-wrapper row expanded align-center">
                 <div class="col-lg-12 text-center">
                   <h2 class="text">
                     <p><span class="serif-light italic">Smart</span> living starts with</p>
@@ -150,7 +152,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         </header>
         <div class="playFullVideo">
@@ -162,18 +163,18 @@
         <main class="page-content">
           <section>
             <div class="projects-block-wrapper">
-              <div class="row expanded title-container">
+              <div class="title-container row expanded">
                 <div class="col-lg-12 text-center">
                   <span class="upper-title" data-scroll data-scroll-call="data-type-letter-spacing">Projects</span>
                   <h2 class="main-title">
                     <p data-split-reveal-type><span class="serif-light italic">A</span> <span>decade</span> <span class="serif-light italic">of</span>
                       <span>projects</span></p>
                   </h2>
-                  <div class="cta-btn-wrapper">
+                  <div class="cta-btn-wrapper" data-scroll data-scroll-call="toggleDisplay">
                     <a href="https://kategora.com/en/projects/">
                       <span class="background"></span>
                       <span class="round-text-wrapper">
-                        <img data-src="./assets/image/circle-text2.png" alt="" lazy>
+                        <img lazy data-src="./assets/image/circle-text2.png" >
                       </span>
                       <div class="icons-container">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" preserveAspectRatio="xMidYMid meet" style="transform: translate3d(0px, 0px, 0px);">
@@ -213,7 +214,7 @@
               <div class="images-wrapper">
                 <figure class="kiraly-1-image">
                   <img lazy
-                    data-src="./assets/image/kiraly-1.jpg" alt=""
+                    data-src="./assets/image/kiraly-1.jpg"
                     width="666 " height="494">
                   <figcaption>
                     <span class="caption">kiraly budapest</span>
@@ -276,16 +277,15 @@
             <div class="about-block-wrapper">
               <div class="image-container">
                 <div class="block-bg-cover">
-                  <picture class=''>
+                  <picture >
                     <img lazy width='1700' height='1075' class='canvas-img element-cover'
                       data-src='./assets/image/kategora-homepage-office-1700x1075-c.jpg'
                       alt='Meeting room team work space creating'>
                   </picture>
                 </div>
                 <picture>
-                  <img lazy width='348' height='589' class='floating-img' data-scroll data-scroll-call="parallax"
-                    data-src='./assets/image/kategora-homepage-office-02-348x589-c.jpg'
-                    alt='Work spaces team building teh place to be coworking'>
+                  <img class='floating-img' width='348' height='589' data-scroll data-scroll-call="parallax"
+                  lazy data-src='./assets/image/kategora-homepage-office-02-348x589-c.jpg'>
                 </picture>
                 <div class="title-container">
                   <div class="inner">
@@ -299,12 +299,12 @@
                         <span class="word">&nbsp;Our Culture</span>
                       </h2>
                     </div>
-                    <div class="cta-btn-wrapper">
+                    <div class="cta-btn-wrapper" data-scroll data-scroll-call="toggleDisplay">
                       <a href="https://kategora.com/en/about/">
                         <span class="background"></span>
 
                         <span class="round-text-wrapper">
-                          <img lazy data-src="./assets/image/circle-text2.png" alt="">
+                          <img lazy data-src="./assets/image/circle-text2.png">
                         </span>
                         <div class="icons-container">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" preserveAspectRatio="xMidYMid meet" style="transform: translate3d(0px, 0px, 0px);">
@@ -327,8 +327,8 @@
               </div>
               <div class="text-container row expanded">
                 <div class="col-xl-7 col-lg-6 col-md-10 col-sm-12 order-md-2">
-                    <picture class='left-img-picture' data-scroll data-scroll-call="scale-center">
-                      <img lazy width='923' height='589' class=''
+                    <picture class="left-img-picture" data-scroll data-scroll-call="scale-center">
+                      <img lazy width='923' height='589' 
                         data-src='./assets/image/kategora-homepage-team-923x589-c.jpg'
                         alt='Team meeting enjoyable time coworkers coworking'>
                     </picture>
@@ -370,10 +370,9 @@
                   </video>
                 </div>
 
-                <picture class=''>
-                  <img lazy width='348' height='589' class='floating-img' data-scroll data-scroll-call="parallax"
-                    data-src='./assets/image/sustainability-2-348x589-c.jpg'
-                    alt='Co-living Coliving Design Architecture Sustainability'>
+                <picture >
+                  <img class="floating-img" width='348' height='589' data-scroll data-scroll-call="parallax"
+                  lazy  data-src='./assets/image/sustainability-2-348x589-c.jpg'>
                 </picture>
                 <div class="title-container">
                   <div class="inner">
@@ -405,7 +404,7 @@
                 </div>
               </div>
               <div class="more-insights row expanded collapse">
-                <div class="col-xl-10 offset-xl-2 col-lg-12">
+                <div class="col-xl-10 offset-xl-2 col-lg-12" data-scroll data-scroll-call="stagger-in" >
                   <span class="insights-title">Read more about it</span>
                   <div class="scroll-grid">
                     <ul class="insights-list"data-scroll data-scroll-call="data-stagger-up">
@@ -413,10 +412,9 @@
                         <a href="https://kategora.com/en/insights/boosting-the-build-to-rent-market/">
                           <div class="image-wrapper">
                             <div class="block-bg-cover">
-                              <picture class=''>
-                                <img lazy width='430' height='473' class='element-cover'
-                                  data-src='https://kategora.com/wp-content/uploads/fly-images/235/header-image-430x473-c.jpg'
-                                  alt='Co-living Coliving Design Architecture Sustainability'>
+                              <picture >
+                                <img class="element-cover" lazy width='430' height='473' 
+                                  data-src='https://kategora.com/wp-content/uploads/fly-images/235/header-image-430x473-c.jpg'>
                               </picture>
                             </div>
                           </div>
@@ -436,7 +434,7 @@
                         <a href="https://kategora.com/en/insights/boosting-the-build-to-rent-market/">
                           <div class="image-wrapper">
                             <div class="block-bg-cover">
-                              <picture class=''>
+                              <picture>
                                 <img lazy width='430' height='473' class='element-cover'
                                 data-src='./assets/image/iStock-657200756-1-430x473-c.jpg'
                                   alt='Co-living Coliving Design Architecture Sustainability'>
@@ -508,8 +506,8 @@
                       <ul class="work-list" data-scroll data-scroll-call="data-stagger-up">
                         <li>
                           <a href="https://kategora.com/en/projects/nivaria-beach/">
-                            <picture class=''>
-                              <img lazy width='237' height='306' class=''
+                            <picture >
+                              <img lazy width='237' height='306' 
                               data-src='./assets/image/nivaria-beach-footer-237x306-c.jpg'
                                 alt='luxury. sea views.'>
                             </picture>
@@ -520,8 +518,8 @@
                         </li>
                         <li>
                           <a href="https://kategora.com/en/projects/ura/">
-                            <picture class=''>
-                              <img lazy width='237' height='306' class=''
+                            <picture >
+                              <img lazy width='237' height='306' 
                               data-src='./assets/image/ura-footer-237x306-c.jpg'
                                 alt='Smart Building. City Center. Prime.'>
                             </picture>
@@ -530,8 +528,8 @@
                           </a>
                         </li>
                         <li class="soon">
-                          <picture class=''>
-                            <img lazy width='237' height='306' class=''
+                          <picture >
+                            <img lazy width='237' height='306' 
                             data-src='./assets/image/kirali-budapest-footer-237x306-c.jpg'
                               alt='Co-living Coliving Design Architecture Sustainability'>
                           </picture>
@@ -566,22 +564,15 @@
         </main>
       </div>
     </div>
-    <!--
-          xxlarge, xlarge, large = col-xl- bootrap
-          largeMax, medium = col-lg- bootrap
-          small = col-md- bootrap
-          xsmall= col-sm- bootrap 
-          xxsmall = col- bootrap-->
-
     <!-- Jquery -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-     <!-- GSAP framworks -->
+     <!-- GSAP frameworks -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-     <!-- Scrolltrigger plusgin -->
+     <!-- Scrolltrigger plugin -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
     <!-- Main script -->
     <script src="./assets/js/main.js"></script>

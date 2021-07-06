@@ -271,8 +271,9 @@ section {
 
 .main-header-wrapper .logo {
   pointer-events: visible;
-  -webkit-transition: visibility 0.2s ease;
-  transition: visibility 0.2s ease;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 
 .main-header-wrapper svg path {
@@ -400,28 +401,6 @@ section {
 
 .menu-wrapper .language-wrapper .language-links li.active a {
   color: #fff;
-}
-
-.menu-wrapper.active {
-  pointer-events: visible;
-}
-
-.menu-wrapper.active .inner-menu {
-  pointer-events: visible;
-}
-
-.menu-wrapper.active .inner-menu:before {
-  opacity: 1;
-  -webkit-transform: scale(1) translateX(0);
-          transform: scale(1) translateX(0);
-}
-
-.menu-wrapper.active .language-wrapper {
-  opacity: 1;
-}
-
-.menu-wrapper.active .main-links {
-  opacity: 1;
 }
 
 .menu-wrapper .main-links {
@@ -590,6 +569,38 @@ section {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.menu-wrapper.active {
+  pointer-events: visible;
+}
+
+.menu-wrapper.active .inner-menu {
+  pointer-events: visible;
+}
+
+.menu-wrapper.active .inner-menu:before {
+  opacity: 1;
+  -webkit-transform: scale(1) translateX(0);
+          transform: scale(1) translateX(0);
+}
+
+.menu-wrapper.active .language-wrapper {
+  opacity: 1;
+}
+
+.menu-wrapper.active .main-links {
+  opacity: 1;
+}
+
+.menu-wrapper.active .menu-btn .burguer span.top {
+  -webkit-transform: translate(0px, 4px) rotate(225deg);
+          transform: translate(0px, 4px) rotate(225deg);
+}
+
+.menu-wrapper.active .menu-btn .burguer span.bottom {
+  -webkit-transform: translate(0px, -3px) rotate(-45deg);
+          transform: translate(0px, -3px) rotate(-45deg);
 }
 
 .page-main {
@@ -1722,11 +1733,6 @@ section {
   color: #f6f4f2;
   line-height: 1.18em;
   letter-spacing: -0.02em;
-}
-
-.sustainability-block-wrapper .more-insights.enter-viewport .insights-title:after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
 }
 
 .newsletter-block-wrapper {
@@ -4202,11 +4208,20 @@ section {
 }
 
 .kategora-timeline-wrapper .controllers-wrapper button {
+  position: relative;
   background: none;
   outline: none;
   border: none;
   cursor: pointer;
   padding: 0 6px;
+}
+
+.kategora-timeline-wrapper .controllers-wrapper button:hover circle {
+  fill: #232323;
+}
+
+.kategora-timeline-wrapper .controllers-wrapper button:hover path {
+  fill: #f6f4f2;
 }
 
 .kategora-timeline-wrapper .controllers-wrapper button .hitzone {
@@ -4235,14 +4250,6 @@ section {
 
 .kategora-timeline-wrapper .controllers-wrapper button svg path {
   fill: #232323;
-}
-
-.kategora-timeline-wrapper .controllers-wrapper button:hover circle {
-  fill: #232323;
-}
-
-.kategora-timeline-wrapper .controllers-wrapper button:hover path {
-  fill: #f6f4f2;
 }
 
 .kategora-timeline-wrapper .images-container {
@@ -5194,7 +5201,7 @@ section {
   left: 0;
   width: 100%;
   padding: 0 calc(19.4px + 1.8vw) 15px 15px;
-  pointer-events: auto;
+  pointer-events: none;
 }
 
 .filters-wrapper .categories li {
@@ -5210,7 +5217,7 @@ section {
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
+  pointer-events: visible;
 }
 
 @media (max-width: 739px) {

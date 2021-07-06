@@ -222,7 +222,8 @@ section {
   pointer-events: none;
   .logo {
     pointer-events: visible;
-    transition: visibility 0.2s ease;
+    opacity: 1;
+    transition: opacity 0.5s ease;
   }
   svg {
     path {
@@ -320,22 +321,6 @@ section {
           color:#fff
         }
       }
-    }
-  }
-  &.active {
-    pointer-events: visible;
-    .inner-menu {
-      pointer-events: visible;
-      &:before {
-        opacity: 1;
-        transform: scale(1) translateX(0);
-      }
-    }
-    .language-wrapper {
-      opacity: 1;
-    }
-    .main-links {
-      opacity: 1;
     }
   }
   .main-links {
@@ -439,15 +424,15 @@ section {
         bottom: 21px;
       }
     }
-  }
-  .menu-btn.light-btn {
-    background-color: #fff;
-    .label {
-      color: #232323;
-    }
-    .burguer {
-      span {
-        background-color: #232323;
+    &.light-btn {
+      background-color: #fff;
+      .label {
+        color: #232323;
+      }
+      .burguer {
+        span {
+          background-color: #232323;
+        }
       }
     }
   }
@@ -463,6 +448,32 @@ section {
     border: none;
     outline: none;
     box-shadow: none;
+  }
+  &.active {
+    pointer-events: visible;
+    .inner-menu {
+      pointer-events: visible;
+      &:before {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+      }
+    }
+    .language-wrapper {
+      opacity: 1;
+    }
+    .main-links {
+      opacity: 1;
+    }
+    .menu-btn{
+      .burguer {
+        span.top{
+          transform: translate(0px, 4px) rotate(225deg)
+        }
+        span.bottom {
+          transform: translate(0px, -3px) rotate(-45deg)
+        }
+      }
+    }
   }
 }
 
@@ -1333,13 +1344,6 @@ section {
           line-height: 1.18em;
           letter-spacing: -0.02em;
         }
-      }
-    }
-  }
-  .more-insights.enter-viewport {
-    .insights-title {
-      &:after {
-        transform: scaleX(1);
       }
     }
   }
