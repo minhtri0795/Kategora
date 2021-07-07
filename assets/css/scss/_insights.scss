@@ -72,6 +72,9 @@
             border-radius: 6px;
             background-color: #fff;
             transition: height 0.5s ease;
+            &.active{
+                height: 148px;
+            }
         }
         &::after {
             content: "";
@@ -139,7 +142,6 @@
     display: block;
     padding: 0 calc(16.4px + .21176vw);
     text-decoration: none;
-    // opacity: 0;
     outline: none;
     border: none;
     background: transparent;

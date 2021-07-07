@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -101,6 +100,16 @@
             </button>
             <span class="menu-btn-hitzone"></span>
         </div>
+        <button class="audio-btn-wrapper" style="opacity: 1; transform: translate(0px, 0px); pointer-events: visible;">
+            <div class="audio-btn">
+                <span class="background"></span>
+                <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="icon" fill-rule="evenodd" clip-rule="evenodd" d="M0.9375 2.39538H3.1875L5.25 0.137058C5.475 -0.0843455 6 -0.0843455 6 0.491304V8.5504C6 9.08177 5.475 9.08177 5.25 8.86036L3.1875 6.64633H0.9375C0.4125 6.64633 0 6.15924 0 5.53931V3.45811C0 2.88246 0.4125 2.39538 0.9375 2.39538Z" fill="white"></path>
+                    <path class="sound-icon" d="M8 2C8.66667 2.66667 10.5 4.5 8 7" stroke="white"></path>
+                </svg>
+                <span class="line-wrapper"><span class="line"></span></span>
+            </div>
+        </button>
     </div>
 
     <div class="page-main">
@@ -126,6 +135,7 @@
                 </div>
             </header>
             <main class="page-content">
+
                 <section>
                     <div class="filters-wrapper">
                         <span class="label">
@@ -136,18 +146,14 @@
                             <span class="border-option"></span>
                             <span class="current-category"><span>All Categories</span></span>
                             <ul class="categories">
-                                <li data-href="https://kategora.com/en/insights/category/architecture/"
-                                    data-slug="architecture">
-                                    Architecture</li>
-                                <li data-href="https://kategora.com/en/insights/category/coliving/"
-                                    data-slug="coliving">Coliving</li>
-                                <li data-href="https://kategora.com/en/insights/category/sustainability/"
-                                    data-slug="sustainability">
-                                    Sustainability</li>
+                                <li>Architecture</li>
+                                <li>Coliving</li>
+                                <li>Sustainability</li>
                             </ul>
                         </div>
                     </div>
                 </section>
+
                 <section>
                     <div class="insights-grid row expanded justify-content-center no-gutters">
                         <div class="col-xl-11 col-xl-12 no-pd">
@@ -261,6 +267,7 @@
                         </div>
                     </div>
                 </section>
+
                 <section>
                     <div class="featured-work-footer-wrapper">
                         <div class="row expanded no-gutters">
@@ -325,16 +332,10 @@
                         </div>
                       </div>
                 </section>
+
             </main>
         </div>
     </div>
-    <!--
-          xxlarge, xlarge, large = col-xl- bootrap
-          largeMax, medium = col-lg- bootrap
-          small = col-md- bootrap
-          xsmall= col-sm- bootrap 
-          xxsmall = col- bootrap-->
-
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

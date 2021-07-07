@@ -15,10 +15,13 @@
     <!-- Responsive -->
     <link rel="stylesheet" href="../assets/css/responsive.css">
 </head>
-
+ <!-- Background audio -->
+ <audio id="backgroundAudio" src="../assets/audio-video/transversal-project.mp3" autoplay loop></audio>
+ <audio id="birdAudio" src="../assets/audio-video/header.mp3"autoplay loop></audio>
+ <audio id="waveAudio" src="../assets/audio-video/waves-low.mp4" loop></audio>
 <body id="project-page">
     <!-- Logo -->
-    <div class="main-header-wrapper">
+    <div class="main-header-wrapper change-color">
         <a class="logo" href="./index.html">
             <svg width="115" height="66" viewBox="0 0 115 66" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <title>Kategora Logo</title>
@@ -95,16 +98,27 @@
                     <a href="../page/Insights.html">Insights</a>
                 </li>
             </ul>
-            <button class="menu-btn">
+            <button class="menu-btn light-btn">
                 <span class="burguer"><span class="top"></span><span class="bottom"></span></span>
                 <span class="label">M<br>e<br>n<br>u</span>
             </button>
             <span class="menu-btn-hitzone"></span>
         </div>
+        <button class="audio-btn-wrapper light-btn" style="opacity: 1; transform: translate(0px, 0px); pointer-events: visible;">
+            <div class="audio-btn">
+                <span class="background"></span>
+                <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="icon" fill-rule="evenodd" clip-rule="evenodd" d="M0.9375 2.39538H3.1875L5.25 0.137058C5.475 -0.0843455 6 -0.0843455 6 0.491304V8.5504C6 9.08177 5.475 9.08177 5.25 8.86036L3.1875 6.64633H0.9375C0.4125 6.64633 0 6.15924 0 5.53931V3.45811C0 2.88246 0.4125 2.39538 0.9375 2.39538Z" fill="white"></path>
+                    <path class="sound-icon" d="M8 2C8.66667 2.66667 10.5 4.5 8 7" stroke="white"></path>
+                </svg>
+                <span class="line-wrapper"><span class="line"></span></span>
+            </div>
+    </button>
     </div>
 
     <div class="page-main">
         <div class="projects-page">
+
             <header class="page-header dark-zone">
                 <div class="page-header-wrapper">
                     <div class="image-wrapper block-bg-cover">
@@ -131,7 +145,8 @@
             </header>
 
             <main class="page-content">
-                <section>
+
+                <section class="dark-zone">
                     <div class="project-grid-wrapper nivaria-beach">
                         <div class="banner-container">
                             <span>
@@ -151,7 +166,7 @@
                                 <p class="title word">Nivaria Beach</p>
                             </span>
                         </div>
-                        <div class="row expanded left-layout inner-container">
+                        <div class="inner-container row expanded left-layout">
                             <div class="big-col col-xl-6 col-md-7 col-sm-12">
                                 <div class="image-container">
                                     <div class="image-wrapper">
@@ -351,8 +366,8 @@
                         <div class="row expanded right-layout inner-container">
                             <div class="small-col col-xl-2 hide-all">
                                 <a href="https://kategora.com/en/projects/nivaria-beach/">
-                                    <video class="sustainability-bg video-lazy-src" preload autoplay playsinline loop
-                                        muted data-scroll data-scroll-call="parallax">
+                                    <video class="sustainability-bg video-lazy-src" autoplay loop
+                                         data-scroll data-scroll-call="parallax">
                                         <source src="../assets/audio-video/quarry-low.mp4" type="video/mp4">
                                     </video> </a>
                             </div>
@@ -677,6 +692,7 @@
                         </div>
                     </div>
                 </section>
+
                 <section>
                     <div class="kategora-timeline-wrapper">
                         <div class="upper-titles-container">
@@ -1053,6 +1069,7 @@
                         </div>
                     </div>
                 </section>
+
                 <section>
                     <div class="cta-footer-wrapper">
                         <div class="banner-container">
@@ -1083,22 +1100,22 @@
                             </div>
                         </div>
                         <div class="main-container row no-gutters collapse expanded justify-content-center text-center">
-                                <div class="px-sm-0 col-xl-9 col-md-12 col-sm-12">
-                                <a href="../page/About.html">
-                                    <h2 class="title">
-                                    <p data-split-reveal-type><span class="sans-light">Get to</span> <span class="serif-light italic">know</span> <span
-                                        class="sans-light">us</span></p>
-                                    </h2>
-            
-                                    <div class="image-container">
-                                    <picture>
-                                        <img width='1260' height='723' class=''
-                                        src='../assets/image/kategora-about-03-1260x723-c.jpg'
-                                        alt='Team meeting enjoyable time coworkers coworking' data-scroll data-scroll-call="parallax">
-                                    </picture>
-                                    </div>
-                                </a>
+                            <div class="px-sm-0 col-xl-9 col-md-12 col-sm-12">
+                            <a href="../page/About.html">
+                                <h2 class="title">
+                                <p data-split-reveal-type><span class="sans-light">Get to</span> <span class="serif-light italic">know</span> <span
+                                    class="sans-light">us</span></p>
+                                </h2>
+        
+                                <div class="image-container">
+                                <picture>
+                                    <img width='1260' height='723' class=''
+                                    src='../assets/image/kategora-about-03-1260x723-c.jpg'
+                                    alt='Team meeting enjoyable time coworkers coworking' data-scroll data-scroll-call="parallax">
+                                </picture>
                                 </div>
+                            </a>
+                            </div>
                         </div>
                           <div class="lower-footer-container row expanded">
                                 <div class="col-xl-12 lower-footer">
@@ -1120,16 +1137,10 @@
                           </div>
                     </div>
                 </section>
+                
             </main>
         </div>
     </div>
-
-    <!--
-          xxlarge, xlarge, large = col-xl- bootrap
-          largeMax, medium = col-lg- bootrap
-          small = col-md- bootrap
-          xsmall= col-sm- bootrap 
-          xxsmall = col- bootrap-->
 
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"

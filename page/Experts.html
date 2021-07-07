@@ -15,8 +15,9 @@
     <link rel="stylesheet" href="../assets/css/responsive.css">
 </head>
 <body id="expertise-page">
+    <audio id="backgroundAudio" src="../assets/audio-video/transversal-expertise.mp3" autoplay loop></audio>
      <!-- Logo -->
-     <div class="main-header-wrapper">
+     <div class="main-header-wrapper change-color">
         <a class="logo" href="./index.html">
             <svg width="115" height="66" viewBox="0 0 115 66" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <title>Kategora Logo</title>
@@ -93,17 +94,27 @@
                     <a href="../page/Insights.html">Insights</a>
                 </li>
             </ul>
-            <button class="menu-btn">
+            <button class="menu-btn light-btn">
                 <span class="burguer"><span class="top"></span><span class="bottom"></span></span>
                 <span class="label">M<br>e<br>n<br>u</span>
             </button>
             <span class="menu-btn-hitzone"></span>
         </div>
+        <button class="audio-btn-wrapper light-btn" style="opacity: 1; transform: translate(0px, 0px); pointer-events: visible;">
+            <div class="audio-btn">
+                <span class="background"></span>
+                <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="icon" fill-rule="evenodd" clip-rule="evenodd" d="M0.9375 2.39538H3.1875L5.25 0.137058C5.475 -0.0843455 6 -0.0843455 6 0.491304V8.5504C6 9.08177 5.475 9.08177 5.25 8.86036L3.1875 6.64633H0.9375C0.4125 6.64633 0 6.15924 0 5.53931V3.45811C0 2.88246 0.4125 2.39538 0.9375 2.39538Z" fill="white"></path>
+                    <path class="sound-icon" d="M8 2C8.66667 2.66667 10.5 4.5 8 7" stroke="white"></path>
+                </svg>
+                <span class="line-wrapper"><span class="line"></span></span>
+            </div>
+    </button>
     </div>
     <!-- Content -->
     <div class="page-main">
-        <div class="experts-page">
-            <header class="page-header dark-zone">
+        <div class="experts-page dark-zone">
+            <header class="page-header">
                 <div class="page-header-wrapper">
                     <div class="image-wrapper block-bg-cover">
                         <video class="header-video element-cover" preload autoplay loop playinline muted>
@@ -127,6 +138,7 @@
             </header>
 
             <main class="page-content">
+
                 <section>
                     <div class="expertise-list-wrapper">
                         <div class="row expanded">
@@ -138,9 +150,7 @@
 
                         <div class="vectors-list-container row expanded justify-content-center">
                             <div class="cta-btn-wrapper cta-cursor">
-                                <div >
                                     <span class="background"></span>
-
                                     <span class="round-text-wrapper">
                                         <img src="../assets/image/circle-text2.png" alt="">
                                     </span>
@@ -186,7 +196,6 @@
                                             </g>
                                         </svg>
                                     </div>
-                                </div>
                             </div>
                             <div class="col-xl-12">
                                 <ul class="vectors-list" data-scroll data-scroll-call="stagger-in">
@@ -431,6 +440,7 @@
                         </div>
                     </div>
                 </section>
+
                 <section>
                     <div class="cta-footer-wrapper">
                         <div class="banner-container">
@@ -488,36 +498,31 @@
                                 </a>
                                 </div>
                         </div>
-                          <div class="lower-footer-container row expanded">
-                                <div class="col-xl-12 lower-footer">
-                                <ul class="legal-list">
-                                    <li class="legal-item">
-                                    <a href="https://kategora.com/en/privacy-policy/">Privacy Policy</a>
-                                    </li>
-                                    <li class="legal-item">
-                                    <a href="https://kategora.com/en/legal-notice/">Legal Notice</a>
-                                    </li>
-                                    <li class="legal-item">
-                                    <a href="https://kategora.com/en/cookies-consent/">Cookies Consent</a>
-                                    </li>
-                                </ul>
-                                <span class="made-by-buro"><a href="https://burocratik.com" target="_blank"
-                                    rel="external nofollow noopener">Made
-                                    By Büro</a></span>
-                                </div>
-                          </div>
+                        <div class="lower-footer-container row expanded">
+                            <div class="col-xl-12 lower-footer">
+                            <ul class="legal-list">
+                                <li class="legal-item">
+                                <a href="https://kategora.com/en/privacy-policy/">Privacy Policy</a>
+                                </li>
+                                <li class="legal-item">
+                                <a href="https://kategora.com/en/legal-notice/">Legal Notice</a>
+                                </li>
+                                <li class="legal-item">
+                                <a href="https://kategora.com/en/cookies-consent/">Cookies Consent</a>
+                                </li>
+                            </ul>
+                            <span class="made-by-buro"><a href="https://burocratik.com" target="_blank"
+                                rel="external nofollow noopener">Made
+                                By Büro</a></span>
+                            </div>
+                        </div>
                     </div>
                 </section>
+
             </main>
+            
         </div>
     </div>
-
-    <!--
-          xxlarge, xlarge, large = col-xl- bootrap
-          largeMax, medium = col-lg- bootrap
-          small = col-md- bootrap
-          xsmall= col-sm- bootrap 
-          xxsmall = col- bootrap-->
 
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
