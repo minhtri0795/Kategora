@@ -48,23 +48,61 @@ $(document).ready(function () {
       isDarkZone(scriptOnTabletMobile, el);
     });
   });
+
   function isDarkZone(mediaquery, darkzone) {
     let menuWrapper = $(".menu-btn");
+    let audioBtn = $('.audio-btn-wrapper')
     let logo = $(".main-header-wrapper");
-    if (mediaquery.matches) {
-      ScrollTrigger.create({
-        trigger: darkzone,
-        start: "top top",
-        onEnter: function () {
-          menuWrapper.addClass("light-btn");
-          logo.addClass("change-color");
-        },
-        onLeave: function () {
-          menuWrapper.removeClass("light-btn");
-          logo.removeClass("change-color");
-        },
-      });
-    }
+      if(mediaquery.matches){
+        ScrollTrigger.create({
+          trigger: darkzone,
+          start: "top top",
+          onEnter: function () {
+            menuWrapper.addClass("light-btn");
+            logo.addClass("change-color");
+          },
+          onLeave: function () {
+            menuWrapper.removeClass("light-btn");
+            logo.removeClass("change-color");
+          },
+          onEnterBack: function () {
+            menuWrapper.addClass("light-btn");
+            logo.addClass("change-color");
+          },
+          onLeaveBack: function () {
+            menuWrapper.removeClass("light-btn");
+            logo.removeClass("change-color");
+          },
+        });
+      }else{
+        ScrollTrigger.create({
+          trigger: darkzone,
+          start: "top center",
+          end:'bottom center',
+          onEnter: function () {
+            menuWrapper.addClass("light-btn");
+            audioBtn.addClass("light-btn");
+            logo.addClass("change-color");
+          },
+          onLeave: function () {
+            menuWrapper.removeClass("light-btn");
+            audioBtn.removeClass("light-btn");
+            logo.removeClass("change-color");
+          },
+          onEnterBack: function () {
+            menuWrapper.addClass("light-btn");
+            audioBtn.addClass("light-btn");
+            logo.addClass("change-color");
+          },
+          onLeaveBack: function () {
+            menuWrapper.removeClass("light-btn");
+            audioBtn.removeClass("light-btn");
+            logo.removeClass("change-color");
+          },
+        });
+      }
+      
+    
   }
 
   //Handle audio button.
@@ -440,13 +478,13 @@ $(document).ready(function () {
         "-=2.3"
       )
       .from(
-        ".menu-btn",
+        ['.menu-btn','.audio-btn-wrapper'],
         {
           duration: 1,
           opacity: 0,
           x: 30,
         },
-        "-=0.5"
+        "-=2"
       );
     parallaxHeader(340, scriptOnPc);
 
@@ -628,8 +666,6 @@ $(document).ready(function () {
     nextBtn.click(function () {
       if (xTranslate < imageLine[0].clientWidth - 60 * vw) {
         handleClick(40,2)
-      } else {
-        handleClick(0,5)
       }
     });
 
