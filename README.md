@@ -28,7 +28,7 @@ Kategora
 │      ├── heart.html 
 |      ├── thumpsup.html
 ├── assets
-│      ├── css├── scss
+│      ├── css
 │      ├── audio-video
 │      ├── image
 |      ├── font
